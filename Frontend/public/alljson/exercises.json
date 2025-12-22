@@ -1,0 +1,613 @@
+[
+    {
+        "id": "ex001",
+        "title": "Push-Up",
+        "description": "Bodyweight upper-body pushing exercise.",
+        "targetedMuscles": [
+            "Chest",
+            "Triceps",
+            "Shoulders",
+            "Core"
+        ],
+        "procedure": [
+            "Start in plank position.",
+            "Lower chest toward floor.",
+            "Push back up."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain",
+            "Endurance",
+            "Fat Loss"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [],
+        "media": {
+            "image": "https://res.cloudinary.com/dyliap6u9/image/upload/v1766119105/Screenshot_2025-12-18_213537_o8cwbb.png",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Sagging hips",
+            "Flared elbows"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 7
+    },
+    {
+        "id": "ex002",
+        "title": "Bodyweight Squat",
+        "description": "Lower body strength and mobility exercise.",
+        "targetedMuscles": [
+            "Quadriceps",
+            "Glutes",
+            "Hamstrings"
+        ],
+        "procedure": [
+            "Stand shoulder-width apart.",
+            "Lower hips down.",
+            "Push back up."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain",
+            "Fat Loss"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Knees collapsing",
+            "Heels lifting"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 8
+    },
+    {
+        "id": "ex003",
+        "title": "Plank",
+        "description": "Core stabilization exercise.",
+        "targetedMuscles": [
+            "Core",
+            "Shoulders"
+        ],
+        "procedure": [
+            "Hold plank position.",
+            "Keep core tight."
+        ],
+        "TrainingGoals": [
+            "Endurance",
+            "Strength"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Sagging hips"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 4
+    },
+    {
+        "id": "ex004",
+        "title": "Jumping Jacks",
+        "description": "Full-body cardio movement.",
+        "targetedMuscles": [
+            "Full Body"
+        ],
+        "procedure": [
+            "Jump legs apart while raising arms.",
+            "Return to start."
+        ],
+        "TrainingGoals": [
+            "Fat Loss",
+            "Endurance"
+        ],
+        "TrainingMethod": [
+            "Cardio"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Poor coordination"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 10
+    },
+    {
+        "id": "ex005",
+        "title": "Mountain Climbers",
+        "description": "High-intensity core and cardio exercise.",
+        "targetedMuscles": [
+            "Core",
+            "Legs",
+            "Shoulders"
+        ],
+        "procedure": [
+            "Start in plank.",
+            "Drive knees toward chest alternately."
+        ],
+        "TrainingGoals": [
+            "Fat Loss",
+            "Endurance"
+        ],
+        "TrainingMethod": [
+            "Cardio",
+            "Calisthenics"
+        ],
+        "difficulty": "Intermediate",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Bouncing hips"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 11
+    },
+    {
+        "id": "ex006",
+        "title": "Pull-Up",
+        "description": "Upper-body pulling exercise.",
+        "targetedMuscles": [
+            "Back",
+            "Biceps"
+        ],
+        "procedure": [
+            "Hang from bar.",
+            "Pull chin above bar."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Intermediate",
+        "equipmentRequired": [
+            "Pull-up Bar"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Using momentum"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 9
+    },
+    {
+        "id": "ex007",
+        "title": "Lunges",
+        "description": "Single-leg lower-body exercise.",
+        "targetedMuscles": [
+            "Glutes",
+            "Quadriceps"
+        ],
+        "procedure": [
+            "Step forward.",
+            "Lower back knee."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Short steps"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 8
+    },
+    {
+        "id": "ex008",
+        "title": "Burpees",
+        "description": "Explosive full-body cardio exercise.",
+        "targetedMuscles": [
+            "Full Body"
+        ],
+        "procedure": [
+            "Squat down.",
+            "Jump back to plank.",
+            "Jump up."
+        ],
+        "TrainingGoals": [
+            "Fat Loss",
+            "Endurance"
+        ],
+        "TrainingMethod": [
+            "Cardio"
+        ],
+        "difficulty": "Advanced",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Skipping push-up"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 12
+    },
+    {
+        "id": "ex009",
+        "title": "Bicep Curl",
+        "description": "Isolation arm exercise.",
+        "targetedMuscles": [
+            "Biceps"
+        ],
+        "procedure": [
+            "Curl weight upward.",
+            "Lower slowly."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain"
+        ],
+        "TrainingMethod": [
+            "Weighted"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [
+            "Dumbbells"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Swinging weights"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 5
+    },
+    {
+        "id": "ex010",
+        "title": "Tricep Dips",
+        "description": "Bodyweight triceps exercise.",
+        "targetedMuscles": [
+            "Triceps",
+            "Shoulders"
+        ],
+        "procedure": [
+            "Lower body using arms.",
+            "Push back up."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [
+            "Bench"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Shrugging shoulders"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 6
+    },
+    {
+        "id": "ex011",
+        "title": "Deadlift",
+        "description": "Compound posterior-chain exercise.",
+        "targetedMuscles": [
+            "Back",
+            "Glutes",
+            "Hamstrings"
+        ],
+        "procedure": [
+            "Lift bar from ground.",
+            "Keep back neutral."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain"
+        ],
+        "TrainingMethod": [
+            "Weighted"
+        ],
+        "difficulty": "Advanced",
+        "equipmentRequired": [
+            "Barbell"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Rounded back"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 10
+    },
+    {
+        "id": "ex012",
+        "title": "Bench Press",
+        "description": "Chest-focused compound lift.",
+        "targetedMuscles": [
+            "Chest",
+            "Triceps"
+        ],
+        "procedure": [
+            "Lower bar to chest.",
+            "Press upward."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain"
+        ],
+        "TrainingMethod": [
+            "Weighted"
+        ],
+        "difficulty": "Intermediate",
+        "equipmentRequired": [
+            "Barbell",
+            "Bench"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Bouncing bar"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 9
+    },
+    {
+        "id": "ex013",
+        "title": "Overhead Shoulder Press",
+        "description": "Vertical pushing exercise.",
+        "targetedMuscles": [
+            "Shoulders",
+            "Triceps"
+        ],
+        "procedure": [
+            "Press weight overhead.",
+            "Lower under control."
+        ],
+        "TrainingGoals": [
+            "Muscle Gain"
+        ],
+        "TrainingMethod": [
+            "Weighted"
+        ],
+        "difficulty": "Intermediate",
+        "equipmentRequired": [
+            "Dumbbells"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Overarching back"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 7
+    },
+    {
+        "id": "ex014",
+        "title": "Leg Raise",
+        "description": "Lower abdominal exercise.",
+        "targetedMuscles": [
+            "Core"
+        ],
+        "procedure": [
+            "Raise legs upward.",
+            "Lower slowly."
+        ],
+        "TrainingGoals": [
+            "Core Strength"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Intermediate",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Swinging legs"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 5
+    },
+    {
+        "id": "ex015",
+        "title": "Russian Twist",
+        "description": "Rotational core exercise.",
+        "targetedMuscles": [
+            "Obliques"
+        ],
+        "procedure": [
+            "Rotate torso side to side."
+        ],
+        "TrainingGoals": [
+            "Core Strength"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Rounding back"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 6
+    },
+    {
+        "id": "ex016",
+        "title": "Running",
+        "description": "Cardiovascular endurance activity.",
+        "targetedMuscles": [
+            "Legs",
+            "Cardiovascular System"
+        ],
+        "procedure": [
+            "Run at steady pace."
+        ],
+        "TrainingGoals": [
+            "Fat Loss",
+            "Endurance"
+        ],
+        "TrainingMethod": [
+            "Cardio"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [
+            "Running Shoes"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Poor posture"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 11
+    },
+    {
+        "id": "ex017",
+        "title": "Cycling",
+        "description": "Low-impact cardio exercise.",
+        "targetedMuscles": [
+            "Quadriceps",
+            "Glutes"
+        ],
+        "procedure": [
+            "Pedal continuously."
+        ],
+        "TrainingGoals": [
+            "Endurance",
+            "Fat Loss"
+        ],
+        "TrainingMethod": [
+            "Cardio"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [
+            "Bicycle"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Incorrect seat height"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 9
+    },
+    {
+        "id": "ex018",
+        "title": "Downward Dog",
+        "description": "Yoga pose for flexibility.",
+        "targetedMuscles": [
+            "Hamstrings",
+            "Shoulders"
+        ],
+        "procedure": [
+            "Form inverted V shape."
+        ],
+        "TrainingGoals": [
+            "Flexibility"
+        ],
+        "TrainingMethod": [
+            "Yoga"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [
+            "Yoga Mat"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Rounded back"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 3
+    },
+    {
+        "id": "ex019",
+        "title": "Sun Salutation",
+        "description": "Dynamic yoga flow.",
+        "targetedMuscles": [
+            "Full Body"
+        ],
+        "procedure": [
+            "Perform yoga sequence."
+        ],
+        "TrainingGoals": [
+            "Flexibility",
+            "Endurance"
+        ],
+        "TrainingMethod": [
+            "Yoga",
+            "Cardio"
+        ],
+        "difficulty": "Intermediate",
+        "equipmentRequired": [
+            "Yoga Mat"
+        ],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Holding breath"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 6
+    },
+    {
+        "id": "ex020",
+        "title": "Wall Sit",
+        "description": "Isometric leg endurance exercise.",
+        "targetedMuscles": [
+            "Quadriceps"
+        ],
+        "procedure": [
+            "Sit against wall.",
+            "Hold position."
+        ],
+        "TrainingGoals": [
+            "Endurance"
+        ],
+        "TrainingMethod": [
+            "Calisthenics"
+        ],
+        "difficulty": "Beginner",
+        "equipmentRequired": [],
+        "media": {
+            "image": "",
+            "video": ""
+        },
+        "commonMistakes": [
+            "Standing too high"
+        ],
+        "estimatedCaloriesBurnedPerMinute": 4
+    }
+]

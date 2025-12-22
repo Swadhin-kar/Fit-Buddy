@@ -1,0 +1,45 @@
+[
+    {
+        "id":1,
+        "title": "Weight training",
+        "description": "A method focused on building muscle strength and size through resistance exercises using weights.",
+        "image": "weight_training.jpg",
+        "link": "/methods/weight-training"
+    },
+    {
+        "id":2,
+        "title": "Calisthenics",
+        "description": "A bodyweight training method that emphasizes functional movements to improve strength, flexibility, and endurance without the need for equipment.",
+        "image": "calisthenics.jpg",
+        "link": "/methods/calisthenics"
+    },
+    {
+        "id":3,
+        "title": "Power Lifting",
+        "description": "A strength training method that focuses on three main lifts: squat, bench press, and deadlift, aiming to maximize overall strength.",
+        "image": "power_lifting.jpg",
+        "link": "/methods/power-lifting"
+    },
+    {
+        "id":4,
+        "title":"functional training",
+        "description":"A training method that focuses on exercises mimicking everyday movements to improve overall body function and coordination.",
+        "image":"functional_training.jpg",
+        "link":"/methods/functional-training"
+    },
+    {
+        "id":5,
+        "title": "Yoga",
+        "description": "A holistic practice combining physical postures, breathing exercises, and meditation to enhance flexibility, balance, and mental well-being.",
+        "image": "yoga.png",
+        "link": "/methods/yoga"
+    },
+    {
+        "id":6,
+        "title": "Cardio",
+        "description": "A cardiovascular training method aimed at improving heart health and endurance through activities like running, cycling, and swimming.",
+        "image": "cardio.jpg",
+        "link": "/methods/cardio"
+    }
+
+]

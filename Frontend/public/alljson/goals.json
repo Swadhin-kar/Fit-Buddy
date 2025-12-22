@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Fat/Weight Loss",
+        "description": "Focus on reducing body fat through a combination of cardio, strength training, and a balanced diet.",
+        "image": "/fat_loss.jpg",
+        "link": "/goals/fat-loss"
+    },
+    {
+        "id": 2,
+        "title": "Muscle/Strength Gain",
+        "description": "Aim to increase muscle mass with targeted strength training and a protein-rich diet.",
+        "image": "/Strength.jpg",
+        "link": "/goals/Strength-gain"
+    },
+    {
+        "id": 3,
+        "title": "Endurance Building",
+        "description": "Build cardiovascular endurance with activities like running, cycling, and swimming.",
+        "image": "/endurance_building.jpg",
+        "link": "/goals/endurance-building"
+    },
+    {
+        "id": 4,
+        "title": "Mobility Improvement",
+        "description": "Enhance flexibility and joint health through stretching, yoga, and mobility exercises.",
+        "image": "/mobility_improvement.jpg",
+        "link": "/goals/mobility-improvement"
+    },
+    {
+        "id": 5,
+        "title":"physicotherapy",
+        "description":"Recover from injuries and improve physical function with tailored therapy exercises.",
+        "image":"/physical_therapy.jpg",
+        "link":"/goals/physical-therapy"
+    },
+    {
+        "id": 6,
+        "title": "General Fitness",
+        "description": "Maintain overall health and fitness with a balanced routine of cardio, strength, and flexibility exercises.",
+        "image": "/general_fitness.jpg",
+        "link": "/goals/general-fitness"
+    }
+]
