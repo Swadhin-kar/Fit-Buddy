@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend of FitBuddy",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swadhin-kar/Fit-Buddy.git"
+  },
+  "author": "Swadhin kumar kar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swadhin-kar/Fit-Buddy/issues"
+  },
+  "homepage": "https://github.com/Swadhin-kar/Fit-Buddy#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
