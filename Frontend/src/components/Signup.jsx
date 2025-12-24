@@ -3,22 +3,23 @@ import LoadingFallback from "./LoadingFallback";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function Login() {
+const Signup = () => {
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((p) => ({ ...p, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Login:", formData);
-  };
-
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    });
+  
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData((p) => ({ ...p, [name]: value }));
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log("Login:", formData);
+    };
   return (
     <>
       <div className="">
@@ -34,15 +35,32 @@ export default function Login() {
             {/* Header */}
             <div className="text-center">
               <h1 className="text-3xl font-bold text-slate-900 mb-2">
-                Welcome Back
+                Create Account
               </h1>
               <p className="text-slate-600 text-sm">
-                Sign in to your FitBuddy account
+                Join FitBuddy today and start your fitness journey
               </p>
             </div>
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
+
+              {/* Name Field (Sign Up only) */}
+              
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Enter your full name"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-[#1d232a] focus:outline-none transition text-slate-900 placeholder-slate-400"
+                    required
+                  />
+                </div>
 
               {/* Email Field */}
               <div>
@@ -76,18 +94,28 @@ export default function Login() {
                 />
               </div>
 
-              <div className="text-right">
-                <a href="#" className="text-sm text-[#1d232a] hover:text-[#5eddd4] transition font-medium">
-                  Forgot password?
-                </a>
-              </div>
+              {/* Confirm Password Field (Sign Up only) */}
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    Confirm Password
+                  </label>
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    placeholder="••••••••"
+                    className="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-[#1d232a] focus:outline-none transition text-slate-900 placeholder-slate-400"
+                    required
+                  />
+                </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full bg-gradient-to-r from-[#1d232a] to-[#5eddd4] text-slate-900 font-bold py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 text-white"
               >
-                Sign In
+                Create Account
               </button>
             </form>
 
@@ -111,11 +139,12 @@ export default function Login() {
             {/* Toggle Form */}
             <div className="text-center">
               <p className="text-slate-600 text-sm">
-                Don't have an account?
-                <a href="/user/signup"
+                Already have an account?
+                <a
+                  href="/user/login"
                   className="text-[#1d232a] font-bold hover:text-[#5eddd4] transition "
                 >
-                  Sign Up
+                  Sign In
                 </a>
               </p>
             </div>
@@ -134,5 +163,7 @@ export default function Login() {
         </Suspense>
       </div>
     </>
-  );
+  )
 }
+
+export default Signup

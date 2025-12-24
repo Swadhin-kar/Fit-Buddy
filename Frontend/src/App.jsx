@@ -4,7 +4,8 @@ import Bmi from './components/Bmi'
 import { Toaster } from 'react-hot-toast';
 
 const Home = lazy(() => import('./components/Home'))
-const AuthPage = lazy(() => import('./components/AuthPage'))
+const Login = lazy(() => import('./components/Login'))
+const Signup = lazy(() => import('./components/Signup'))
 const Blog = lazy(() => import('./components/Blog'))
 
 const LoadingFallback = () => (
@@ -24,7 +25,8 @@ function App() {
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path = "/" element={<Home />} />
-          <Route path = "/user/login" element={<AuthPage />} />
+          <Route path = "/user/login" element={<Login />} />
+          <Route path = "/user/signup" element={<Signup />} />
           <Route path = '/exercises' element = {<Blog />} />
           <Route path = 'bmi-calculator' element = {<Bmi />} />
         </Routes>
