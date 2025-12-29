@@ -2,6 +2,8 @@ import { useState, Suspense } from "react";
 import LoadingFallback from "./LoadingFallback";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import axios from "axios";
+import toast from 'react-hot-toast'
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -16,7 +18,21 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login:", formData);
+    axios.post('http://localhost:7000/user/login', formData, {withCredentials: true })
+      .then((res) => {
+        if (res.data) {
+          toast.success('Login Successful')
+        }
+
+        setTimeout(() => {
+          window.location.href = '/'
+        }, 1500)
+      }).catch((err) => {
+        if (err.response) {
+          console.log("Error is :", err);
+          toast.error("Error :" + err.response.data.message)
+        }
+      })
   };
 
   return (

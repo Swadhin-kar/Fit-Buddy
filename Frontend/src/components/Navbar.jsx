@@ -1,5 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useContext } from 'react';
+import { AuthContext } from './AuthContext';
+
 
 const Navbar = () => {
 
@@ -41,6 +44,13 @@ const Navbar = () => {
 
   // for the login state
   let [loggedIn, setLoggedIn] = useState(false)
+
+  const { user, loading } = useContext(AuthContext)
+
+  useEffect(()=>{
+    if(user) setLoggedIn(true)
+    else setLoggedIn(false)
+  }, [user])
 
 
   return (

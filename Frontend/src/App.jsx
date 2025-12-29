@@ -7,15 +7,9 @@ const Home = lazy(() => import('./components/Home'))
 const Login = lazy(() => import('./components/Login'))
 const Signup = lazy(() => import('./components/Signup'))
 const Blog = lazy(() => import('./components/Blog'))
+const FitBee = lazy(() => import('./components/FitBee'))
 
-const LoadingFallback = () => (
-  <div className="flex items-center justify-center min-h-screen">
-    <div className="text-center">
-      <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      <p className="mt-4 text-gray-600">Loading...</p>
-    </div>
-  </div>
-)
+import LoadingFallback from './components/LoadingFallback';
 
 function App() {
 
@@ -29,6 +23,7 @@ function App() {
           <Route path = "/user/signup" element={<Signup />} />
           <Route path = '/exercises' element = {<Blog />} />
           <Route path = 'bmi-calculator' element = {<Bmi />} />
+          <Route path = '/FitBee' element = {<FitBee />} />
         </Routes>
       </Suspense>
     </>

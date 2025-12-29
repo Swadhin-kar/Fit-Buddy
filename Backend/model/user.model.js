@@ -18,12 +18,12 @@ const userSchema = new mongoose.Schema({
     },
     age: {
         type :Number, 
-        required : true,
+        required : false,
         unique : false
     },
     gender: {
         type : String,
-        required : true,
+        required : false,
         unique : false
     },
     height: {
@@ -37,11 +37,14 @@ const userSchema = new mongoose.Schema({
         unique: false
     },
     profilePicture: {
-        type: URL,
+        type: String,
         required: false,
         unique : false
+    },
+    refreshToken:{
+        type: String
     }
-})
+},{timestamps: true})
 
 const User = mongoose.model('User', userSchema)
 

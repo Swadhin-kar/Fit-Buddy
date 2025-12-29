@@ -2,24 +2,47 @@ import { useState, Suspense } from "react";
 import LoadingFallback from "./LoadingFallback";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import toast from 'react-hot-toast'
+import axios from 'axios'
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: ""
-    });
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((p) => ({ ...p, [name]: value }));
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("Login:", formData);
-    };
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((p) => ({ ...p, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(!(formData.password === formData.confirmPassword)){
+      toast.error("Password and Confirm Password do not match");
+      return 
+    }
+
+    axios.post('http://localhost:7000/user/signup', formData, {withCredentials: true})
+      .then((res) => {
+        if (res.data) {
+          toast.success('Registered Successful')
+        }
+
+        setTimeout(() => {
+          window.location.href = '/'
+        }, 1500)
+      }).catch((err) => {
+        if (err.response) {
+          console.log("Error is :", err);
+          toast.error("Error :" + err.response.data.message)
+        }
+      })
+  };
   return (
     <>
       <div className="">
@@ -46,21 +69,21 @@ const Signup = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
 
               {/* Name Field (Sign Up only) */}
-              
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    className="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-[#1d232a] focus:outline-none transition text-slate-900 placeholder-slate-400"
-                    required
-                  />
-                </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-[#1d232a] focus:outline-none transition text-slate-900 placeholder-slate-400"
+                  required
+                />
+              </div>
 
               {/* Email Field */}
               <div>
@@ -95,20 +118,20 @@ const Signup = () => {
               </div>
 
               {/* Confirm Password Field (Sign Up only) */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Confirm Password
-                  </label>
-                  <input
-                    type="password"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="••••••••"
-                    className="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-[#1d232a] focus:outline-none transition text-slate-900 placeholder-slate-400"
-                    required
-                  />
-                </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Confirm Password
+                </label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  placeholder="••••••••"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-[#1d232a] focus:outline-none transition text-slate-900 placeholder-slate-400"
+                  required
+                />
+              </div>
 
               {/* Submit Button */}
               <button
