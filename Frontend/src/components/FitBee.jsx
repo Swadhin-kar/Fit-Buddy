@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from "react";
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 export default function AiAssistant() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Hi 👋 I'm Fit Buddy AI. Ask me about workouts, calories or fitness tips!",
+      content: "Hi 👋 I'm Fit-Bee. Ask me about workouts, calories or fitness tips!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -24,19 +26,24 @@ export default function AiAssistant() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/ai/chat", {
+      const res = await fetch("http://localhost:7000/ai/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ prompt: input }),
       });
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
 
       const data = await res.json();
 
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: data.reply },
+        { role: "assistant", content: data.message || data },
       ]);
     } catch (err) {
+      console.error("Error:", err);
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: "⚠️ Something went wrong. Try again." },
@@ -47,6 +54,8 @@ export default function AiAssistant() {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="flex justify-center items-center min-h-screen bg-base-200 px-2">
       <div className="w-full max-w-3xl bg-base-100 rounded-2xl shadow-xl flex flex-col">
 
@@ -56,7 +65,7 @@ export default function AiAssistant() {
             AI
           </div>
           <div>
-            <h2 className="font-semibold text-lg">Fit Buddy AI</h2>
+            <h2 className="font-semibold text-lg">Fit-Bee</h2>
             <p className="text-xs text-gray-500">Your fitness assistant</p>
           </div>
         </div>
@@ -112,5 +121,7 @@ export default function AiAssistant() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

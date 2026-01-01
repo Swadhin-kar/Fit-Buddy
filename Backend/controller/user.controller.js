@@ -4,7 +4,7 @@ import User from '../model/user.model.js'
 import { generateToken, generateRefreshToken } from '../utils/token.js'
 
 export const registerUser = async (req, res) => {
-    console.log("REQ BODY:", req.body);
+    // console.log("REQ BODY:", req.body);
     if (!req.body) {
         return res.status(400).send({ message: "Content body missing" })
     }

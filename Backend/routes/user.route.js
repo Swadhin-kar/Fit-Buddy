@@ -6,7 +6,7 @@ import protect from '../middleware/authMiddleware.js'
 router.post("/signup", registerUser);
 router.post("/login", loginUser);
 router.post("/refresh", refresh);
-router.post("/logout", protect, logout);
+router.post("/logout", logout);
 router.get('/verify', protect, verify);
 
 

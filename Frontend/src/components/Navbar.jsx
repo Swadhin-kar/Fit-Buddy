@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 
 const Navbar = () => {
@@ -43,14 +45,38 @@ const Navbar = () => {
   }, [])
 
   // for the login state
-  let [loggedIn, setLoggedIn] = useState(false)
 
-  const { user, loading } = useContext(AuthContext)
+  const { user, loading, checkAuth } = useContext(AuthContext)
 
-  useEffect(()=>{
-    if(user) setLoggedIn(true)
+  useEffect(() => {
+    if (user) setLoggedIn(true)
     else setLoggedIn(false)
   }, [user])
+
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
+
+
+  useEffect(() => {
+    if (user) setLoggedIn(true)
+    else setLoggedIn(false)
+  }, [])
+
+  const logoutme = async () => {
+    setIsLoggingOut(true)
+    try {
+      await axios.post('http://localhost:7000/user/logout', {}, { withCredentials: true })
+      setUser(null)
+      toast.success('Logged out successfully')
+      setTimeout(() => {
+        window.location.href = '/'
+        window.location.reload()
+      }, 800)
+    } catch (err) {
+      toast.error('Failed to logout')
+      setIsLoggingOut(false)
+    }
+  }
 
 
   return (
@@ -134,7 +160,9 @@ const Navbar = () => {
           </svg>
         </label>
         {loggedIn ? (
-          <a className='btn bg-red-500 text-white ml-4 hover:bg-red-600'>Logout</a>
+          <button onClick={logoutme} disabled={isLoggingOut} className='btn bg-red-500 text-white ml-4 hover:bg-red-600 disabled:opacity-50'>
+            {isLoggingOut ? 'Logging out...' : 'Logout'}
+          </button>
         ) : (
           <a
             className="btn bg-blue-700 text-white ml-4  hover:bg-blue-900 "

@@ -1,53 +1,61 @@
 import { useState, Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 import LoadingFallback from "./LoadingFallback";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import axios from "axios";
-import toast from 'react-hot-toast'
+import axios from "../utils/axios";
+import toast from "react-hot-toast";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((p) => ({ ...p, [name]: value }));
+    setFormData((p) => ({
+      ...p,
+      [e.target.name]: e.target.value,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post('http://localhost:7000/user/login', formData, {withCredentials: true })
-      .then((res) => {
-        if (res.data) {
-          toast.success('Login Successful')
-        }
+    setLoading(true);
 
-        setTimeout(() => {
-          window.location.href = '/'
-        }, 1500)
-      }).catch((err) => {
-        if (err.response) {
-          console.log("Error is :", err);
-          toast.error("Error :" + err.response.data.message)
-        }
-      })
+    try {
+      const res = await axios.post(
+        "/user/login",
+        formData,
+        { withCredentials: true }
+      );
+
+      toast.success("Login successful");
+      setFormData({ email: "", password: "" });
+
+      setTimeout(() => {
+        navigate('/')
+      }, 1000);
+    } catch (err) {
+      toast.error(err?.response?.data?.message || "Login failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
-      <div className="">
-        <Suspense fallback={<LoadingFallback />}>
-          <Navbar />
-        </Suspense>
-      </div>
-      <div className="min-h-screen flex items-center justify-center mt-15 p-4">
-        {/* Card Container */}
+      <Suspense fallback={<LoadingFallback />}>
+        <Navbar />
+      </Suspense>
+
+      <div className="min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-md">
           <div className="bg-white rounded-lg shadow-2xl p-8 space-y-6">
 
-            {/* Header */}
             <div className="text-center">
               <h1 className="text-3xl font-bold text-slate-900 mb-2">
                 Welcome Back
@@ -57,7 +65,6 @@ export default function Login() {
               </p>
             </div>
 
-            {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
 
               {/* Email Field */}
@@ -136,19 +143,12 @@ export default function Login() {
               </p>
             </div>
           </div>
-
-          {/* Footer */}
-          <p className="text-center text-slate-500 text-xs mt-6">
-            By continuing, you agree to FitBuddy's Terms & Conditions
-          </p>
         </div>
       </div>
 
-      <div className="mt-4">
-        <Suspense fallback={<LoadingFallback />}>
-          <Footer />
-        </Suspense>
-      </div>
+      <Suspense fallback={<LoadingFallback />}>
+        <Footer />
+      </Suspense>
     </>
   );
 }

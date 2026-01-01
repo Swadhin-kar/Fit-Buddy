@@ -1,33 +1,54 @@
 import express from "express";
-import OpenAI from "openai";
-import dotenv from 'dotenv'
+import axios from "axios";
 
-dotenv.config()
+const router = express.Router();
 
-const aiRouter = express.Router();
+export const fitnessAI = async (req, res) => {
+  const { prompt } = req.body;
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
-aiRouter.post("/chat", async (req, res) => {
   try {
-    const { message } = req.body;
+    if (!prompt) {
+      return res.status(400).json({ error: "Prompt is required" });
+    }
 
-    const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages: [
-        { role: "system", content: "You are a fitness assistant for Fit Buddy." },
-        { role: "user", content: message },
-      ],
-    });
+    const response = await axios.post(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        model: "deepseek/deepseek-r1-0528:free",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a fitness assistant. Give safe, beginner-friendly advice. No medical claims."
+          },
+          {
+            role: "user",
+            content: prompt
+          }
+        ],
+        temperature: 0.6
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-    res.json({
-      reply: response.choices[0].message.content,
-    });
+    const message = response.data.choices[0].message.content;
+    res.json({ success: true, message });
   } catch (err) {
-    res.status(500).json({ error: "AI failed" });
+    console.error("AI API Error:", err.response?.data || err.message);
+    
+    if (err.response?.status === 429) {
+      return res.status(429).json({ error: "Free AI limit reached. Try again later." });
+    }
+    
+    res.status(500).json({ error: "Failed to get AI response" });
   }
-});
+};
 
-export default aiRouter;
+router.post("/chat", fitnessAI);
+
+export default router;
