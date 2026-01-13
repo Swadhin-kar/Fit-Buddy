@@ -1,7 +1,5 @@
 import { useState, Suspense } from "react";
 import LoadingFallback from "./LoadingFallback";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 import toast from 'react-hot-toast'
 import axios from 'axios'
 
@@ -46,9 +44,6 @@ const Signup = () => {
   return (
     <>
       <div className="">
-        <Suspense fallback={<LoadingFallback />}>
-          <Navbar />
-        </Suspense>
       </div>
       <div className="min-h-screen flex items-center justify-center mt-15 p-4">
         {/* Card Container */}
@@ -178,12 +173,6 @@ const Signup = () => {
             By continuing, you agree to FitBuddy's Terms & Conditions
           </p>
         </div>
-      </div>
-
-      <div className="mt-4">
-        <Suspense fallback={<LoadingFallback />}>
-          <Footer />
-        </Suspense>
       </div>
     </>
   )

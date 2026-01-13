@@ -1,6 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import Navbar from './Navbar'
-import Footer from './Footer'
 
 export default function AiAssistant() {
   const [messages, setMessages] = useState([
@@ -55,7 +53,6 @@ export default function AiAssistant() {
 
   return (
     <>
-    <Navbar />
     <div className="flex justify-center items-center min-h-screen bg-base-200 px-2">
       <div className="w-full max-w-3xl bg-base-100 rounded-2xl shadow-xl flex flex-col">
 
@@ -121,7 +118,6 @@ export default function AiAssistant() {
         </div>
       </div>
     </div>
-    <Footer />
     </>
   );
 }

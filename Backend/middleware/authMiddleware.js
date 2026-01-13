@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 
 const protect = (req, res, next) => {
-  console.log("Cookies received:", req.cookies);
+  // console.log("Cookies received:", req.cookies);
 
   const token = req.cookies.accessToken;
   if (!token) {

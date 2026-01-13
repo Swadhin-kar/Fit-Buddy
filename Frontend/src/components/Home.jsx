@@ -11,7 +11,6 @@ import LoadingFallback from './LoadingFallback'
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Hero />
       {/* <Card /> */}
       <Suspense fallback={<LoadingFallback />}>
@@ -20,7 +19,6 @@ const Home = () => {
       <Suspense fallback={<LoadingFallback />}>
         <Training_method />
       </Suspense>
-      <Footer />
     </>
   )
 }

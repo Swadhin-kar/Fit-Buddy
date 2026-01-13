@@ -1,6 +1,4 @@
 import { useState, useMemo, useEffect, lazy, Suspense } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 const ExerciseInfo = lazy(() => import('./ExerciseInfo'));
 // import ExerciseInfo from "./ExerciseInfo";
 
@@ -42,7 +40,6 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-base-100">
-      <Navbar />
 
       {/* Hero */}
       <section className="px-6 py-10 text-center mt-10">
@@ -109,9 +106,9 @@ export default function Blog() {
             {filteredExercises.map((ex) => (
               <div
                 key={ex.id}
-                className="Card bg-base-200 shadow-[0_2px_10px_rgba(72,72,72,0.95)] hover:shadow-[0_4px_20px_rgba(72,72,72,1)] transition rounded-lg"
+                className="Card bg-base-200 shadow-[0_2px_10px_rgba(72,72,72,0.95)] hover:shadow-[0_4px_20px_rgba(72,72,72,1)] transition rounded-lg "
               >
-                <figure className="h-40 bg-base-300">
+                <figure className="h-80 bg-base-300">
                   <img
                     src={ex.media.image ? ex.media.image : null}
                     alt={ex.name}
@@ -143,8 +140,6 @@ export default function Blog() {
         </div>
       )
       }
-
-      <Footer />
     </div>
 
   );

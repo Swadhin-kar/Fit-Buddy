@@ -1,12 +1,17 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { User } from 'lucide-react';
 
 
 const Navbar = () => {
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // for the theme controller
   let [theme, setTheme] = useState(() => {
@@ -20,7 +25,6 @@ const Navbar = () => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark'
     } else return 'light'
-
   });
 
   useEffect(() => {
@@ -44,6 +48,7 @@ const Navbar = () => {
     }
   }, [])
 
+
   // for the login state
 
   const { user, loading, checkAuth } = useContext(AuthContext)
@@ -60,7 +65,7 @@ const Navbar = () => {
   useEffect(() => {
     if (user) setLoggedIn(true)
     else setLoggedIn(false)
-  }, [])
+  }, [user])
 
   const logoutme = async () => {
     setIsLoggingOut(true)
@@ -69,7 +74,10 @@ const Navbar = () => {
       setUser(null)
       toast.success('Logged out successfully')
       setTimeout(() => {
-        window.location.href = '/'
+
+        navigate('/', {
+          state: { from: location.pathname }
+        })
         window.location.reload()
       }, 800)
     } catch (err) {
@@ -78,9 +86,14 @@ const Navbar = () => {
     }
   }
 
+  const handleLogin = () => {
+    navigate('/login', {
+      state: { from: location.pathname }
+    })
+  }
 
   return (
-    <div className={`navbar fixed top-0 left-0 w-full z-50 bg-[#536775] shadow-md duration-100  text-white`}>
+    <div className={`navbar fixed top-0 left-0 w-full z-50 bg-[#1D546D] shadow-md duration-100  text-white`}>
 
       <div className="navbar-start">
         <div className="dropdown">
@@ -89,13 +102,13 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className={`menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-[#536775]`}>
+            className={`menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-[#1D546D]`}>
             <li><a href='/'>Home</a></li>
             <li><a href='/exercises'>Exercises</a></li>
             <li>
               <details>
                 <summary>Tools</summary>
-                <ul className="p-2 bg-[#536775] w-40 z-1 ">
+                <ul className="p-2 bg-[#1D546D] w-40 z-1 ">
                   <li><a href='/calorie-calculator'>Calorie calculator</a></li>
                   <li><a href='/bmi-calculator'>BMI calculator</a></li>
                   <li><a href='/exercise-selector'>Exercise Selector</a></li>
@@ -115,7 +128,7 @@ const Navbar = () => {
           <li>
             <details>
               <summary>Tools</summary>
-              <ul className="p-2 bg-[#536775] w-40 z-1 ">
+              <ul className="p-2 bg-[#1D546D] w-40 z-1 ">
                 <li><a href='/calorie-calculator'>Calorie calculator</a></li>
                 <li><a href='/bmi-calculator'>BMI calculator</a></li>
                 <li><a href='/exercise-selector'>Exercise Selector</a></li>
@@ -160,9 +173,18 @@ const Navbar = () => {
           </svg>
         </label>
         {loggedIn ? (
-          <button onClick={logoutme} disabled={isLoggingOut} className='btn bg-red-500 text-white ml-4 hover:bg-red-600 disabled:opacity-50'>
-            {isLoggingOut ? 'Logging out...' : 'Logout'}
-          </button>
+          <>
+            <button onClick={logoutme} disabled={isLoggingOut} className='btn bg-red-500 text-white ml-4 hover:bg-red-600 disabled:opacity-50'>
+              {isLoggingOut ? 'Logging out...' : 'Logout'}
+            </button>
+            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white ml-4">
+              {
+                user.profilePicture ? <img src={user.profilePicture} alt="Profile" className="h-full w-full rounded-full object-cover" onClick={() => {
+                  window.location.href('/DashBoard')
+                }} /> : <User size={20} onClick={handleLogin} />
+              }
+            </div>
+          </>
         ) : (
           <a
             className="btn bg-blue-700 text-white ml-4  hover:bg-blue-900 "

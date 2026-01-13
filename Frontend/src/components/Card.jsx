@@ -1,8 +1,28 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
-const Card = ({ data }) => {
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const Card = ({ data, index }) => {
     return (
-        <div
+        <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
             className="card bg-base-100 w-full max-w-xs mx-auto transition-all duration-300 hover:-translate-y-1
     shadow-[0_2px_10px_rgba(72,72,72,0.95)]
     hover:shadow-[0_4px_20px_rgba(72,72,72,1)]"
@@ -22,7 +42,7 @@ const Card = ({ data }) => {
                 <p>{data.description}</p>
                 <div className="card-actions justify-end"></div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

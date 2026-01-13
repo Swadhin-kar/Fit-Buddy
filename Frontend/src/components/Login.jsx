@@ -1,5 +1,5 @@
 import { useState, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import LoadingFallback from "./LoadingFallback";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -7,6 +7,7 @@ import axios from "../utils/axios";
 import toast from "react-hot-toast";
 
 export default function Login() {
+  const location = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
@@ -22,6 +23,7 @@ export default function Login() {
     }));
   };
 
+  const from = location.state?.from || '/'
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -37,7 +39,7 @@ export default function Login() {
       setFormData({ email: "", password: "" });
 
       setTimeout(() => {
-        navigate('/')
+        navigate(from, { replace: false})
       }, 1000);
     } catch (err) {
       toast.error(err?.response?.data?.message || "Login failed");
@@ -48,9 +50,6 @@ export default function Login() {
 
   return (
     <>
-      <Suspense fallback={<LoadingFallback />}>
-        <Navbar />
-      </Suspense>
 
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-md">
@@ -145,10 +144,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-
-      <Suspense fallback={<LoadingFallback />}>
-        <Footer />
-      </Suspense>
     </>
   );
 }

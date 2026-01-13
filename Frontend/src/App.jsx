@@ -10,22 +10,35 @@ const Blog = lazy(() => import('./components/Blog'))
 const FitBee = lazy(() => import('./components/FitBee'))
 
 import LoadingFallback from './components/LoadingFallback';
+import FitBeeIcon from './components/FitBeeIcon';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Protect from './Protect';
+import DashBoard from './components/DashBoard';
 
 function App() {
 
   return (
     <>
       <Toaster position="top-center" />
+      <Navbar />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
-          <Route path = "/" element={<Home />} />
-          <Route path = "/user/login" element={<Login />} />
-          <Route path = "/user/signup" element={<Signup />} />
-          <Route path = '/exercises' element = {<Blog />} />
-          <Route path = 'bmi-calculator' element = {<Bmi />} />
-          <Route path = '/FitBee' element = {<FitBee />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/user/login" element={<Login />} />
+          <Route path="/user/signup" element={<Signup />} />
+          <Route path='/exercises' element={<Blog />} />
+          <Route path='/bmi-calculator' element={<Bmi />} />
+
+          <Route path='/dashboard' element={<DashBoard />} />
+          
+          <Route element={<Protect />}>
+            <Route path='/FitBee' element={<FitBee />} />
+          </Route>
         </Routes>
       </Suspense>
+      <Footer />
+      <FitBeeIcon />
     </>
   )
 }
