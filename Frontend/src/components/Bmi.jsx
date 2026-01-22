@@ -236,7 +236,7 @@ export default function Bmi() {
                         </form>
                         {bmiResult ? (
                             <div className="text-center mt-6">
-                                <h2 className="text-2xl font-bold text-slate-900">Your BMI: {bmiResult}</h2>
+                                <h2 className="text-2xl font-bold text-slate-900">Your BMI: {bmiResult?.toFixed(2)}</h2>
                                 <p className="text-slate-600 text-sm mt-2">
                                     {bmiResult < 18.5 && "You are underweight."}
                                     {bmiResult >= 18.5 && bmiResult < 24.9 && "You have a healthy weight."}

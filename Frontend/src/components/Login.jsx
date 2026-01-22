@@ -1,10 +1,11 @@
-import { useState, Suspense } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import LoadingFallback from "./LoadingFallback";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import axios from "../utils/axios";
 import toast from "react-hot-toast";
+import { AuthContext } from "./AuthContext";
 
 export default function Login() {
   const location = useLocation();
@@ -15,6 +16,8 @@ export default function Login() {
     email: "",
     password: "",
   });
+
+  const { checkAuth } = useContext(AuthContext)
 
   const handleChange = (e) => {
     setFormData((p) => ({
@@ -33,7 +36,9 @@ export default function Login() {
         "/user/login",
         formData,
         { withCredentials: true }
-      );
+      )
+      await checkAuth()
+      
 
       toast.success("Login successful");
       setFormData({ email: "", password: "" });

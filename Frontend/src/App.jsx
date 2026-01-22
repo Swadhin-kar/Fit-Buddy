@@ -15,7 +15,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Protect from './Protect';
 import DashBoard from './components/DashBoard';
-
+import Alpha from './components/Alpha';
 function App() {
 
   return (
@@ -29,6 +29,7 @@ function App() {
           <Route path="/user/signup" element={<Signup />} />
           <Route path='/exercises' element={<Blog />} />
           <Route path='/bmi-calculator' element={<Bmi />} />
+          <Route path='/test' element={<Alpha />} />
 
           <Route path='/dashboard' element={<DashBoard />} />
           

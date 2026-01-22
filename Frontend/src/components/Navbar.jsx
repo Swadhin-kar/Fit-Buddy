@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
-import axios from 'axios';
+import axios from '../utils/axios';
 import toast from 'react-hot-toast';
 import { User } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 
 const Navbar = () => {
@@ -13,50 +14,34 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // for the theme controller
-  let [theme, setTheme] = useState(() => {
-    try {
-      let stored = localStorage.getItem('theme')
-      if (stored) return stored
-    } catch (error) {
-      // i will just catch the error and now i will check for further system preference
-    }
+  // Theme is applied directly to <html> via ThemeToggle; no localStorage or Context here.
 
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    } else return 'light'
-  });
+  // const [theme, setTheme] = useState('light');
+  // useEffect(() => {
+  //   if(theme === 'dark'){
+  //     document.documentElement.classList.add('dark')
+  //   }else{=
+  //     document.documentElement.classList.remove('dark')
+  //   }
+  // }, [theme])
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    try {
-      localStorage.setItem('theme', theme);
-    } catch (e) {
-      // ignore
-    }
-  }, [theme]);
-
-  const [sticky, setSticky] = useState(false)
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) setSticky(true)
-      else setSticky(false)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  // const [sticky, setSticky] = useState(false)
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 0) setSticky(true)
+  //     else setSticky(false)
+  //   }
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [])
 
 
   // for the login state
 
-  const { user, loading, checkAuth } = useContext(AuthContext)
+  const { user, loading, checkAuth, setUser } = useContext(AuthContext)
 
-  useEffect(() => {
-    if (user) setLoggedIn(true)
-    else setLoggedIn(false)
-  }, [user])
 
   const [loggedIn, setLoggedIn] = useState(false)
   const [isLoggingOut, setIsLoggingOut] = useState(false)
@@ -70,7 +55,7 @@ const Navbar = () => {
   const logoutme = async () => {
     setIsLoggingOut(true)
     try {
-      await axios.post('http://localhost:7000/user/logout', {}, { withCredentials: true })
+      await axios.post('/user/logout')
       setUser(null)
       toast.success('Logged out successfully')
       setTimeout(() => {
@@ -87,7 +72,7 @@ const Navbar = () => {
   }
 
   const handleLogin = () => {
-    navigate('/login', {
+    navigate('/user/login', {
       state: { from: location.pathname }
     })
   }
@@ -141,38 +126,11 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        {/* Theme toggle (daisyUI swap) */}
-        <label className={`swap swap-rotate `}>
-          {/* controlled checkbox: checked = dark theme */}
-          <input
-            type="checkbox"
-            className="hidden"
-            aria-label="Toggle theme"
-            checked={theme === 'dark'}
-            onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
-          />
+        <div className="mr-2">
+          <ThemeToggle className="text-white" />
+        </div>
 
-          {/* sun icon (light) - shown when checkbox is unchecked */}
-          <svg
-            className="swap-off h-6 w-6 fill-current cursor-pointer"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-          </svg>
-
-          {/* moon icon (dark) - shown when checkbox is checked */}
-          <svg
-            className="swap-on h-6 w-6 fill-current cursor-pointer"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-          </svg>
-        </label>
-        {loggedIn ? (
+        {/* {loggedIn ? (
           <>
             <button onClick={logoutme} disabled={isLoggingOut} className='btn bg-red-500 text-white ml-4 hover:bg-red-600 disabled:opacity-50'>
               {isLoggingOut ? 'Logging out...' : 'Logout'}
@@ -192,6 +150,38 @@ const Navbar = () => {
           >
             Login/Signup
           </a>
+        )} */}
+
+        {user ? (
+          <>
+            <button
+              onClick={logoutme}
+              disabled={isLoggingOut}
+              className="btn bg-red-500 text-white ml-4 hover:bg-red-600 disabled:opacity-50"
+            >
+              {isLoggingOut ? 'Logging out...' : 'Logout'}
+            </button>
+
+            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white ml-4">
+              {user.profilePicture ? (
+                <img
+                  src={user.profilePicture}
+                  alt="Profile"
+                  className="h-full w-full rounded-full object-cover cursor-pointer"
+                  onClick={() => navigate('/dashboard')}
+                />
+              ) : (
+                <User size={20} className="cursor-pointer" />
+              )}
+            </div>
+          </>
+        ) : (
+          <button
+            className="btn bg-blue-700 text-white ml-4 hover:bg-blue-900"
+            onClick={handleLogin}
+          >
+            Login / Signup
+          </button>
         )}
       </div>
     </div>

@@ -29,17 +29,11 @@ const Training_method = () => {
           <h1 className="text-2xl md:text-3xl font-semibold">Training Methods</h1>
           <p className="text-sm md:text-base max-w-2xl mx-auto mt-2 ">Explore our collection of training methods to help you find your favorite style and achieve your desired results. Whether you're aiming to build muscle, lose weight, or improve endurance, we've got you covered.</p>
         </div>
-        <motion.div 
-          className="grid gap-10 items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="grid gap-10 items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {methods.map((method, index) => (
             <Card key={index} data={method} index={index} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   )

@@ -1,32 +1,54 @@
-import React from 'react'
-import { createContext, useState, useEffect } from 'react'
-import axios from 'axios'
+import { createContext, useState, useEffect, useRef } from "react"
+import axios from "../utils/axios"
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null)
 
-export const AuthProvider = ({ children }) => {
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const mounted = useRef(false)
 
-    const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(true)
-
-    const checkAuth = async () => {
-        try {
-            const res = await axios.get('http://localhost:7000/user/verify', { withCredentials: true })
-            setUser(res.data.user)
-        } catch (err) {
-            setUser(null)
-        } finally {
-            setLoading(false)
-        }
+  const checkAuth = async () => {
+    try {
+      const res = await axios.get("/user/verify")
+      setUser(res.data.user)
+    } catch (err) {
+      if (err?.response?.status === 401) {
+        setUser(null)
+      } else {
+        console.error("Auth check error:", err)
+        setUser(null)
+      }
+    } finally {
+      setLoading(false)
     }
+  }
 
-    useEffect(() => {
-        checkAuth()
-    }, [])
+  useEffect(() => {
+    mounted.current = true
+    checkAuth()
 
-    return (
-        <AuthContext.Provider value={{ user, setUser, loading, checkAuth }}>
-            {children}
-        </AuthContext.Provider>
+    const interceptor = axios.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error?.response?.status === 401) {
+          if (mounted.current) setUser(null)
+        }
+        return Promise.reject(error)
+      }
     )
+
+    return () => {
+      mounted.current = false
+      axios.interceptors.response.eject(interceptor)
+    }
+  }, [])
+
+  const isAuthenticated = Boolean(user)
+
+  return (
+    <AuthContext.Provider value={{ user, setUser, loading, isAuthenticated, checkAuth }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }

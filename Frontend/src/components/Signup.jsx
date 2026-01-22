@@ -1,7 +1,7 @@
 import { useState, Suspense } from "react";
 import LoadingFallback from "./LoadingFallback";
 import toast from 'react-hot-toast'
-import axios from 'axios'
+import axios from '../utils/axios'
 
 
 const Signup = () => {
@@ -25,7 +25,7 @@ const Signup = () => {
       return 
     }
 
-    axios.post('http://localhost:7000/user/signup', formData, {withCredentials: true})
+    axios.post('/user/signup', formData)
       .then((res) => {
         if (res.data) {
           toast.success('Registered Successful')
