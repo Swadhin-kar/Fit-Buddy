@@ -14,32 +14,6 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Theme is applied directly to <html> via ThemeToggle; no localStorage or Context here.
-
-  // const [theme, setTheme] = useState('light');
-  // useEffect(() => {
-  //   if(theme === 'dark'){
-  //     document.documentElement.classList.add('dark')
-  //   }else{=
-  //     document.documentElement.classList.remove('dark')
-  //   }
-  // }, [theme])
-
-  // const [sticky, setSticky] = useState(false)
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 0) setSticky(true)
-  //     else setSticky(false)
-  //   }
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [])
-
-
-  // for the login state
-
   const { user, loading, checkAuth, setUser } = useContext(AuthContext)
 
 
@@ -78,7 +52,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className={`navbar fixed top-0 left-0 w-full z-50 bg-[#1D546D] shadow-md duration-100  text-white`}>
+    <div className={`navbar fixed top-0 left-0 w-full z-50 bg-[rgb(var(--navbar))] shadow-md duration-100  text-white`}>
 
       <div className="navbar-start">
         <div className="dropdown">
@@ -87,13 +61,13 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className={`menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-[#1D546D]`}>
+            className={`menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-[rgb(var(--navbar))]`}>
             <li><a href='/'>Home</a></li>
             <li><a href='/exercises'>Exercises</a></li>
             <li>
               <details>
                 <summary>Tools</summary>
-                <ul className="p-2 bg-[#1D546D] w-40 z-1 ">
+                <ul className="p-2 bg-[rgb(var(--navbar))] w-40 z-1 ">
                   <li><a href='/calorie-calculator'>Calorie calculator</a></li>
                   <li><a href='/bmi-calculator'>BMI calculator</a></li>
                   <li><a href='/exercise-selector'>Exercise Selector</a></li>
@@ -104,7 +78,7 @@ const Navbar = () => {
             <li><a>Contact Us</a></li>
           </ul>
         </div>
-        <a className={`btn btn-ghost text-xl `} href='/'>FitBuddy</a>
+        <a className={`btn btn-ghost text-xl hover:bg-[rgb(var(--navbar-hover))] hover:border-none`} href='/'>FitBuddy</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className={`menu menu-horizontal px-1 `}>
@@ -113,7 +87,7 @@ const Navbar = () => {
           <li>
             <details>
               <summary>Tools</summary>
-              <ul className="p-2 bg-[#1D546D] w-40 z-1 ">
+              <ul className="p-2 bg-[rgb(var(--navbar))] w-40 z-1 ">
                 <li><a href='/calorie-calculator'>Calorie calculator</a></li>
                 <li><a href='/bmi-calculator'>BMI calculator</a></li>
                 <li><a href='/exercise-selector'>Exercise Selector</a></li>
@@ -129,28 +103,6 @@ const Navbar = () => {
         <div className="mr-2">
           <ThemeToggle className="text-white" />
         </div>
-
-        {/* {loggedIn ? (
-          <>
-            <button onClick={logoutme} disabled={isLoggingOut} className='btn bg-red-500 text-white ml-4 hover:bg-red-600 disabled:opacity-50'>
-              {isLoggingOut ? 'Logging out...' : 'Logout'}
-            </button>
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white ml-4">
-              {
-                user.profilePicture ? <img src={user.profilePicture} alt="Profile" className="h-full w-full rounded-full object-cover" onClick={() => {
-                  window.location.href('/DashBoard')
-                }} /> : <User size={20} onClick={handleLogin} />
-              }
-            </div>
-          </>
-        ) : (
-          <a
-            className="btn bg-blue-700 text-white ml-4  hover:bg-blue-900 "
-            href='/user/login'
-          >
-            Login/Signup
-          </a>
-        )} */}
 
         {user ? (
           <>

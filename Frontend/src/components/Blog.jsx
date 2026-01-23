@@ -1,71 +1,74 @@
 import { useState, useMemo, useEffect, lazy, Suspense } from "react";
-const ExerciseInfo = lazy(() => import('./ExerciseInfo'));
-// import ExerciseInfo from "./ExerciseInfo";
+
+const ExerciseInfo = lazy(() => import("./ExerciseInfo"));
 
 export default function Blog() {
   const [search, setSearch] = useState("");
   const [selectedGoal, setSelectedGoal] = useState(null);
   const [selectedMethod, setSelectedMethod] = useState(null);
-  const [exercises, setExercises] = useState([])
-
-
-  const [openedExercise, setOpenedExercise] = useState(null)
+  const [exercises, setExercises] = useState([]);
+  const [openedExercise, setOpenedExercise] = useState(null);
 
   useEffect(() => {
-    fetch('/alljson/exercises.json')
+    fetch("/alljson/exercises.json")
       .then((res) => res.json())
-      .then((data) => {
-        // console.log("Fetched exercises:", data);
-        setExercises(Array.isArray(data) ? data : []);
-      })
-      .catch((err) => console.error("Error fetching exercises: ", err))
-  }, [])
+      .then((data) => setExercises(Array.isArray(data) ? data : []))
+      .catch((err) => console.error("Error fetching exercises:", err));
+  }, []);
 
   const filteredExercises = useMemo(() => {
-    if (exercises.length === 0) return [];
-
     let size = 0;
     return exercises.filter((ex) => {
-      const matchesSearch = ex.title.toLowerCase().includes(search.toLowerCase());
-      const matchesGoal = selectedGoal ? ex.TrainingGoals.includes(selectedGoal) : true;
-      const matchesMethod = selectedMethod ? ex.TrainingMethod.includes(selectedMethod) : true;
+      const matchesSearch = ex.title
+        .toLowerCase()
+        .includes(search.toLowerCase());
+      const matchesGoal = selectedGoal
+        ? ex.TrainingGoals.includes(selectedGoal)
+        : true;
+      const matchesMethod = selectedMethod
+        ? ex.TrainingMethod.includes(selectedMethod)
+        : true;
+
       if (matchesSearch && matchesGoal && matchesMethod && size < 18) {
         size++;
         return true;
-      } else {
-        return false;
       }
-    })
+      return false;
+    });
   }, [exercises, search, selectedGoal, selectedMethod]);
 
   return (
-    <div className="min-h-screen bg-base-100">
+    <div className="min-h-screen bg-[rgb(var(--page-bg))] text-[rgb(var(--text-primary))]">
 
       {/* Hero */}
       <section className="px-6 py-10 text-center mt-10">
-        <h1 className="text-3xl font-bold">Explore Exercises & Fitness Guides</h1>
-        <p className="text-base-content/70 mt-2">
+        <h1 className="text-3xl font-bold">
+          Explore Exercises & Fitness Guides
+        </h1>
+        <p className="mt-2 text-[rgb(var(--text-muted))]">
           Search exercises by goal, method or name
         </p>
       </section>
 
-      {/* Search */}
-      <div className="flex flex-col md:flex-row justify-around   px-6">
+      {/* Search & Filters */}
+      <div className="flex flex-col md:flex-row justify-around gap-4 px-6">
         <input
           type="text"
           placeholder="Search exercise..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="input input-bordered w-full max-w-md"
+          className="input w-full max-w-md bg-[rgb(var(--card-depth-1))] text-[rgb(var(--text-primary))]"
         />
+
         <select
-          className="select select-bordered w-full max-w-xs"
-          onChange={(e) => setSelectedGoal(e.target.value === "" ? null : e.target.value)}
+          className="select w-full max-w-xs bg-[rgb(var(--card-depth-1))]"
           value={selectedGoal || ""}
+          onChange={(e) =>
+            setSelectedGoal(e.target.value === "" ? null : e.target.value)
+          }
         >
           <option value="">All Goals</option>
-          <option value="
-          Fat Loss">Weight/Fat Loss</option>
+          <option value="Fat Loss">Weight/Fat Loss</option>
           <option value="Muscle Gain">Strength/Muscle Gain</option>
           <option value="Endurance">Endurance</option>
           <option value="Mobility">Mobility</option>
@@ -73,9 +76,11 @@ export default function Blog() {
         </select>
 
         <select
-          className="select select-bordered w-full max-w-xs"
-          onChange={(e) => setSelectedMethod(e.target.value === "" ? null : e.target.value)}
+          className="select w-full max-w-xs bg-[rgb(var(--card-depth-1))]"
           value={selectedMethod || ""}
+          onChange={(e) =>
+            setSelectedMethod(e.target.value === "" ? null : e.target.value)
+          }
         >
           <option value="">All Methods</option>
           <option value="Weighted">Weighted</option>
@@ -85,20 +90,12 @@ export default function Blog() {
           <option value="Yoga">Yoga</option>
           <option value="Cardio">Cardio</option>
         </select>
-
       </div>
 
-      {/* Filters */}
-      {/* <section className="px-6 py-8 space-y-6">
-        <FitnessGoal onSelect={setSelectedGoal} selected={selectedGoal} />
-        <TrainingMethod onSelect={setSelectedMethod} selected={selectedMethod} />
-      </section> */}
-
       {/* Exercise Grid */}
-
       <section className="px-6 pb-16 mt-10">
         {filteredExercises.length === 0 ? (
-          <p className="text-center text-base-content/60">
+          <p className="text-center text-[rgb(var(--text-muted))]">
             No exercises found
           </p>
         ) : (
@@ -106,22 +103,36 @@ export default function Blog() {
             {filteredExercises.map((ex) => (
               <div
                 key={ex.id}
-                className="Card bg-base-200 shadow-[0_2px_10px_rgba(72,72,72,0.95)] hover:shadow-[0_4px_20px_rgba(72,72,72,1)] transition rounded-lg "
+                className="
+                  rounded-lg
+                  bg-[rgb(var(--card-depth-1))]
+                  shadow-[0_2px_10px_rgba(0,0,0,0.25)]
+                  hover:shadow-[0_6px_25px_rgba(0,0,0,0.4)]
+                  transition
+                "
               >
-                <figure className="h-80 bg-base-300">
+                <figure className="h-80 bg-[rgb(var(--card-depth-2))] rounded-t-lg">
                   <img
-                    src={ex.media.image ? ex.media.image : null}
-                    alt={ex.name}
-                    className="object-cover h-full w-full rounded-lg"
+                    src={ex.media.image || ""}
+                    alt={ex.title}
+                    className="object-cover h-full w-full rounded-t-lg"
                   />
                 </figure>
-                <div className="card-body">
-                  <h2 className="card-title">{ex.title}</h2>
-                  <p className="text-sm text-base-content/70 line-clamp-2">
+
+                <div className="p-4">
+                  <h2 className="text-lg font-semibold">
+                    {ex.title}
+                  </h2>
+
+                  <p className="mt-1 text-sm text-[rgb(var(--text-muted))] line-clamp-2">
                     {ex.description}
                   </p>
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-sm btn-primary" onClick={() => setOpenedExercise(ex)}>
+
+                  <div className="mt-4 flex justify-end">
+                    <button
+                      className="btn btn-sm"
+                      onClick={() => setOpenedExercise(ex)}
+                    >
                       View Exercise
                     </button>
                   </div>
@@ -132,15 +143,15 @@ export default function Blog() {
         )}
       </section>
 
+      {/* Modal */}
       {openedExercise && (
-        <div>
-          <Suspense fallback={<div>Loading...</div>}>
-            <ExerciseInfo ex={openedExercise} onClose={() => { setOpenedExercise(null) }} />
-          </Suspense>
-        </div>
-      )
-      }
+        <Suspense fallback={<div className="text-center">Loading...</div>}>
+          <ExerciseInfo
+            ex={openedExercise}
+            onClose={() => setOpenedExercise(null)}
+          />
+        </Suspense>
+      )}
     </div>
-
   );
 }
