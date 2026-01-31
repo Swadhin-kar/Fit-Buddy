@@ -8,13 +8,14 @@ const Login = lazy(() => import('./components/Login'))
 const Signup = lazy(() => import('./components/Signup'))
 const Blog = lazy(() => import('./components/Blog'))
 const FitBee = lazy(() => import('./components/FitBee'))
+const DashBoard = lazy(() => import('./components/DashBoard'))
+const CalorieCalculator = lazy(() => import('./components/CalorieCalculator'))
 
 import LoadingFallback from './components/LoadingFallback';
 import FitBeeIcon from './components/FitBeeIcon';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Protect from './Protect';
-import DashBoard from './components/DashBoard';
 import Alpha from './components/Alpha';
 function App() {
 
@@ -29,11 +30,12 @@ function App() {
           <Route path="/user/signup" element={<Signup />} />
           <Route path='/exercises' element={<Blog />} />
           <Route path='/bmi-calculator' element={<Bmi />} />
+          <Route path='/calorie-calculator' element={<CalorieCalculator />} />
           <Route path='/test' element={<Alpha />} />
 
-          <Route path='/dashboard' element={<DashBoard />} />
-          
+
           <Route element={<Protect />}>
+            <Route path='/dashboard' element={<DashBoard />} />
             <Route path='/FitBee' element={<FitBee />} />
           </Route>
         </Routes>

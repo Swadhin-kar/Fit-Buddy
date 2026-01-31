@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "name": "Cooked White Rice",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 28, "protein": 2.7, "fat": 0.3, "calories": 130, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 42.0, "protein": 4.1, "fat": 0.4, "calories": 195, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 56, "protein": 5.4, "fat": 0.6, "calories": 260, "calorieLevel": "high" }
+  },
+  {
+    "id": 2,
+    "name": "Whole Wheat Roti",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 36, "protein": 6, "fat": 2, "calories": 200, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 54.0, "protein": 9.0, "fat": 3.0, "calories": 300, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 72, "protein": 12, "fat": 4, "calories": 400, "calorieLevel": "high" }
+  },
+  {
+    "id": 3,
+    "name": "Dal Tadka",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 15, "protein": 6, "fat": 4, "calories": 120, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 22.5, "protein": 9.0, "fat": 6.0, "calories": 180, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 30, "protein": 12, "fat": 8, "calories": 240, "calorieLevel": "moderate" }
+  },
+  {
+    "id": 4,
+    "name": "Paneer Butter Masala",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 6, "protein": 10, "fat": 18, "calories": 230, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 9.0, "protein": 15.0, "fat": 27.0, "calories": 345, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 12, "protein": 20, "fat": 36, "calories": 460, "calorieLevel": "high" }
+  },
+  {
+    "id": 5,
+    "name": "Chicken Biryani",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 25, "protein": 12, "fat": 9, "calories": 230, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 37.5, "protein": 18.0, "fat": 13.5, "calories": 345, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 50, "protein": 24, "fat": 18, "calories": 460, "calorieLevel": "high" }
+  },
+  {
+    "id": 6,
+    "name": "Butter Naan",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 45, "protein": 8, "fat": 8, "calories": 290, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 67.5, "protein": 12.0, "fat": 12.0, "calories": 435, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 90, "protein": 16, "fat": 16, "calories": 580, "calorieLevel": "high" }
+  },
+  {
+    "id": 7,
+    "name": "Rajma Masala",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 18, "protein": 7, "fat": 5, "calories": 150, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 27.0, "protein": 10.5, "fat": 7.5, "calories": 225, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 36, "protein": 14, "fat": 10, "calories": 300, "calorieLevel": "high" }
+  },
+  {
+    "id": 8,
+    "name": "Masala Dosa",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 35, "protein": 5, "fat": 8, "calories": 240, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 52.5, "protein": 7.5, "fat": 12.0, "calories": 360, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 70, "protein": 10, "fat": 16, "calories": 480, "calorieLevel": "high" }
+  },
+  {
+    "id": 9,
+    "name": "Idli",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 25, "protein": 4, "fat": 0.5, "calories": 120, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 37.5, "protein": 6.0, "fat": 0.8, "calories": 180, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 50, "protein": 8, "fat": 1.0, "calories": 240, "calorieLevel": "moderate" }
+  },
+  {
+    "id": 10,
+    "name": "Chana Masala",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 20, "protein": 7, "fat": 6, "calories": 165, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 30.0, "protein": 10.5, "fat": 9.0, "calories": 248, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 40, "protein": 14, "fat": 12, "calories": 330, "calorieLevel": "high" }
+  },
+  {
+    "id": 11,
+    "name": "Poha",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 35, "protein": 4, "fat": 8, "calories": 230, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 52.5, "protein": 6.0, "fat": 12.0, "calories": 345, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 70, "protein": 8, "fat": 16, "calories": 460, "calorieLevel": "high" }
+  },
+  {
+    "id": 12,
+    "name": "Butter Chicken",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 6, "protein": 14, "fat": 18, "calories": 250, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 9.0, "protein": 21.0, "fat": 27.0, "calories": 375, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 12, "protein": 28, "fat": 36, "calories": 500, "calorieLevel": "high" }
+  },
+  {
+    "id": 13,
+    "name": "Samosa",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 32, "protein": 4, "fat": 15, "calories": 280, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 48.0, "protein": 6.0, "fat": 22.5, "calories": 420, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 64, "protein": 8, "fat": 30, "calories": 560, "calorieLevel": "high" }
+  },
+  {
+    "id": 14,
+    "name": "Dal Makhani",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 16, "protein": 5, "fat": 9, "calories": 170, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 24.0, "protein": 7.5, "fat": 13.5, "calories": 255, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 32, "protein": 10, "fat": 18, "calories": 340, "calorieLevel": "high" }
+  },
+  {
+    "id": 15,
+    "name": "Aloo Paratha",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 35, "protein": 4, "fat": 10, "calories": 250, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 52.5, "protein": 6.0, "fat": 15.0, "calories": 375, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 70, "protein": 8, "fat": 20, "calories": 500, "calorieLevel": "high" }
+  },
+  {
+    "id": 16,
+    "name": "Chicken Curry",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 5, "protein": 15, "fat": 10, "calories": 180, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 7.5, "protein": 22.5, "fat": 15.0, "calories": 270, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 10, "protein": 30, "fat": 20, "calories": 360, "calorieLevel": "high" }
+  },
+  {
+    "id": 17,
+    "name": "Palak Paneer",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 5, "protein": 9, "fat": 14, "calories": 190, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 7.5, "protein": 13.5, "fat": 21.0, "calories": 285, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 10, "protein": 18, "fat": 28, "calories": 380, "calorieLevel": "high" }
+  },
+  {
+    "id": 18,
+    "name": "Gulab Jamun",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 50, "protein": 4, "fat": 12, "calories": 320, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 75.0, "protein": 6.0, "fat": 18.0, "calories": 480, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 100, "protein": 8, "fat": 24, "calories": 640, "calorieLevel": "high" }
+  },
+  {
+    "id": 19,
+    "name": "Prawn Masala",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 5, "protein": 16, "fat": 9, "calories": 170, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 7.5, "protein": 24.0, "fat": 13.5, "calories": 255, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 10, "protein": 32, "fat": 18, "calories": 340, "calorieLevel": "high" }
+  },
+  {
+    "id": 20,
+    "name": "Aloo Tikki",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 25, "protein": 3, "fat": 10, "calories": 200, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 37.5, "protein": 4.5, "fat": 15.0, "calories": 300, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 50, "protein": 6, "fat": 20, "calories": 400, "calorieLevel": "high" }
+  },
+  {
+    "id": 21,
+    "name": "Egg Curry",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 5, "protein": 10, "fat": 10, "calories": 160, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 7.5, "protein": 15.0, "fat": 15.0, "calories": 240, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 10, "protein": 20, "fat": 20, "calories": 320, "calorieLevel": "high" }
+  },
+  {
+    "id": 22,
+    "name": "Pav Bhaji (Bhaji only)",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 12, "protein": 3, "fat": 9, "calories": 150, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 18.0, "protein": 4.5, "fat": 13.5, "calories": 225, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 24, "protein": 6, "fat": 18, "calories": 300, "calorieLevel": "high" }
+  },
+  {
+    "id": 23,
+    "name": "Fish Curry",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 4, "protein": 15, "fat": 8, "calories": 150, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 6.0, "protein": 22.5, "fat": 12.0, "calories": 225, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 8, "protein": 30, "fat": 16, "calories": 300, "calorieLevel": "high" }
+  },
+  {
+    "id": 24,
+    "name": "Mixed Vegetable Curry",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 10, "protein": 3, "fat": 5, "calories": 105, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 15.0, "protein": 4.5, "fat": 7.5, "calories": 158, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 20, "protein": 6, "fat": 10, "calories": 210, "calorieLevel": "moderate" }
+  },
+  {
+    "id": 25,
+    "name": "Upma",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 25, "protein": 4, "fat": 7, "calories": 180, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 37.5, "protein": 6.0, "fat": 10.5, "calories": 270, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 50, "protein": 8, "fat": 14, "calories": 360, "calorieLevel": "high" }
+  },
+  {
+    "id": 26,
+    "name": "Kadai Paneer",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 7, "protein": 10, "fat": 16, "calories": 215, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 10.5, "protein": 15.0, "fat": 24.0, "calories": 322, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 14, "protein": 20, "fat": 32, "calories": 430, "calorieLevel": "high" }
+  },
+  {
+    "id": 27,
+    "name": "Sabudana Khichdi",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 45, "protein": 2, "fat": 12, "calories": 300, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 67.5, "protein": 3.0, "fat": 18.0, "calories": 450, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 90, "protein": 4, "fat": 24, "calories": 600, "calorieLevel": "high" }
+  },
+  {
+    "id": 28,
+    "name": "Baingan Bharta",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 8, "protein": 2, "fat": 6, "calories": 100, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 12.0, "protein": 3.0, "fat": 9.0, "calories": 150, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 16, "protein": 4, "fat": 12, "calories": 200, "calorieLevel": "moderate" }
+  },
+  {
+    "id": 29,
+    "name": "Medu Vada",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 25, "protein": 6, "fat": 15, "calories": 260, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 37.5, "protein": 9.0, "fat": 22.5, "calories": 390, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 50, "protein": 12, "fat": 30, "calories": 520, "calorieLevel": "high" }
+  },
+  {
+    "id": 30,
+    "name": "Dhokla",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 25, "protein": 6, "fat": 5, "calories": 170, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 37.5, "protein": 9.0, "fat": 7.5, "calories": 255, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 50, "protein": 12, "fat": 10, "calories": 340, "calorieLevel": "high" }
+  },
+  {
+    "id": 31,
+    "name": "Mutton Biryani",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 24, "protein": 13, "fat": 12, "calories": 260, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 36.0, "protein": 19.5, "fat": 18.0, "calories": 390, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 48, "protein": 26, "fat": 24, "calories": 520, "calorieLevel": "high" }
+  },
+  {
+    "id": 32,
+    "name": "Aloo Gobi",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 12, "protein": 3, "fat": 5, "calories": 110, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 18.0, "protein": 4.5, "fat": 7.5, "calories": 165, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 24, "protein": 6, "fat": 10, "calories": 220, "calorieLevel": "moderate" }
+  },
+  {
+    "id": 33,
+    "name": "Paneer Tikka",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 5, "protein": 15, "fat": 14, "calories": 210, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 7.5, "protein": 22.5, "fat": 21.0, "calories": 315, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 10, "protein": 30, "fat": 28, "calories": 420, "calorieLevel": "high" }
+  },
+  {
+    "id": 34,
+    "name": "Chicken Tikka",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 3, "protein": 22, "fat": 8, "calories": 180, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 4.5, "protein": 33.0, "fat": 12.0, "calories": 270, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 6, "protein": 44, "fat": 16, "calories": 360, "calorieLevel": "high" }
+  },
+  {
+    "id": 35,
+    "name": "Gajar Halwa",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 35, "protein": 4, "fat": 15, "calories": 290, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 52.5, "protein": 6.0, "fat": 22.5, "calories": 435, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 70, "protein": 8, "fat": 30, "calories": 580, "calorieLevel": "high" }
+  },
+  {
+    "id": 36,
+    "name": "Bhindi Fry",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 10, "protein": 3, "fat": 7, "calories": 120, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 15.0, "protein": 4.5, "fat": 10.5, "calories": 180, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 20, "protein": 6, "fat": 14, "calories": 240, "calorieLevel": "moderate" }
+  },
+  {
+    "id": 37,
+    "name": "Coconut Chutney",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 10, "protein": 2, "fat": 20, "calories": 230, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 15.0, "protein": 3.0, "fat": 30.0, "calories": 345, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 20, "protein": 4, "fat": 40, "calories": 460, "calorieLevel": "high" }
+  },
+  {
+    "id": 38,
+    "name": "Sambhar",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 10, "protein": 3, "fat": 1, "calories": 60, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 15.0, "protein": 4.5, "fat": 1.5, "calories": 90, "calorieLevel": "low" },
+    "large": { "grams": 200, "carbs": 20, "protein": 6, "fat": 2, "calories": 120, "calorieLevel": "low" }
+  },
+  {
+    "id": 39,
+    "name": "Plain Paratha",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 40, "protein": 5, "fat": 12, "calories": 280, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 60.0, "protein": 7.5, "fat": 18.0, "calories": 420, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 80, "protein": 10, "fat": 24, "calories": 560, "calorieLevel": "high" }
+  },
+  {
+    "id": 40,
+    "name": "Mutton Curry",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 4, "protein": 16, "fat": 15, "calories": 220, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 6.0, "protein": 24.0, "fat": 22.5, "calories": 330, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 8, "protein": 32, "fat": 30, "calories": 440, "calorieLevel": "high" }
+  },
+  {
+    "id": 41,
+    "name": "Pani Puri (6 pieces)",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 30, "protein": 3, "fat": 5, "calories": 180, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 45.0, "protein": 4.5, "fat": 7.5, "calories": 270, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 60, "protein": 6, "fat": 10, "calories": 360, "calorieLevel": "high" }
+  },
+  {
+    "id": 42,
+    "name": "Bhel Puri",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 40, "protein": 5, "fat": 8, "calories": 250, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 60.0, "protein": 7.5, "fat": 12.0, "calories": 375, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 80, "protein": 10, "fat": 16, "calories": 500, "calorieLevel": "high" }
+  },
+  {
+    "id": 43,
+    "name": "Rasgulla",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 45, "protein": 4, "fat": 2, "calories": 210, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 67.5, "protein": 6.0, "fat": 3.0, "calories": 315, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 90, "protein": 8, "fat": 4, "calories": 420, "calorieLevel": "high" }
+  },
+  {
+    "id": 44,
+    "name": "Rice Kheer",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 25, "protein": 4, "fat": 6, "calories": 170, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 37.5, "protein": 6.0, "fat": 9.0, "calories": 255, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 50, "protein": 8, "fat": 12, "calories": 340, "calorieLevel": "high" }
+  },
+  {
+    "id": 45,
+    "name": "Egg Biryani",
+    "type": "non-veg",
+    "small": { "grams": 100, "carbs": 26, "protein": 8, "fat": 8, "calories": 210, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 39.0, "protein": 12.0, "fat": 12.0, "calories": 315, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 52, "protein": 16, "fat": 16, "calories": 420, "calorieLevel": "high" }
+  },
+  {
+    "id": 46,
+    "name": "Garlic Naan",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 44, "protein": 7, "fat": 7, "calories": 270, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 66.0, "protein": 10.5, "fat": 10.5, "calories": 405, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 88, "protein": 14, "fat": 14, "calories": 540, "calorieLevel": "high" }
+  },
+  {
+    "id": 47,
+    "name": "Veg Biryani",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 28, "protein": 4, "fat": 7, "calories": 195, "calorieLevel": "moderate" },
+    "medium": { "grams": 150, "carbs": 42.0, "protein": 6.0, "fat": 10.5, "calories": 292, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 56, "protein": 8, "fat": 14, "calories": 390, "calorieLevel": "high" }
+  },
+  {
+    "id": 48,
+    "name": "Moong Dal Halwa",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 40, "protein": 7, "fat": 25, "calories": 410, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 60.0, "protein": 10.5, "fat": 37.5, "calories": 615, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 80, "protein": 14, "fat": 50, "calories": 820, "calorieLevel": "high" }
+  },
+  {
+    "id": 49,
+    "name": "Jalebi",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 70, "protein": 2, "fat": 15, "calories": 420, "calorieLevel": "high" },
+    "medium": { "grams": 150, "carbs": 105.0, "protein": 3.0, "fat": 22.5, "calories": 630, "calorieLevel": "high" },
+    "large": { "grams": 200, "carbs": 140, "protein": 4, "fat": 30, "calories": 840, "calorieLevel": "high" }
+  },
+  {
+    "id": 50,
+    "name": "Brown Rice (Cooked)",
+    "type": "veg",
+    "small": { "grams": 100, "carbs": 23, "protein": 2.6, "fat": 0.9, "calories": 111, "calorieLevel": "low" },
+    "medium": { "grams": 150, "carbs": 34.5, "protein": 3.9, "fat": 1.4, "calories": 166, "calorieLevel": "moderate" },
+    "large": { "grams": 200, "carbs": 46, "protein": 5.2, "fat": 1.8, "calories": 222, "calorieLevel": "moderate" }
+  }
+]

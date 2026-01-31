@@ -1,260 +1,178 @@
-// import React, { useState } from "react";
-// import { User, Mail, Dumbbell, Flame, Calculator, PlusCircle, Edit3 } from "lucide-react";
-// import Navbar from "./Navbar";
-// import Footer from './Footer'
-
-// const generateHeatmap = () => {
-//   const days = 84; // 12 weeks
-//   return Array.from({ length: days }, () => Math.floor(Math.random() * 5));
-// };
-
-// const intensityColors = [
-//   "bg-gray-800",
-//   "bg-yellow-600",
-//   "bg-yellow-500",
-//   "bg-orange-500",
-//   "bg-red-600",
-// ];
-
-// export default function PersonalDashboard() {
-//   const [heatmap] = useState(generateHeatmap());
-//   const [routine, setRoutine] = useState([
-//     "Push-ups – 3x15",
-//     "Squats – 3x20",
-//     "Plank – 60s",
-//     "Running – 20 min",
-//   ]);
-
-//   return (
-//     <div className="min-h-screen bg-base-100 p-4 md:p-8">
-//       {/* Header */}
-//       <div className="mb-16">
-//         <Navbar />
-//       </div>
-//       <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
-//         <div className="rounded-2xl p-6 flex items-center bg-[#5F9598] text-white gap-4 w-full md:w-1/3">
-//           <div className="h-16 w-16 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white">
-//             <User size={32} />
-//           </div>
-//           <div>
-//             <h2 className="text-xl font-semibold">
-//               Swadhin Kumar Kar
-//             </h2>
-//             <p className="flex items-center gap-2 text-sm text-white/60">
-//               <Mail size={14} /> swadhinkarjan26@gmail.com
-//             </p>
-//           </div>
-//         </div>
-
-
-//         {/* Action Buttons */}
-//         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full md:w-2/3">
-//           <ActionButton icon={<PlusCircle />} label="Update Today" />
-//           <ActionButton icon={<Calculator />} label="BMI Calculator" />
-//           <ActionButton icon={<Flame />} label="Calorie Calc" />
-//           <ActionButton icon={<Dumbbell />} label="Exercise Gen" />
-//         </div>
-//       </div>
-
-//       {/* Heatmap Section */}
-//       <div className="mt-8 bg-[#5F9598] rounded-2xl p-6">
-//         <h3 className="text-lg font-semibold mb-4 text-white">Exercise Consistency</h3>
-//         <div className="grid grid-cols-14 gap-1">
-//           {heatmap.map((level, i) => (
-//             <div
-//               key={i}
-//               className={`h-4 w-4 rounded-sm ${intensityColors[level]}`}
-//               title={`Intensity: ${level}`}
-//             />
-//           ))}
-//         </div>
-//         <p className="text-xs mt-3 text-white">Yellow → Red indicates higher workout intensity</p>
-//       </div>
-
-//       {/* Routine & Tools */}
-//       <div className="mt-8 grid md:grid-cols-2 gap-6">
-//         <div className="bg-gray-200 rounded-2xl p-6">
-//           <div className="flex justify-between items-center mb-4">
-//             <h3 className="text-lg font-semibold text-base-900 dark:text-base-100">Current Exercise Routine</h3>
-//             <button className="flex items-center gap-2 text-sm text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300">
-//               <Edit3 size={16} /> Edit
-//             </button>
-//           </div>
-//           <ul className="space-y-2">
-//             {routine.map((item, i) => (
-//               <li key={i} className="bg-base-300 dark:bg-gray-900 rounded-lg px-4 py-2 text-base-900 dark:text-base-100">
-//                 {item}
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         <div className="bg-base-200 dark:bg-gray-800 rounded-2xl p-6">
-//           <h3 className="text-lg font-semibold mb-4 text-base-900 dark:text-base-100">Quick Insights</h3>
-//           <div className="grid grid-cols-2 gap-4">
-//             <InsightCard title="Streak" value="6 days" />
-//             <InsightCard title="Weekly Calories" value="3,200 kcal" />
-//             <InsightCard title="BMI" value="22.4" />
-//             <InsightCard title="Goal" value="Muscle Gain" />
-//           </div>
-//         </div>
-//       </div>
-//       <div>
-//         <Footer></Footer>
-//       </div>
-//     </div>
-//   );
-// }
-
-// function ActionButton({ icon, label }) {
-//   return (
-//     <button className="bg-[#5F9598] hover:bg-[#3f6365] shadow-md hover:shadow-lg transition rounded-2xl p-4 flex flex-col items-center gap-2 text-white">
-//       {icon}
-//       <span className="text-sm">{label}</span>
-//     </button>
-//   );
-// }
-
-// function InsightCard({ title, value }) {
-//   return (
-//     <div className="bg-base-300 dark:bg-gray-900 rounded-xl p-4">
-//       <p className="text-xs text-base-500 dark:text-gray-400">{title}</p>
-//       <p className="text-lg font-semibold text-base-900 dark:text-base-100">{value}</p>
-//     </div>
-//   );
-// }
-
-
 import React, { useState } from "react";
 import {
-  User, Mail, Dumbbell, Flame,
-  Calculator, PlusCircle, Edit3
+  User,
+  Mail,
+  Dumbbell,
+  Flame,
+  Calculator,
+  PlusCircle,
+  Edit3,
+  Trophy,
+  CheckCircle,
+  TrendingUp,
+  Droplets,
+  Moon,
+  Activity
 } from "lucide-react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+// Assuming Navbar is in the same directory
+// import Navbar from "./Navbar"; 
 
-/* ---------- Heatmap Utils ---------- */
+/* ---------- Heatmap Logic ---------- */
 const generateHeatmap = (weeks = 20) => {
   const days = weeks * 7;
-  return Array.from({ length: days }, () =>
-    Math.floor(Math.random() * 5)
-  );
+  return Array.from({ length: days }, () => Math.floor(Math.random() * 5));
 };
 
-const intensityColors = [
-  "bg-slate-300 dark:bg-slate-700",
-  "bg-[#9be9a8]",
-  "bg-[#40c463]",
-  "bg-[#30a14e]",
-  "bg-[#216e39]",
-];
+// Senior Logic: Dynamic opacity mapping based on brand secondary (green)
+const getHeatmapColor = (level) => {
+  const levels = [
+    "bg-[rgb(var(--card-depth-2))]", // Level 0: Empty
+    "bg-[rgb(var(--secondary))]/30", // Level 1: Low
+    "bg-[rgb(var(--secondary))]/50", // Level 2: Med
+    "bg-[rgb(var(--secondary))]/80", // Level 3: High
+    "bg-[rgb(var(--secondary))]",    // Level 4: Max
+  ];
+  return levels[level];
+};
 
-/* ---------- Component ---------- */
 export default function PersonalDashboard() {
   const [heatmap] = useState(generateHeatmap());
 
   const routine = [
-    "Push-ups – 3x15",
-    "Squats – 3x20",
-    "Plank – 60s",
-    "Running – 20 min",
+    { name: "Push-ups", sets: "3×15", icon: <Activity size={14} /> },
+    { name: "Squats", sets: "3×20", icon: <Activity size={14} /> },
+    { name: "Plank", sets: "60s", icon: <Activity size={14} /> },
+    { name: "Running", sets: "20 min", icon: <Activity size={14} /> },
   ];
 
   return (
-    <div className="min-h-screen bg-slate-100 dark:bg-slate-900 px-4 md:px-8">
-      <Navbar />
+    <div className="min-h-screen bg-[rgb(var(--body-color))] text-[rgb(var(--text-primary))] px-4 pt-24 pb-12 md:px-10 transition-colors duration-300">
+      {/* <Navbar /> */}
 
-      {/* Profile + Actions */}
-      <div className="mt-10 flex flex-col md:flex-row gap-6">
-        {/* Profile */}
-        <div className="flex items-center gap-4 p-6 rounded-2xl
-          bg-[#5F9598] text-white w-full md:w-1/3 shadow-md">
-          <div className="h-16 w-16 rounded-full bg-[#1D546D]
-            flex items-center justify-center">
-            <User size={30} />
+      {/* ================= HEADER SECTION ================= */}
+      <header className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Fitness Command Center</h1>
+          <p className="opacity-60 text-sm">Welcome back, Chief. Your progress is looking sharp.</p>
+        </div>
+        <div className="flex gap-2">
+           <button className="px-4 py-2 rounded-xl bg-[rgb(var(--primary))] text-white hover:bg-[rgb(var(--primary-hover))] transition-all shadow-lg shadow-[rgb(var(--primary))]/20 flex items-center gap-2 text-sm font-medium">
+             <PlusCircle size={18} /> Log Workout
+           </button>
+        </div>
+      </header>
+
+      {/* ================= TOP STATS (High Visual Impact) ================= */}
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <StatCard title="Calories Burned" value="450" unit="kcal" trend="+12%" color="var(--primary)" />
+        <StatCard title="Workout Streak" value="6" unit="days" trend="Stable" color="var(--secondary)" />
+        <StatCard title="Current BMI" value="22.4" unit="Normal" trend="Optimal" color="var(--accent)" />
+        <StatCard title="Goal Progress" value="68" unit="%" trend="+2%" color="var(--primary)" />
+      </section>
+
+      <div className="mt-8 grid lg:grid-cols-12 gap-8">
+        
+        {/* LEFT COLUMN: Profile & Actions (4 cols) */}
+        <div className="lg:col-span-4 space-y-6">
+          {/* Profile Card */}
+          <div className="group relative overflow-hidden rounded-[2rem] p-8 text-white shadow-2xl transition-transform hover:scale-[1.01] bg-gradient-to-br from-[rgb(var(--primary))] via-[rgb(var(--primary-hover))] to-[rgb(var(--secondary-hover))]">
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl group-hover:bg-white/20 transition-all" />
+            
+            <div className="relative flex flex-col items-center text-center">
+              <div className="mb-4 h-24 w-24 rounded-3xl bg-white/20 backdrop-blur-md flex items-center justify-center ring-2 ring-white/30 shadow-inner">
+                <User size={48} strokeWidth={1.5} />
+              </div>
+              <h2 className="text-xl font-bold tracking-wide">Swadhin Kumar Kar</h2>
+              <p className="mt-1 text-sm opacity-80 flex items-center gap-2">
+                <Mail size={14} /> swadhinkarjan26@gmail.com
+              </p>
+              
+              <div className="mt-6 flex gap-3 w-full">
+                 <div className="flex-1 rounded-2xl bg-black/10 backdrop-blur-sm p-3 border border-white/10">
+                    <p className="text-[10px] uppercase tracking-widest opacity-70">Level</p>
+                    <p className="font-bold">Pro Athlete</p>
+                 </div>
+                 <div className="flex-1 rounded-2xl bg-black/10 backdrop-blur-sm p-3 border border-white/10">
+                    <p className="text-[10px] uppercase tracking-widest opacity-70">Points</p>
+                    <p className="font-bold">2,450</p>
+                 </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h2 className="text-lg font-semibold">
-              Swadhin Kumar Kar
-            </h2>
-            <p className="text-sm flex items-center gap-2 text-white/80">
-              <Mail size={14} /> swadhinkarjan26@gmail.com
-            </p>
+
+          {/* Quick Action Grid */}
+          <div className="grid grid-cols-2 gap-3">
+            <ActionButton icon={<Calculator />} label="BMI Calc" sub="Check index" />
+            <ActionButton icon={<Flame />} label="Nutrition" sub="Log meals" />
+            <ActionButton icon={<Dumbbell />} label="Plan" sub="Edit routine" />
+            <ActionButton icon={<Trophy />} label="Badges" sub="View all" />
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full md:w-2/3">
-          <ActionButton icon={<PlusCircle />} label="Update Today" />
-          <ActionButton icon={<Calculator />} label="BMI Calculator" />
-          <ActionButton icon={<Flame />} label="Calories" />
-          <ActionButton icon={<Dumbbell />} label="Exercises" />
-        </div>
-      </div>
+        {/* RIGHT COLUMN: Performance (8 cols) */}
+        <div className="lg:col-span-8 space-y-8">
+          
+          {/* Consistency Heatmap */}
+          <Card>
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h3 className="text-lg font-bold">Activity Consistency</h3>
+                <p className="text-xs opacity-50">Visualizing your dedication over the last 20 weeks</p>
+              </div>
+              <div className="flex items-center gap-2 text-[10px] opacity-60">
+                <span>Less</span>
+                <div className="flex gap-1">
+                  {[0, 1, 2, 3, 4].map(l => <div key={l} className={`h-2 w-2 rounded-sm ${getHeatmapColor(l)}`} />)}
+                </div>
+                <span>More</span>
+              </div>
+            </div>
+            <div className="overflow-x-auto pb-2 custom-scrollbar">
+              <div className="grid grid-flow-col grid-rows-7 gap-1.5 min-w-max">
+                {heatmap.map((level, i) => (
+                  <div
+                    key={i}
+                    className={`h-[14px] w-[14px] rounded-[3px] shadow-sm transition-all duration-300 hover:ring-2 hover:ring-[rgb(var(--primary))] hover:scale-125 cursor-pointer ${getHeatmapColor(level)}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </Card>
 
-      {/* Heatmap */}
-      <div className="mt-10 p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-md">
-        <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">
-          Exercise Consistency
-        </h3>
+          {/* Focus & Routine Grid */}
+          <div className="grid md:grid-cols-2 gap-6">
+             {/* Today's Focus */}
+             <Card>
+               <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                 <TrendingUp size={20} className="text-[rgb(var(--primary))]" /> Today's Focus
+               </h3>
+               <div className="space-y-3">
+                 <FocusItem label="Training" value="Chest & Triceps" icon={<Dumbbell size={16}/>} />
+                 <FocusItem label="Hydration" value="2.5L / 4L" icon={<Droplets size={16}/>} color="var(--primary)" />
+                 <FocusItem label="Recovery" value="7.5 hrs Sleep" icon={<Moon size={16}/>} color="var(--accent)" />
+               </div>
+             </Card>
 
-        <div className="overflow-x-auto">
-          <div
-            className="grid grid-flow-col grid-rows-7 gap-[3px]"
-            style={{ gridAutoColumns: "min-content" }}
-          >
-            {heatmap.map((level, i) => (
-              <div
-                key={i}
-                className={`h-[11px] w-[11px] rounded-sm ${intensityColors[level]}`}
-                title={`Intensity ${level}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <p className="text-xs mt-3 text-slate-500 dark:text-slate-400">
-          More activity → darker color
-        </p>
-      </div>
-
-      {/* Routine + Insights */}
-      <div className="mt-10 grid md:grid-cols-2 gap-6">
-        {/* Routine */}
-        <div className="p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-md">
-          <div className="flex justify-between mb-4">
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-white">
-              Current Routine
-            </h3>
-            <button className="flex items-center gap-2 text-sm
-              text-[#1D546D] dark:text-[#5F9598] hover:opacity-80">
-              <Edit3 size={16} /> Edit
-            </button>
-          </div>
-
-          <ul className="space-y-2">
-            {routine.map((item, i) => (
-              <li key={i}
-                className="px-4 py-2 rounded-lg
-                bg-slate-100 dark:bg-slate-700
-                text-slate-800 dark:text-white">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Insights */}
-        <div className="p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-md">
-          <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">
-            Quick Insights
-          </h3>
-
-          <div className="grid grid-cols-2 gap-4">
-            <InsightCard title="Streak" value="6 days" />
-            <InsightCard title="Weekly Calories" value="3200 kcal" />
-            <InsightCard title="BMI" value="22.4" />
-            <InsightCard title="Goal" value="Muscle Gain" />
+             {/* Routine List */}
+             <Card>
+               <div className="flex justify-between items-center mb-4">
+                 <h3 className="text-lg font-bold">Current Routine</h3>
+                 <button className="text-[rgb(var(--primary))] hover:underline text-xs font-bold">Manage</button>
+               </div>
+               <div className="space-y-2">
+                 {routine.map((item, i) => (
+                   <div key={i} className="group flex items-center justify-between p-3 rounded-2xl bg-[rgb(var(--card-depth-1))] border border-[rgb(var(--card-depth-2))]/30 hover:border-[rgb(var(--primary))]/50 transition-colors">
+                     <div className="flex items-center gap-3">
+                       <div className="p-2 rounded-lg bg-[rgb(var(--card-depth-0))] text-[rgb(var(--primary))]">
+                         {item.icon}
+                       </div>
+                       <span className="text-sm font-medium">{item.name}</span>
+                     </div>
+                     <span className="text-xs font-bold opacity-60 group-hover:opacity-100 group-hover:text-[rgb(var(--secondary))] transition-opacity">{item.sets}</span>
+                   </div>
+                 ))}
+               </div>
+             </Card>
           </div>
         </div>
       </div>
@@ -262,26 +180,55 @@ export default function PersonalDashboard() {
   );
 }
 
-function ActionButton({ icon, label }) {
-  return (
-    <button className="rounded-2xl p-4 flex flex-col items-center gap-2
-      bg-[#5F9598] hover:bg-[#4c8083]
-      text-white shadow-md transition">
+/* ================= ENHANCED COMPONENTS ================= */
+
+const Card = ({ children, className = "" }) => (
+  <div className={`rounded-[2rem] p-6 
+    bg-[rgb(var(--card-depth-0))] 
+    border border-[rgb(var(--card-depth-1))]
+    shadow-xl shadow-black/[0.02] dark:shadow-none transition-all ${className}`}>
+    {children}
+  </div>
+);
+
+const StatCard = ({ title, value, unit, trend, color }) => (
+  <div className="group relative overflow-hidden rounded-3xl p-6 bg-[rgb(var(--card-depth-0))] border border-[rgb(var(--card-depth-1))] shadow-sm hover:shadow-lg transition-all duration-500">
+    <div 
+      className="absolute top-0 left-0 h-1 w-full opacity-40 group-hover:opacity-100 transition-opacity"
+      style={{ backgroundColor: `rgb(${color})` }}
+    />
+    <p className="text-[10px] uppercase tracking-widest font-bold opacity-50 mb-2">{title}</p>
+    <div className="flex items-baseline gap-1">
+      <span className="text-3xl font-black tracking-tight" style={{ color: `rgb(${color})` }}>{value}</span>
+      <span className="text-xs font-bold opacity-40">{unit}</span>
+    </div>
+    <div className="mt-4 flex items-center justify-between">
+       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${trend.includes('+') ? 'bg-[rgb(var(--secondary))]/10 text-[rgb(var(--secondary))]' : 'bg-[rgb(var(--card-depth-2))] opacity-60'}`}>
+         {trend}
+       </span>
+       <Activity size={16} className="opacity-10" />
+    </div>
+  </div>
+);
+
+const ActionButton = ({ icon, label, sub }) => (
+  <button className="flex flex-col items-start p-4 w-full rounded-2xl bg-[rgb(var(--card-depth-0))] border border-[rgb(var(--card-depth-1))] hover:border-[rgb(var(--secondary))] hover:-translate-y-1 transition-all group">
+    <div className="mb-3 p-2 rounded-xl bg-[rgb(var(--card-depth-1))] text-[rgb(var(--primary))] group-hover:bg-[rgb(var(--secondary))] group-hover:text-white transition-colors">
+      {React.cloneElement(icon, { size: 20 })}
+    </div>
+    <span className="text-sm font-bold">{label}</span>
+    <span className="text-[10px] opacity-50 font-medium">{sub}</span>
+  </button>
+);
+
+const FocusItem = ({ label, value, icon, color = "var(--secondary)" }) => (
+  <div className="flex items-center gap-4 p-3 rounded-2xl bg-[rgb(var(--card-depth-1))] border border-transparent hover:border-[rgb(var(--card-depth-2))] transition-all">
+    <div className="p-2.5 rounded-xl bg-[rgb(var(--card-depth-0))] shadow-sm" style={{ color: `rgb(${color})` }}>
       {icon}
-      <span className="text-sm">{label}</span>
-    </button>
-  );
-}
-
-function InsightCard({ title, value }) {
-  return (
-    <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-700">
-      <p className="text-xs text-slate-500 dark:text-slate-400">
-        {title}
-      </p>
-      <p className="text-lg font-semibold text-slate-800 dark:text-white">
-        {value}
-      </p>
     </div>
-  );
-}
+    <div>
+      <p className="text-[10px] uppercase font-bold opacity-40 leading-none mb-1">{label}</p>
+      <p className="text-sm font-bold tracking-tight">{value}</p>
+    </div>
+  </div>
+);

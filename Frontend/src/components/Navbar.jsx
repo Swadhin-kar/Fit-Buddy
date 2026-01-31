@@ -82,8 +82,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className={`menu menu-horizontal px-1 `}>
-          <li><a href='/'>Home</a></li>
-          <li><a href='/exercises'>Exercises</a></li>
+          {/* <li><a href='/'>Home</a></li> */}
+          <li><button onClick={() => navigate('/')} >Home</button></li>
+          <li><button onClick={() => navigate('/exercises')} >Exercises</button></li>
+          {/* <li><a href='/exercises'>Exercises</a></li> */}
           <li>
             <details>
               <summary>Tools</summary>
@@ -95,6 +97,9 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
+
+
+
           <li><a>Contact Us</a></li>
         </ul>
       </div>
