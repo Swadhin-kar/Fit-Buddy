@@ -3,400 +3,5320 @@
     "id": 1,
     "name": "Cooked White Rice",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 28, "protein": 2.7, "fat": 0.3, "calories": 130, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 42.0, "protein": 4.1, "fat": 0.4, "calories": 195, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 56, "protein": 5.4, "fat": 0.6, "calories": 260, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 28,
+      "protein": 2.7,
+      "fat": 0.3,
+      "calories": 130,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 42.0,
+      "protein": 4.1,
+      "fat": 0.4,
+      "calories": 195,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 56,
+      "protein": 5.4,
+      "fat": 0.6,
+      "calories": 260,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 2,
     "name": "Whole Wheat Roti",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 36, "protein": 6, "fat": 2, "calories": 200, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 54.0, "protein": 9.0, "fat": 3.0, "calories": 300, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 72, "protein": 12, "fat": 4, "calories": 400, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 36,
+      "protein": 6,
+      "fat": 2,
+      "calories": 200,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 54.0,
+      "protein": 9.0,
+      "fat": 3.0,
+      "calories": 300,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 72,
+      "protein": 12,
+      "fat": 4,
+      "calories": 400,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 3,
     "name": "Dal Tadka",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 15, "protein": 6, "fat": 4, "calories": 120, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 22.5, "protein": 9.0, "fat": 6.0, "calories": 180, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 30, "protein": 12, "fat": 8, "calories": 240, "calorieLevel": "moderate" }
+    "small": {
+      "grams": 100,
+      "carbs": 15,
+      "protein": 6,
+      "fat": 4,
+      "calories": 120,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 22.5,
+      "protein": 9.0,
+      "fat": 6.0,
+      "calories": 180,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 30,
+      "protein": 12,
+      "fat": 8,
+      "calories": 240,
+      "calorieLevel": "moderate"
+    },
+    "category": "Lentils",
+    "fiber_g": 8.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 400.0,
+    "potassium_mg": 250.0,
+    "vitamin_c_mg": 5.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 2.0,
+    "spice_level": "Medium",
+    "cooking_method": "Pressure Cook",
+    "region": "North"
   },
   {
     "id": 4,
     "name": "Paneer Butter Masala",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 6, "protein": 10, "fat": 18, "calories": 230, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 9.0, "protein": 15.0, "fat": 27.0, "calories": 345, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 12, "protein": 20, "fat": 36, "calories": 460, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 6,
+      "protein": 10,
+      "fat": 18,
+      "calories": 230,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 9.0,
+      "protein": 15.0,
+      "fat": 27.0,
+      "calories": 345,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 12,
+      "protein": 20,
+      "fat": 36,
+      "calories": 460,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 5,
     "name": "Chicken Biryani",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 25, "protein": 12, "fat": 9, "calories": 230, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 37.5, "protein": 18.0, "fat": 13.5, "calories": 345, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 50, "protein": 24, "fat": 18, "calories": 460, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 25,
+      "protein": 12,
+      "fat": 9,
+      "calories": 230,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 37.5,
+      "protein": 18.0,
+      "fat": 13.5,
+      "calories": 345,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 50,
+      "protein": 24,
+      "fat": 18,
+      "calories": 460,
+      "calorieLevel": "high"
+    },
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 800.0,
+    "potassium_mg": 400.0,
+    "vitamin_c_mg": 10.0,
+    "calcium_mg": 60.0,
+    "iron_mg": 18.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Dum",
+    "region": "South"
   },
   {
     "id": 6,
     "name": "Butter Naan",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 45, "protein": 8, "fat": 8, "calories": 290, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 67.5, "protein": 12.0, "fat": 12.0, "calories": 435, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 90, "protein": 16, "fat": 16, "calories": 580, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 45,
+      "protein": 8,
+      "fat": 8,
+      "calories": 290,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 67.5,
+      "protein": 12.0,
+      "fat": 12.0,
+      "calories": 435,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 90,
+      "protein": 16,
+      "fat": 16,
+      "calories": 580,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 7,
     "name": "Rajma Masala",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 18, "protein": 7, "fat": 5, "calories": 150, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 27.0, "protein": 10.5, "fat": 7.5, "calories": 225, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 36, "protein": 14, "fat": 10, "calories": 300, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 18,
+      "protein": 7,
+      "fat": 5,
+      "calories": 150,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 27.0,
+      "protein": 10.5,
+      "fat": 7.5,
+      "calories": 225,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 36,
+      "protein": 14,
+      "fat": 10,
+      "calories": 300,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 8,
     "name": "Masala Dosa",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 35, "protein": 5, "fat": 8, "calories": 240, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 52.5, "protein": 7.5, "fat": 12.0, "calories": 360, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 70, "protein": 10, "fat": 16, "calories": 480, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 35,
+      "protein": 5,
+      "fat": 8,
+      "calories": 240,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 52.5,
+      "protein": 7.5,
+      "fat": 12.0,
+      "calories": 360,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 70,
+      "protein": 10,
+      "fat": 16,
+      "calories": 480,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 9,
     "name": "Idli",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 25, "protein": 4, "fat": 0.5, "calories": 120, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 37.5, "protein": 6.0, "fat": 0.8, "calories": 180, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 50, "protein": 8, "fat": 1.0, "calories": 240, "calorieLevel": "moderate" }
+    "small": {
+      "grams": 100,
+      "carbs": 25,
+      "protein": 4,
+      "fat": 0.5,
+      "calories": 120,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 37.5,
+      "protein": 6.0,
+      "fat": 0.8,
+      "calories": 180,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 50,
+      "protein": 8,
+      "fat": 1.0,
+      "calories": 240,
+      "calorieLevel": "moderate"
+    },
+    "category": "Snacks",
+    "fiber_g": 4.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 200.0,
+    "potassium_mg": 80.0,
+    "vitamin_c_mg": 1.0,
+    "calcium_mg": 15.0,
+    "iron_mg": 2.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "South"
   },
   {
     "id": 10,
     "name": "Chana Masala",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 20, "protein": 7, "fat": 6, "calories": 165, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 30.0, "protein": 10.5, "fat": 9.0, "calories": 248, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 40, "protein": 14, "fat": 12, "calories": 330, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 20,
+      "protein": 7,
+      "fat": 6,
+      "calories": 165,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 30.0,
+      "protein": 10.5,
+      "fat": 9.0,
+      "calories": 248,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 40,
+      "protein": 14,
+      "fat": 12,
+      "calories": 330,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 11,
     "name": "Poha",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 35, "protein": 4, "fat": 8, "calories": 230, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 52.5, "protein": 6.0, "fat": 12.0, "calories": 345, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 70, "protein": 8, "fat": 16, "calories": 460, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 35,
+      "protein": 4,
+      "fat": 8,
+      "calories": 230,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 52.5,
+      "protein": 6.0,
+      "fat": 12.0,
+      "calories": 345,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 70,
+      "protein": 8,
+      "fat": 16,
+      "calories": 460,
+      "calorieLevel": "high"
+    },
+    "category": "Breakfast",
+    "fiber_g": 3.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 280.0,
+    "potassium_mg": 100.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 20.0,
+    "iron_mg": 6.0,
+    "spice_level": "Mild",
+    "cooking_method": "Saut\u00e9",
+    "region": "West"
   },
   {
     "id": 12,
     "name": "Butter Chicken",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 6, "protein": 14, "fat": 18, "calories": 250, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 9.0, "protein": 21.0, "fat": 27.0, "calories": 375, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 12, "protein": 28, "fat": 36, "calories": 500, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 6,
+      "protein": 14,
+      "fat": 18,
+      "calories": 250,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 9.0,
+      "protein": 21.0,
+      "fat": 27.0,
+      "calories": 375,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 12,
+      "protein": 28,
+      "fat": 36,
+      "calories": 500,
+      "calorieLevel": "high"
+    },
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 600.0,
+    "potassium_mg": 350.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 15.0,
+    "spice_level": "Medium",
+    "cooking_method": "Grill",
+    "region": "North"
   },
   {
     "id": 13,
     "name": "Samosa",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 32, "protein": 4, "fat": 15, "calories": 280, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 48.0, "protein": 6.0, "fat": 22.5, "calories": 420, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 64, "protein": 8, "fat": 30, "calories": 560, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 32,
+      "protein": 4,
+      "fat": 15,
+      "calories": 280,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 6.0,
+      "fat": 22.5,
+      "calories": 420,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64,
+      "protein": 8,
+      "fat": 30,
+      "calories": 560,
+      "calorieLevel": "high"
+    },
+    "category": "Snacks",
+    "fiber_g": 3.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 600.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 15.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "North"
   },
   {
     "id": 14,
     "name": "Dal Makhani",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 16, "protein": 5, "fat": 9, "calories": 170, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 24.0, "protein": 7.5, "fat": 13.5, "calories": 255, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 32, "protein": 10, "fat": 18, "calories": 340, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 16,
+      "protein": 5,
+      "fat": 9,
+      "calories": 170,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 24.0,
+      "protein": 7.5,
+      "fat": 13.5,
+      "calories": 255,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 32,
+      "protein": 10,
+      "fat": 18,
+      "calories": 340,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 15,
     "name": "Aloo Paratha",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 35, "protein": 4, "fat": 10, "calories": 250, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 52.5, "protein": 6.0, "fat": 15.0, "calories": 375, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 70, "protein": 8, "fat": 20, "calories": 500, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 35,
+      "protein": 4,
+      "fat": 10,
+      "calories": 250,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 52.5,
+      "protein": 6.0,
+      "fat": 15.0,
+      "calories": 375,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 70,
+      "protein": 8,
+      "fat": 20,
+      "calories": 500,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 16,
     "name": "Chicken Curry",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 5, "protein": 15, "fat": 10, "calories": 180, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 7.5, "protein": 22.5, "fat": 15.0, "calories": 270, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 10, "protein": 30, "fat": 20, "calories": 360, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 5,
+      "protein": 15,
+      "fat": 10,
+      "calories": 180,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 7.5,
+      "protein": 22.5,
+      "fat": 15.0,
+      "calories": 270,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 10,
+      "protein": 30,
+      "fat": 20,
+      "calories": 360,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 17,
     "name": "Palak Paneer",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 5, "protein": 9, "fat": 14, "calories": 190, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 7.5, "protein": 13.5, "fat": 21.0, "calories": 285, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 10, "protein": 18, "fat": 28, "calories": 380, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 5,
+      "protein": 9,
+      "fat": 14,
+      "calories": 190,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 7.5,
+      "protein": 13.5,
+      "fat": 21.0,
+      "calories": 285,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 10,
+      "protein": 18,
+      "fat": 28,
+      "calories": 380,
+      "calorieLevel": "high"
+    },
+    "category": "Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 450.0,
+    "potassium_mg": 200.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 200.0,
+    "iron_mg": 12.0,
+    "spice_level": "Mild",
+    "cooking_method": "Saut\u00e9",
+    "region": "North"
   },
   {
     "id": 18,
     "name": "Gulab Jamun",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 50, "protein": 4, "fat": 12, "calories": 320, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 75.0, "protein": 6.0, "fat": 18.0, "calories": 480, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 100, "protein": 8, "fat": 24, "calories": 640, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 50,
+      "protein": 4,
+      "fat": 12,
+      "calories": 320,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 75.0,
+      "protein": 6.0,
+      "fat": 18.0,
+      "calories": 480,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 100,
+      "protein": 8,
+      "fat": 24,
+      "calories": 640,
+      "calorieLevel": "high"
+    },
+    "category": "Dessert",
+    "fiber_g": 2.0,
+    "sugar_g": 35.0,
+    "sodium_mg": 120.0,
+    "potassium_mg": 80.0,
+    "vitamin_c_mg": 5.0,
+    "calcium_mg": 60.0,
+    "iron_mg": 12.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "North"
   },
   {
     "id": 19,
     "name": "Prawn Masala",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 5, "protein": 16, "fat": 9, "calories": 170, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 7.5, "protein": 24.0, "fat": 13.5, "calories": 255, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 10, "protein": 32, "fat": 18, "calories": 340, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 5,
+      "protein": 16,
+      "fat": 9,
+      "calories": 170,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 7.5,
+      "protein": 24.0,
+      "fat": 13.5,
+      "calories": 255,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 10,
+      "protein": 32,
+      "fat": 18,
+      "calories": 340,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 20,
     "name": "Aloo Tikki",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 25, "protein": 3, "fat": 10, "calories": 200, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 37.5, "protein": 4.5, "fat": 15.0, "calories": 300, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 50, "protein": 6, "fat": 20, "calories": 400, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 25,
+      "protein": 3,
+      "fat": 10,
+      "calories": 200,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 37.5,
+      "protein": 4.5,
+      "fat": 15.0,
+      "calories": 300,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 50,
+      "protein": 6,
+      "fat": 20,
+      "calories": 400,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 21,
     "name": "Egg Curry",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 5, "protein": 10, "fat": 10, "calories": 160, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 7.5, "protein": 15.0, "fat": 15.0, "calories": 240, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 10, "protein": 20, "fat": 20, "calories": 320, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 5,
+      "protein": 10,
+      "fat": 10,
+      "calories": 160,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 7.5,
+      "protein": 15.0,
+      "fat": 15.0,
+      "calories": 240,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 10,
+      "protein": 20,
+      "fat": 20,
+      "calories": 320,
+      "calorieLevel": "high"
+    },
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 520.0,
+    "potassium_mg": 280.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 65.0,
+    "iron_mg": 18.0,
+    "spice_level": "Medium",
+    "cooking_method": "Curry",
+    "region": "South"
   },
   {
     "id": 22,
     "name": "Pav Bhaji (Bhaji only)",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 12, "protein": 3, "fat": 9, "calories": 150, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 18.0, "protein": 4.5, "fat": 13.5, "calories": 225, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 24, "protein": 6, "fat": 18, "calories": 300, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 12,
+      "protein": 3,
+      "fat": 9,
+      "calories": 150,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 4.5,
+      "fat": 13.5,
+      "calories": 225,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24,
+      "protein": 6,
+      "fat": 18,
+      "calories": 300,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 23,
     "name": "Fish Curry",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 4, "protein": 15, "fat": 8, "calories": 150, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 6.0, "protein": 22.5, "fat": 12.0, "calories": 225, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 8, "protein": 30, "fat": 16, "calories": 300, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 4,
+      "protein": 15,
+      "fat": 8,
+      "calories": 150,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 6.0,
+      "protein": 22.5,
+      "fat": 12.0,
+      "calories": 225,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 8,
+      "protein": 30,
+      "fat": 16,
+      "calories": 300,
+      "calorieLevel": "high"
+    },
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 700.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 20.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "South"
   },
   {
     "id": 24,
     "name": "Mixed Vegetable Curry",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 10, "protein": 3, "fat": 5, "calories": 105, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 15.0, "protein": 4.5, "fat": 7.5, "calories": 158, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 20, "protein": 6, "fat": 10, "calories": 210, "calorieLevel": "moderate" }
+    "small": {
+      "grams": 100,
+      "carbs": 10,
+      "protein": 3,
+      "fat": 5,
+      "calories": 105,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 15.0,
+      "protein": 4.5,
+      "fat": 7.5,
+      "calories": 158,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 20,
+      "protein": 6,
+      "fat": 10,
+      "calories": 210,
+      "calorieLevel": "moderate"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 25,
     "name": "Upma",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 25, "protein": 4, "fat": 7, "calories": 180, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 37.5, "protein": 6.0, "fat": 10.5, "calories": 270, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 50, "protein": 8, "fat": 14, "calories": 360, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 25,
+      "protein": 4,
+      "fat": 7,
+      "calories": 180,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 37.5,
+      "protein": 6.0,
+      "fat": 10.5,
+      "calories": 270,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 50,
+      "protein": 8,
+      "fat": 14,
+      "calories": 360,
+      "calorieLevel": "high"
+    },
+    "category": "Breakfast",
+    "fiber_g": 4.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 350.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 5.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Saut\u00e9",
+    "region": "South"
   },
   {
     "id": 26,
     "name": "Kadai Paneer",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 7, "protein": 10, "fat": 16, "calories": 215, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 10.5, "protein": 15.0, "fat": 24.0, "calories": 322, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 14, "protein": 20, "fat": 32, "calories": 430, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 7,
+      "protein": 10,
+      "fat": 16,
+      "calories": 215,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 10.5,
+      "protein": 15.0,
+      "fat": 24.0,
+      "calories": 322,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 14,
+      "protein": 20,
+      "fat": 32,
+      "calories": 430,
+      "calorieLevel": "high"
+    },
+    "category": "Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 620.0,
+    "potassium_mg": 280.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 180.0,
+    "iron_mg": 20.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "North"
   },
   {
     "id": 27,
     "name": "Sabudana Khichdi",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 45, "protein": 2, "fat": 12, "calories": 300, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 67.5, "protein": 3.0, "fat": 18.0, "calories": 450, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 90, "protein": 4, "fat": 24, "calories": 600, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 45,
+      "protein": 2,
+      "fat": 12,
+      "calories": 300,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 67.5,
+      "protein": 3.0,
+      "fat": 18.0,
+      "calories": 450,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 90,
+      "protein": 4,
+      "fat": 24,
+      "calories": 600,
+      "calorieLevel": "high"
+    },
+    "category": "Breakfast",
+    "fiber_g": 2.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 240.0,
+    "potassium_mg": 80.0,
+    "vitamin_c_mg": 3.0,
+    "calcium_mg": 15.0,
+    "iron_mg": 4.0,
+    "spice_level": "Mild",
+    "cooking_method": "Saut\u00e9",
+    "region": "West"
   },
   {
     "id": 28,
     "name": "Baingan Bharta",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 8, "protein": 2, "fat": 6, "calories": 100, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 12.0, "protein": 3.0, "fat": 9.0, "calories": 150, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 16, "protein": 4, "fat": 12, "calories": 200, "calorieLevel": "moderate" }
+    "small": {
+      "grams": 100,
+      "carbs": 8,
+      "protein": 2,
+      "fat": 6,
+      "calories": 100,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 12.0,
+      "protein": 3.0,
+      "fat": 9.0,
+      "calories": 150,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 16,
+      "protein": 4,
+      "fat": 12,
+      "calories": 200,
+      "calorieLevel": "moderate"
+    },
+    "category": "Veg",
+    "fiber_g": 6.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 250.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 20.0,
+    "iron_mg": 6.0,
+    "spice_level": "Medium",
+    "cooking_method": "Roast",
+    "region": "North"
   },
   {
     "id": 29,
     "name": "Medu Vada",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 25, "protein": 6, "fat": 15, "calories": 260, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 37.5, "protein": 9.0, "fat": 22.5, "calories": 390, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 50, "protein": 12, "fat": 30, "calories": 520, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 25,
+      "protein": 6,
+      "fat": 15,
+      "calories": 260,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 37.5,
+      "protein": 9.0,
+      "fat": 22.5,
+      "calories": 390,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 50,
+      "protein": 12,
+      "fat": 30,
+      "calories": 520,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 30,
     "name": "Dhokla",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 25, "protein": 6, "fat": 5, "calories": 170, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 37.5, "protein": 9.0, "fat": 7.5, "calories": 255, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 50, "protein": 12, "fat": 10, "calories": 340, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 25,
+      "protein": 6,
+      "fat": 5,
+      "calories": 170,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 37.5,
+      "protein": 9.0,
+      "fat": 7.5,
+      "calories": 255,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 50,
+      "protein": 12,
+      "fat": 10,
+      "calories": 340,
+      "calorieLevel": "high"
+    },
+    "category": "Snacks",
+    "fiber_g": 2.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 320.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 15.0,
+    "iron_mg": 4.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "West"
   },
   {
     "id": 31,
     "name": "Mutton Biryani",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 24, "protein": 13, "fat": 12, "calories": 260, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 36.0, "protein": 19.5, "fat": 18.0, "calories": 390, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 48, "protein": 26, "fat": 24, "calories": 520, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 24,
+      "protein": 13,
+      "fat": 12,
+      "calories": 260,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 36.0,
+      "protein": 19.5,
+      "fat": 18.0,
+      "calories": 390,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 48,
+      "protein": 26,
+      "fat": 24,
+      "calories": 520,
+      "calorieLevel": "high"
+    },
+    "category": "Non-Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 850.0,
+    "potassium_mg": 420.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 55.0,
+    "iron_mg": 20.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Dum",
+    "region": "South"
   },
   {
     "id": 32,
     "name": "Aloo Gobi",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 12, "protein": 3, "fat": 5, "calories": 110, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 18.0, "protein": 4.5, "fat": 7.5, "calories": 165, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 24, "protein": 6, "fat": 10, "calories": 220, "calorieLevel": "moderate" }
+    "small": {
+      "grams": 100,
+      "carbs": 12,
+      "protein": 3,
+      "fat": 5,
+      "calories": 110,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 4.5,
+      "fat": 7.5,
+      "calories": 165,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24,
+      "protein": 6,
+      "fat": 10,
+      "calories": 220,
+      "calorieLevel": "moderate"
+    },
+    "category": "Veg",
+    "fiber_g": 5.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 300.0,
+    "potassium_mg": 150.0,
+    "vitamin_c_mg": 30.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Saut\u00e9",
+    "region": "North"
   },
   {
     "id": 33,
     "name": "Paneer Tikka",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 5, "protein": 15, "fat": 14, "calories": 210, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 7.5, "protein": 22.5, "fat": 21.0, "calories": 315, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 10, "protein": 30, "fat": 28, "calories": 420, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 5,
+      "protein": 15,
+      "fat": 14,
+      "calories": 210,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 7.5,
+      "protein": 22.5,
+      "fat": 21.0,
+      "calories": 315,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 10,
+      "protein": 30,
+      "fat": 28,
+      "calories": 420,
+      "calorieLevel": "high"
+    },
+    "category": "Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 480.0,
+    "potassium_mg": 220.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 180.0,
+    "iron_mg": 15.0,
+    "spice_level": "Mild",
+    "cooking_method": "Grill",
+    "region": "North"
   },
   {
     "id": 34,
     "name": "Chicken Tikka",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 3, "protein": 22, "fat": 8, "calories": 180, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 4.5, "protein": 33.0, "fat": 12.0, "calories": 270, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 6, "protein": 44, "fat": 16, "calories": 360, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 3,
+      "protein": 22,
+      "fat": 8,
+      "calories": 180,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 4.5,
+      "protein": 33.0,
+      "fat": 12.0,
+      "calories": 270,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 6,
+      "protein": 44,
+      "fat": 16,
+      "calories": 360,
+      "calorieLevel": "high"
+    },
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 580.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 18.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 22.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Grill",
+    "region": "North"
   },
   {
     "id": 35,
     "name": "Gajar Halwa",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 35, "protein": 4, "fat": 15, "calories": 290, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 52.5, "protein": 6.0, "fat": 22.5, "calories": 435, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 70, "protein": 8, "fat": 30, "calories": 580, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 35,
+      "protein": 4,
+      "fat": 15,
+      "calories": 290,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 52.5,
+      "protein": 6.0,
+      "fat": 22.5,
+      "calories": 435,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 70,
+      "protein": 8,
+      "fat": 30,
+      "calories": 580,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 36,
     "name": "Bhindi Fry",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 10, "protein": 3, "fat": 7, "calories": 120, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 15.0, "protein": 4.5, "fat": 10.5, "calories": 180, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 20, "protein": 6, "fat": 14, "calories": 240, "calorieLevel": "moderate" }
+    "small": {
+      "grams": 100,
+      "carbs": 10,
+      "protein": 3,
+      "fat": 7,
+      "calories": 120,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 15.0,
+      "protein": 4.5,
+      "fat": 10.5,
+      "calories": 180,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 20,
+      "protein": 6,
+      "fat": 14,
+      "calories": 240,
+      "calorieLevel": "moderate"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 37,
     "name": "Coconut Chutney",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 10, "protein": 2, "fat": 20, "calories": 230, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 15.0, "protein": 3.0, "fat": 30.0, "calories": 345, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 20, "protein": 4, "fat": 40, "calories": 460, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 10,
+      "protein": 2,
+      "fat": 20,
+      "calories": 230,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 15.0,
+      "protein": 3.0,
+      "fat": 30.0,
+      "calories": 345,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 20,
+      "protein": 4,
+      "fat": 40,
+      "calories": 460,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 38,
     "name": "Sambhar",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 10, "protein": 3, "fat": 1, "calories": 60, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 15.0, "protein": 4.5, "fat": 1.5, "calories": 90, "calorieLevel": "low" },
-    "large": { "grams": 200, "carbs": 20, "protein": 6, "fat": 2, "calories": 120, "calorieLevel": "low" }
+    "small": {
+      "grams": 100,
+      "carbs": 10,
+      "protein": 3,
+      "fat": 1,
+      "calories": 60,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 15.0,
+      "protein": 4.5,
+      "fat": 1.5,
+      "calories": 90,
+      "calorieLevel": "low"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 20,
+      "protein": 6,
+      "fat": 2,
+      "calories": 120,
+      "calorieLevel": "low"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 39,
     "name": "Plain Paratha",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 40, "protein": 5, "fat": 12, "calories": 280, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 60.0, "protein": 7.5, "fat": 18.0, "calories": 420, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 80, "protein": 10, "fat": 24, "calories": 560, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 40,
+      "protein": 5,
+      "fat": 12,
+      "calories": 280,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 60.0,
+      "protein": 7.5,
+      "fat": 18.0,
+      "calories": 420,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 80,
+      "protein": 10,
+      "fat": 24,
+      "calories": 560,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 40,
     "name": "Mutton Curry",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 4, "protein": 16, "fat": 15, "calories": 220, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 6.0, "protein": 24.0, "fat": 22.5, "calories": 330, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 8, "protein": 32, "fat": 30, "calories": 440, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 4,
+      "protein": 16,
+      "fat": 15,
+      "calories": 220,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 6.0,
+      "protein": 24.0,
+      "fat": 22.5,
+      "calories": 330,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 8,
+      "protein": 32,
+      "fat": 30,
+      "calories": 440,
+      "calorieLevel": "high"
+    },
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 720.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 22.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "South"
   },
   {
     "id": 41,
     "name": "Pani Puri (6 pieces)",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 30, "protein": 3, "fat": 5, "calories": 180, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 45.0, "protein": 4.5, "fat": 7.5, "calories": 270, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 60, "protein": 6, "fat": 10, "calories": 360, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 30,
+      "protein": 3,
+      "fat": 5,
+      "calories": 180,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 45.0,
+      "protein": 4.5,
+      "fat": 7.5,
+      "calories": 270,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 60,
+      "protein": 6,
+      "fat": 10,
+      "calories": 360,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 42,
     "name": "Bhel Puri",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 40, "protein": 5, "fat": 8, "calories": 250, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 60.0, "protein": 7.5, "fat": 12.0, "calories": 375, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 80, "protein": 10, "fat": 16, "calories": 500, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 40,
+      "protein": 5,
+      "fat": 8,
+      "calories": 250,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 60.0,
+      "protein": 7.5,
+      "fat": 12.0,
+      "calories": 375,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 80,
+      "protein": 10,
+      "fat": 16,
+      "calories": 500,
+      "calorieLevel": "high"
+    },
+    "category": "Snacks",
+    "fiber_g": 4.0,
+    "sugar_g": 12.0,
+    "sodium_mg": 480.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Mix",
+    "region": "West"
   },
   {
     "id": 43,
     "name": "Rasgulla",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 45, "protein": 4, "fat": 2, "calories": 210, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 67.5, "protein": 6.0, "fat": 3.0, "calories": 315, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 90, "protein": 8, "fat": 4, "calories": 420, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 45,
+      "protein": 4,
+      "fat": 2,
+      "calories": 210,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 67.5,
+      "protein": 6.0,
+      "fat": 3.0,
+      "calories": 315,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 90,
+      "protein": 8,
+      "fat": 4,
+      "calories": 420,
+      "calorieLevel": "high"
+    },
+    "category": "Dessert",
+    "fiber_g": 0.0,
+    "sugar_g": 35.0,
+    "sodium_mg": 80.0,
+    "potassium_mg": 60.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 80.0,
+    "iron_mg": 2.0,
+    "spice_level": "Mild",
+    "cooking_method": "Boil",
+    "region": "East"
   },
   {
     "id": 44,
     "name": "Rice Kheer",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 25, "protein": 4, "fat": 6, "calories": 170, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 37.5, "protein": 6.0, "fat": 9.0, "calories": 255, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 50, "protein": 8, "fat": 12, "calories": 340, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 25,
+      "protein": 4,
+      "fat": 6,
+      "calories": 170,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 37.5,
+      "protein": 6.0,
+      "fat": 9.0,
+      "calories": 255,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 50,
+      "protein": 8,
+      "fat": 12,
+      "calories": 340,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 45,
     "name": "Egg Biryani",
     "type": "non-veg",
-    "small": { "grams": 100, "carbs": 26, "protein": 8, "fat": 8, "calories": 210, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 39.0, "protein": 12.0, "fat": 12.0, "calories": 315, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 52, "protein": 16, "fat": 16, "calories": 420, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 26,
+      "protein": 8,
+      "fat": 8,
+      "calories": 210,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 39.0,
+      "protein": 12.0,
+      "fat": 12.0,
+      "calories": 315,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 52,
+      "protein": 16,
+      "fat": 16,
+      "calories": 420,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 46,
     "name": "Garlic Naan",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 44, "protein": 7, "fat": 7, "calories": 270, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 66.0, "protein": 10.5, "fat": 10.5, "calories": 405, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 88, "protein": 14, "fat": 14, "calories": 540, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 44,
+      "protein": 7,
+      "fat": 7,
+      "calories": 270,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 66.0,
+      "protein": 10.5,
+      "fat": 10.5,
+      "calories": 405,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 88,
+      "protein": 14,
+      "fat": 14,
+      "calories": 540,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 47,
     "name": "Veg Biryani",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 28, "protein": 4, "fat": 7, "calories": 195, "calorieLevel": "moderate" },
-    "medium": { "grams": 150, "carbs": 42.0, "protein": 6.0, "fat": 10.5, "calories": 292, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 56, "protein": 8, "fat": 14, "calories": 390, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 28,
+      "protein": 4,
+      "fat": 7,
+      "calories": 195,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 42.0,
+      "protein": 6.0,
+      "fat": 10.5,
+      "calories": 292,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 56,
+      "protein": 8,
+      "fat": 14,
+      "calories": 390,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 48,
     "name": "Moong Dal Halwa",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 40, "protein": 7, "fat": 25, "calories": 410, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 60.0, "protein": 10.5, "fat": 37.5, "calories": 615, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 80, "protein": 14, "fat": 50, "calories": 820, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 40,
+      "protein": 7,
+      "fat": 25,
+      "calories": 410,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 60.0,
+      "protein": 10.5,
+      "fat": 37.5,
+      "calories": 615,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 80,
+      "protein": 14,
+      "fat": 50,
+      "calories": 820,
+      "calorieLevel": "high"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
   },
   {
     "id": 49,
     "name": "Jalebi",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 70, "protein": 2, "fat": 15, "calories": 420, "calorieLevel": "high" },
-    "medium": { "grams": 150, "carbs": 105.0, "protein": 3.0, "fat": 22.5, "calories": 630, "calorieLevel": "high" },
-    "large": { "grams": 200, "carbs": 140, "protein": 4, "fat": 30, "calories": 840, "calorieLevel": "high" }
+    "small": {
+      "grams": 100,
+      "carbs": 70,
+      "protein": 2,
+      "fat": 15,
+      "calories": 420,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 105.0,
+      "protein": 3.0,
+      "fat": 22.5,
+      "calories": 630,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 140,
+      "protein": 4,
+      "fat": 30,
+      "calories": 840,
+      "calorieLevel": "high"
+    },
+    "category": "Dessert",
+    "fiber_g": 1.0,
+    "sugar_g": 45.0,
+    "sodium_mg": 200.0,
+    "potassium_mg": 90.0,
+    "vitamin_c_mg": 3.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 15.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "North"
   },
   {
     "id": 50,
     "name": "Brown Rice (Cooked)",
     "type": "veg",
-    "small": { "grams": 100, "carbs": 23, "protein": 2.6, "fat": 0.9, "calories": 111, "calorieLevel": "low" },
-    "medium": { "grams": 150, "carbs": 34.5, "protein": 3.9, "fat": 1.4, "calories": 166, "calorieLevel": "moderate" },
-    "large": { "grams": 200, "carbs": 46, "protein": 5.2, "fat": 1.8, "calories": 222, "calorieLevel": "moderate" }
+    "small": {
+      "grams": 100,
+      "carbs": 23,
+      "protein": 2.6,
+      "fat": 0.9,
+      "calories": 111,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 34.5,
+      "protein": 3.9,
+      "fat": 1.4,
+      "calories": 166,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 46,
+      "protein": 5.2,
+      "fat": 1.8,
+      "calories": 222,
+      "calorieLevel": "moderate"
+    },
+    "category": "Unknown",
+    "fiber_g": 0.0,
+    "sugar_g": 0.0,
+    "sodium_mg": 0.0,
+    "potassium_mg": 0.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 0.0,
+    "iron_mg": 0.0,
+    "spice_level": "Unknown",
+    "cooking_method": "Unknown",
+    "region": "Unknown"
+  },
+  {
+    "id": 51,
+    "name": "Masoor Dal",
+    "type": "veg",
+    "category": "Lentils",
+    "fiber_g": 7.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 350.0,
+    "potassium_mg": 280.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 3.0,
+    "spice_level": "Medium",
+    "cooking_method": "Boil",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 19.0,
+      "protein": 8.0,
+      "fat": 2.0,
+      "calories": 110.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 28.5,
+      "protein": 12.0,
+      "fat": 3.0,
+      "calories": 165.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 38.0,
+      "protein": 16.0,
+      "fat": 4.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 52,
+    "name": "Chole Bhature",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 8.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 900.0,
+    "potassium_mg": 200.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 80.0,
+    "iron_mg": 25.0,
+    "spice_level": "Medium",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 45.0,
+      "protein": 12.0,
+      "fat": 22.0,
+      "calories": 380.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 67.5,
+      "protein": 18.0,
+      "fat": 33.0,
+      "calories": 570.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 90.0,
+      "protein": 24.0,
+      "fat": 44.0,
+      "calories": 760.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 53,
+    "name": "Tandoori Chicken",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 0.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 650.0,
+    "potassium_mg": 420.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 25.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Grill",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 3.0,
+      "protein": 30.0,
+      "fat": 12.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 4.5,
+      "protein": 45.0,
+      "fat": 18.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 6.0,
+      "protein": 60.0,
+      "fat": 24.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 54,
+    "name": "Vegetable Pulao",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 500.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 10.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 32.0,
+      "protein": 5.0,
+      "fat": 8.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 7.5,
+      "fat": 12.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64.0,
+      "protein": 10.0,
+      "fat": 16.0,
+      "calories": 400.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 55,
+    "name": "Rajma",
+    "type": "veg",
+    "category": "Lentils",
+    "fiber_g": 9.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 400.0,
+    "potassium_mg": 300.0,
+    "vitamin_c_mg": 4.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 4.0,
+    "spice_level": "Medium",
+    "cooking_method": "Pressure Cook",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 21.0,
+      "protein": 8.0,
+      "fat": 3.0,
+      "calories": 130.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 31.5,
+      "protein": 12.0,
+      "fat": 4.5,
+      "calories": 195.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 42.0,
+      "protein": 16.0,
+      "fat": 6.0,
+      "calories": 260.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 56,
+    "name": "Dosa",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 3.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 400.0,
+    "potassium_mg": 150.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 20.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Pan Fry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 28.0,
+      "protein": 4.0,
+      "fat": 8.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 42.0,
+      "protein": 6.0,
+      "fat": 12.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 56.0,
+      "protein": 8.0,
+      "fat": 16.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 57,
+    "name": "Vada",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 3.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 450.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 3.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 12.0,
+    "spice_level": "Medium",
+    "cooking_method": "Deep Fry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 20.0,
+      "protein": 8.0,
+      "fat": 15.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 30.0,
+      "protein": 12.0,
+      "fat": 22.5,
+      "calories": 330.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 40.0,
+      "protein": 16.0,
+      "fat": 30.0,
+      "calories": 440.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 58,
+    "name": "Pakora",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 4.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 550.0,
+    "potassium_mg": 130.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 18.0,
+    "spice_level": "Medium",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 22.0,
+      "protein": 8.0,
+      "fat": 18.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 33.0,
+      "protein": 12.0,
+      "fat": 27.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 44.0,
+      "protein": 16.0,
+      "fat": 36.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 59,
+    "name": "Kheer",
+    "type": "veg",
+    "category": "Dessert",
+    "fiber_g": 1.0,
+    "sugar_g": 20.0,
+    "sodium_mg": 180.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 120.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 30.0,
+      "protein": 6.0,
+      "fat": 12.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 45.0,
+      "protein": 9.0,
+      "fat": 18.0,
+      "calories": 330.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 60.0,
+      "protein": 12.0,
+      "fat": 24.0,
+      "calories": 440.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 60,
+    "name": "Roti",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 8.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 380.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 2.0,
+    "spice_level": "Mild",
+    "cooking_method": "Pan Cook",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 50.0,
+      "protein": 9.0,
+      "fat": 4.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 75.0,
+      "protein": 13.5,
+      "fat": 6.0,
+      "calories": 405.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 100.0,
+      "protein": 18.0,
+      "fat": 8.0,
+      "calories": 540.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 61,
+    "name": "Naan",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 3.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 420.0,
+    "potassium_mg": 200.0,
+    "vitamin_c_mg": 1.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 3.0,
+    "spice_level": "Mild",
+    "cooking_method": "Tandoor",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 55.0,
+      "protein": 10.0,
+      "fat": 6.0,
+      "calories": 310.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 82.5,
+      "protein": 15.0,
+      "fat": 9.0,
+      "calories": 465.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 110.0,
+      "protein": 20.0,
+      "fat": 12.0,
+      "calories": 620.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 62,
+    "name": "Paratha",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 5.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 600.0,
+    "potassium_mg": 220.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 4.0,
+    "spice_level": "Mild",
+    "cooking_method": "Pan Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 42.0,
+      "protein": 8.0,
+      "fat": 18.0,
+      "calories": 320.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 63.0,
+      "protein": 12.0,
+      "fat": 27.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 84.0,
+      "protein": 16.0,
+      "fat": 36.0,
+      "calories": 640.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 63,
+    "name": "Puri",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 3.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 450.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 0.0,
+    "calcium_mg": 20.0,
+    "iron_mg": 6.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 38.0,
+      "protein": 8.0,
+      "fat": 20.0,
+      "calories": 340.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 57.0,
+      "protein": 12.0,
+      "fat": 30.0,
+      "calories": 510.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 76.0,
+      "protein": 16.0,
+      "fat": 40.0,
+      "calories": 680.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 64,
+    "name": "Bhatura",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 4.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 700.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 1.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 42.0,
+      "protein": 10.0,
+      "fat": 22.0,
+      "calories": 380.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 63.0,
+      "protein": 15.0,
+      "fat": 33.0,
+      "calories": 570.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 84.0,
+      "protein": 20.0,
+      "fat": 44.0,
+      "calories": 760.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 65,
+    "name": "Khandvi",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 2.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 380.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 1.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 5.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 18.0,
+      "protein": 10.0,
+      "fat": 6.0,
+      "calories": 120.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 27.0,
+      "protein": 15.0,
+      "fat": 9.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 36.0,
+      "protein": 20.0,
+      "fat": 12.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 66,
+    "name": "Thepla",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 6.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 520.0,
+    "potassium_mg": 200.0,
+    "vitamin_c_mg": 3.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 8.0,
+    "spice_level": "Medium",
+    "cooking_method": "Pan Fry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 32.0,
+      "protein": 12.0,
+      "fat": 16.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 18.0,
+      "fat": 24.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64.0,
+      "protein": 24.0,
+      "fat": 32.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 67,
+    "name": "Khakhra",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 8.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 450.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 6.0,
+    "spice_level": "Mild",
+    "cooking_method": "Roast",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 48.0,
+      "protein": 14.0,
+      "fat": 12.0,
+      "calories": 320.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 72.0,
+      "protein": 21.0,
+      "fat": 18.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 96.0,
+      "protein": 28.0,
+      "fat": 24.0,
+      "calories": 640.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 68,
+    "name": "Handvo",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 5.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 420.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 12.0,
+    "spice_level": "Mild",
+    "cooking_method": "Bake",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 28.0,
+      "protein": 12.0,
+      "fat": 10.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 42.0,
+      "protein": 18.0,
+      "fat": 15.0,
+      "calories": 330.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 56.0,
+      "protein": 24.0,
+      "fat": 20.0,
+      "calories": 440.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 69,
+    "name": "Muthia",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 8.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 380.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 10.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 20.0,
+      "protein": 8.0,
+      "fat": 12.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 30.0,
+      "protein": 12.0,
+      "fat": 18.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 40.0,
+      "protein": 16.0,
+      "fat": 24.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 70,
+    "name": "Undhiyu",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 6.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 320.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 15.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 20.0,
+      "protein": 5.0,
+      "fat": 8.0,
+      "calories": 160.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 30.0,
+      "protein": 7.5,
+      "fat": 12.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 40.0,
+      "protein": 10.0,
+      "fat": 16.0,
+      "calories": 320.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 71,
+    "name": "Kadhi",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 280.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 5.0,
+    "calcium_mg": 80.0,
+    "iron_mg": 3.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 14.0,
+      "protein": 6.0,
+      "fat": 6.0,
+      "calories": 120.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 21.0,
+      "protein": 9.0,
+      "fat": 9.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 28.0,
+      "protein": 12.0,
+      "fat": 12.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 72,
+    "name": "Shrikhand",
+    "type": "veg",
+    "category": "Dessert",
+    "fiber_g": 0.0,
+    "sugar_g": 28.0,
+    "sodium_mg": 120.0,
+    "potassium_mg": 100.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 150.0,
+    "iron_mg": 4.0,
+    "spice_level": "Mild",
+    "cooking_method": "Chill",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 32.0,
+      "protein": 8.0,
+      "fat": 12.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 12.0,
+      "fat": 18.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64.0,
+      "protein": 16.0,
+      "fat": 24.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 73,
+    "name": "Basundi",
+    "type": "veg",
+    "category": "Dessert",
+    "fiber_g": 0.0,
+    "sugar_g": 25.0,
+    "sodium_mg": 140.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 1.0,
+    "calcium_mg": 180.0,
+    "iron_mg": 6.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 28.0,
+      "protein": 10.0,
+      "fat": 14.0,
+      "calories": 260.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 42.0,
+      "protein": 15.0,
+      "fat": 21.0,
+      "calories": 390.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 56.0,
+      "protein": 20.0,
+      "fat": 28.0,
+      "calories": 520.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 74,
+    "name": "Pav Bhaji",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 6.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 680.0,
+    "potassium_mg": 220.0,
+    "vitamin_c_mg": 45.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 12.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 32.0,
+      "protein": 8.0,
+      "fat": 12.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 12.0,
+      "fat": 18.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64.0,
+      "protein": 16.0,
+      "fat": 24.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 75,
+    "name": "Misal Pav",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 8.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 720.0,
+    "potassium_mg": 280.0,
+    "vitamin_c_mg": 35.0,
+    "calcium_mg": 60.0,
+    "iron_mg": 18.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 24.0,
+      "protein": 12.0,
+      "fat": 8.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 36.0,
+      "protein": 18.0,
+      "fat": 12.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 48.0,
+      "protein": 24.0,
+      "fat": 16.0,
+      "calories": 400.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 76,
+    "name": "Vada Pav",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 4.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 650.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 15.0,
+    "spice_level": "Medium",
+    "cooking_method": "Deep Fry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 26.0,
+      "protein": 10.0,
+      "fat": 18.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 39.0,
+      "protein": 15.0,
+      "fat": 27.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 52.0,
+      "protein": 20.0,
+      "fat": 36.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 77,
+    "name": "Sev Puri",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 3.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 520.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 18.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 10.0,
+    "spice_level": "Medium",
+    "cooking_method": "Mix",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 24.0,
+      "protein": 6.0,
+      "fat": 14.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 36.0,
+      "protein": 9.0,
+      "fat": 21.0,
+      "calories": 330.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 48.0,
+      "protein": 12.0,
+      "fat": 28.0,
+      "calories": 440.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 78,
+    "name": "Ragda Patties",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 6.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 580.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 12.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 26.0,
+      "protein": 8.0,
+      "fat": 10.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 39.0,
+      "protein": 12.0,
+      "fat": 15.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 52.0,
+      "protein": 16.0,
+      "fat": 20.0,
+      "calories": 400.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 79,
+    "name": "Thalipeeth",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 8.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 420.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 5.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 10.0,
+    "spice_level": "Medium",
+    "cooking_method": "Pan Fry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 30.0,
+      "protein": 12.0,
+      "fat": 14.0,
+      "calories": 260.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 45.0,
+      "protein": 18.0,
+      "fat": 21.0,
+      "calories": 390.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 60.0,
+      "protein": 24.0,
+      "fat": 28.0,
+      "calories": 520.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 80,
+    "name": "Kolambi Bhaat",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 520.0,
+    "potassium_mg": 320.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 15.0,
+    "spice_level": "Medium",
+    "cooking_method": "Steam",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 28.0,
+      "protein": 18.0,
+      "fat": 8.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 42.0,
+      "protein": 27.0,
+      "fat": 12.0,
+      "calories": 330.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 56.0,
+      "protein": 36.0,
+      "fat": 16.0,
+      "calories": 440.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 81,
+    "name": "Kombdi Vade",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 580.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 20.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Deep Fry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 24.0,
+      "protein": 22.0,
+      "fat": 16.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 36.0,
+      "protein": 33.0,
+      "fat": 24.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 48.0,
+      "protein": 44.0,
+      "fat": 32.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 82,
+    "name": "Malvani Fish",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 640.0,
+    "potassium_mg": 420.0,
+    "vitamin_c_mg": 18.0,
+    "calcium_mg": 50.0,
+    "iron_mg": 25.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 6.0,
+      "protein": 24.0,
+      "fat": 10.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 9.0,
+      "protein": 36.0,
+      "fat": 15.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 12.0,
+      "protein": 48.0,
+      "fat": 20.0,
+      "calories": 400.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 83,
+    "name": "Sol Kadhi",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 180.0,
+    "potassium_mg": 200.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 2.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 8.0,
+      "protein": 2.0,
+      "fat": 4.0,
+      "calories": 60.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 12.0,
+      "protein": 3.0,
+      "fat": 6.0,
+      "calories": 90.0,
+      "calorieLevel": "low"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 16.0,
+      "protein": 4.0,
+      "fat": 8.0,
+      "calories": 120.0,
+      "calorieLevel": "low"
+    }
+  },
+  {
+    "id": 84,
+    "name": "Amti",
+    "type": "veg",
+    "category": "Lentils",
+    "fiber_g": 6.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 320.0,
+    "potassium_mg": 240.0,
+    "vitamin_c_mg": 3.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 3.0,
+    "spice_level": "Medium",
+    "cooking_method": "Boil",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 17.0,
+      "protein": 7.0,
+      "fat": 3.0,
+      "calories": 110.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 25.5,
+      "protein": 10.5,
+      "fat": 4.5,
+      "calories": 165.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 34.0,
+      "protein": 14.0,
+      "fat": 6.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 85,
+    "name": "Puran Poli",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 6.0,
+    "sugar_g": 18.0,
+    "sodium_mg": 280.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Pan Fry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 48.0,
+      "protein": 8.0,
+      "fat": 12.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 72.0,
+      "protein": 12.0,
+      "fat": 18.0,
+      "calories": 450.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 96.0,
+      "protein": 16.0,
+      "fat": 24.0,
+      "calories": 600.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 86,
+    "name": "Modak",
+    "type": "veg",
+    "category": "Dessert",
+    "fiber_g": 3.0,
+    "sugar_g": 22.0,
+    "sodium_mg": 160.0,
+    "potassium_mg": 100.0,
+    "vitamin_c_mg": 5.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 38.0,
+      "protein": 6.0,
+      "fat": 14.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 57.0,
+      "protein": 9.0,
+      "fat": 21.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 76.0,
+      "protein": 12.0,
+      "fat": 28.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 87,
+    "name": "Karanji",
+    "type": "veg",
+    "category": "Dessert",
+    "fiber_g": 4.0,
+    "sugar_g": 25.0,
+    "sodium_mg": 180.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 10.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 40.0,
+      "protein": 8.0,
+      "fat": 18.0,
+      "calories": 320.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 60.0,
+      "protein": 12.0,
+      "fat": 27.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 80.0,
+      "protein": 16.0,
+      "fat": 36.0,
+      "calories": 640.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 88,
+    "name": "Chirote",
+    "type": "veg",
+    "category": "Dessert",
+    "fiber_g": 2.0,
+    "sugar_g": 28.0,
+    "sodium_mg": 200.0,
+    "potassium_mg": 90.0,
+    "vitamin_c_mg": 1.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 12.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "West",
+    "small": {
+      "grams": 100,
+      "carbs": 42.0,
+      "protein": 6.0,
+      "fat": 20.0,
+      "calories": 340.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 63.0,
+      "protein": 9.0,
+      "fat": 30.0,
+      "calories": 510.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 84.0,
+      "protein": 12.0,
+      "fat": 40.0,
+      "calories": 680.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 89,
+    "name": "Appam",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 3.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 280.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 1.0,
+    "calcium_mg": 20.0,
+    "iron_mg": 6.0,
+    "spice_level": "Mild",
+    "cooking_method": "Pan Fry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 32.0,
+      "protein": 4.0,
+      "fat": 6.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 6.0,
+      "fat": 9.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64.0,
+      "protein": 8.0,
+      "fat": 12.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 90,
+    "name": "Puttu",
+    "type": "veg",
+    "category": "Bread",
+    "fiber_g": 4.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 320.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 2.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 30.0,
+      "protein": 6.0,
+      "fat": 8.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 45.0,
+      "protein": 9.0,
+      "fat": 12.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 60.0,
+      "protein": 12.0,
+      "fat": 16.0,
+      "calories": 400.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 91,
+    "name": "Kappa",
+    "type": "veg",
+    "category": "Breakfast",
+    "fiber_g": 4.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 240.0,
+    "potassium_mg": 520.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Boil",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 36.0,
+      "protein": 2.0,
+      "fat": 4.0,
+      "calories": 160.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 54.0,
+      "protein": 3.0,
+      "fat": 6.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 72.0,
+      "protein": 4.0,
+      "fat": 8.0,
+      "calories": 320.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 92,
+    "name": "Meen Curry",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 680.0,
+    "potassium_mg": 440.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 55.0,
+    "iron_mg": 28.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 5.0,
+      "protein": 23.0,
+      "fat": 9.0,
+      "calories": 190.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 7.5,
+      "protein": 34.5,
+      "fat": 13.5,
+      "calories": 285.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 10.0,
+      "protein": 46.0,
+      "fat": 18.0,
+      "calories": 380.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 93,
+    "name": "Meen Pollichathu",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 620.0,
+    "potassium_mg": 460.0,
+    "vitamin_c_mg": 18.0,
+    "calcium_mg": 48.0,
+    "iron_mg": 22.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Wrap",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 4.0,
+      "protein": 25.0,
+      "fat": 11.0,
+      "calories": 210.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 6.0,
+      "protein": 37.5,
+      "fat": 16.5,
+      "calories": 315.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 8.0,
+      "protein": 50.0,
+      "fat": 22.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 94,
+    "name": "Kozhi Curry",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 0.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 590.0,
+    "potassium_mg": 410.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 42.0,
+    "iron_mg": 20.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 3.0,
+      "protein": 28.0,
+      "fat": 14.0,
+      "calories": 250.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 4.5,
+      "protein": 42.0,
+      "fat": 21.0,
+      "calories": 375.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 6.0,
+      "protein": 56.0,
+      "fat": 28.0,
+      "calories": 500.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 95,
+    "name": "Avial",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 6.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 380.0,
+    "potassium_mg": 220.0,
+    "vitamin_c_mg": 35.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 12.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 12.0,
+      "protein": 4.0,
+      "fat": 10.0,
+      "calories": 140.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 6.0,
+      "fat": 15.0,
+      "calories": 210.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24.0,
+      "protein": 8.0,
+      "fat": 20.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 96,
+    "name": "Kaalan",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 5.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 340.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 55.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 14.0,
+      "protein": 3.0,
+      "fat": 8.0,
+      "calories": 120.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 21.0,
+      "protein": 4.5,
+      "fat": 12.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 28.0,
+      "protein": 6.0,
+      "fat": 16.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 97,
+    "name": "Thoran",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 8.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 420.0,
+    "potassium_mg": 240.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 15.0,
+    "spice_level": "Mild",
+    "cooking_method": "Saut\u00e9",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 14.0,
+      "protein": 6.0,
+      "fat": 12.0,
+      "calories": 160.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 21.0,
+      "protein": 9.0,
+      "fat": 18.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 28.0,
+      "protein": 12.0,
+      "fat": 24.0,
+      "calories": 320.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 98,
+    "name": "Olan",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 280.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 6.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 12.0,
+      "protein": 2.0,
+      "fat": 6.0,
+      "calories": 100.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 3.0,
+      "fat": 9.0,
+      "calories": 150.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24.0,
+      "protein": 4.0,
+      "fat": 12.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 99,
+    "name": "Erissery",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 7.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 360.0,
+    "potassium_mg": 200.0,
+    "vitamin_c_mg": 30.0,
+    "calcium_mg": 50.0,
+    "iron_mg": 18.0,
+    "spice_level": "Mild",
+    "cooking_method": "Boil",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 14.0,
+      "protein": 5.0,
+      "fat": 10.0,
+      "calories": 150.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 21.0,
+      "protein": 7.5,
+      "fat": 15.0,
+      "calories": 225.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 28.0,
+      "protein": 10.0,
+      "fat": 20.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 100,
+    "name": "Kootu Curry",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 9.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 440.0,
+    "potassium_mg": 260.0,
+    "vitamin_c_mg": 40.0,
+    "calcium_mg": 60.0,
+    "iron_mg": 25.0,
+    "spice_level": "Mild",
+    "cooking_method": "Saut\u00e9",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 16.0,
+      "protein": 8.0,
+      "fat": 12.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 24.0,
+      "protein": 12.0,
+      "fat": 18.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 32.0,
+      "protein": 16.0,
+      "fat": 24.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 101,
+    "name": "Inji Curry",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 420.0,
+    "potassium_mg": 120.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 4.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Simmer",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 10.0,
+      "protein": 1.0,
+      "fat": 4.0,
+      "calories": 80.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 15.0,
+      "protein": 1.5,
+      "fat": 6.0,
+      "calories": 120.0,
+      "calorieLevel": "low"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 20.0,
+      "protein": 2.0,
+      "fat": 8.0,
+      "calories": 160.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 102,
+    "name": "Mango Pickle",
+    "type": "veg",
+    "category": "Condiment",
+    "fiber_g": 4.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 1800.0,
+    "potassium_mg": 80.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 15.0,
+    "iron_mg": 8.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Ferment",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 12.0,
+      "protein": 1.0,
+      "fat": 8.0,
+      "calories": 120.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 1.5,
+      "fat": 12.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24.0,
+      "protein": 2.0,
+      "fat": 16.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 103,
+    "name": "Lemon Pickle",
+    "type": "veg",
+    "category": "Condiment",
+    "fiber_g": 3.0,
+    "sugar_g": 10.0,
+    "sodium_mg": 1600.0,
+    "potassium_mg": 60.0,
+    "vitamin_c_mg": 35.0,
+    "calcium_mg": 12.0,
+    "iron_mg": 6.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Ferment",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 14.0,
+      "protein": 1.0,
+      "fat": 6.0,
+      "calories": 100.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 21.0,
+      "protein": 1.5,
+      "fat": 9.0,
+      "calories": 150.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 28.0,
+      "protein": 2.0,
+      "fat": 12.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 104,
+    "name": "Puli Inji",
+    "type": "veg",
+    "category": "Condiment",
+    "fiber_g": 3.0,
+    "sugar_g": 15.0,
+    "sodium_mg": 1400.0,
+    "potassium_mg": 90.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 18.0,
+    "iron_mg": 5.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Simmer",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 12.0,
+      "protein": 1.0,
+      "fat": 5.0,
+      "calories": 90.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 1.5,
+      "fat": 7.5,
+      "calories": 135.0,
+      "calorieLevel": "low"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24.0,
+      "protein": 2.0,
+      "fat": 10.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 105,
+    "name": "Hyderabadi Biryani",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 880.0,
+    "potassium_mg": 440.0,
+    "vitamin_c_mg": 9.0,
+    "calcium_mg": 58.0,
+    "iron_mg": 22.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Dum",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 36.0,
+      "protein": 27.0,
+      "fat": 19.0,
+      "calories": 340.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 54.0,
+      "protein": 40.5,
+      "fat": 28.5,
+      "calories": 510.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 72.0,
+      "protein": 54.0,
+      "fat": 38.0,
+      "calories": 680.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 106,
+    "name": "Kolkata Biryani",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 780.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 18.0,
+    "spice_level": "Mild",
+    "cooking_method": "Dum",
+    "region": "East",
+    "small": {
+      "grams": 100,
+      "carbs": 38.0,
+      "protein": 24.0,
+      "fat": 16.0,
+      "calories": 310.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 57.0,
+      "protein": 36.0,
+      "fat": 24.0,
+      "calories": 465.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 76.0,
+      "protein": 48.0,
+      "fat": 32.0,
+      "calories": 620.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 107,
+    "name": "Lucknowi Biryani",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 820.0,
+    "potassium_mg": 400.0,
+    "vitamin_c_mg": 10.0,
+    "calcium_mg": 52.0,
+    "iron_mg": 19.0,
+    "spice_level": "Mild",
+    "cooking_method": "Dum",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 37.0,
+      "protein": 26.0,
+      "fat": 17.0,
+      "calories": 320.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 55.5,
+      "protein": 39.0,
+      "fat": 25.5,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 74.0,
+      "protein": 52.0,
+      "fat": 34.0,
+      "calories": 640.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 108,
+    "name": "Keema",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 680.0,
+    "potassium_mg": 320.0,
+    "vitamin_c_mg": 6.0,
+    "calcium_mg": 40.0,
+    "iron_mg": 15.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 8.0,
+      "protein": 20.0,
+      "fat": 16.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 12.0,
+      "protein": 30.0,
+      "fat": 24.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 16.0,
+      "protein": 40.0,
+      "fat": 32.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 109,
+    "name": "Seekh Kebab",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 750.0,
+    "potassium_mg": 360.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 38.0,
+    "iron_mg": 18.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Grill",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 3.0,
+      "protein": 24.0,
+      "fat": 18.0,
+      "calories": 260.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 4.5,
+      "protein": 36.0,
+      "fat": 27.0,
+      "calories": 390.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 6.0,
+      "protein": 48.0,
+      "fat": 36.0,
+      "calories": 520.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 110,
+    "name": "Shami Kebab",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 720.0,
+    "potassium_mg": 340.0,
+    "vitamin_c_mg": 10.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 16.0,
+    "spice_level": "Medium",
+    "cooking_method": "Shallow Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 6.0,
+      "protein": 22.0,
+      "fat": 16.0,
+      "calories": 250.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 9.0,
+      "protein": 33.0,
+      "fat": 24.0,
+      "calories": 375.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 12.0,
+      "protein": 44.0,
+      "fat": 32.0,
+      "calories": 500.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 111,
+    "name": "Galouti Kebab",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 780.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 5.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 20.0,
+    "spice_level": "Medium",
+    "cooking_method": "Grill",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 4.0,
+      "protein": 23.0,
+      "fat": 22.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 6.0,
+      "protein": 34.5,
+      "fat": 33.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 8.0,
+      "protein": 46.0,
+      "fat": 44.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 112,
+    "name": "Reshmi Kebab",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 0.0,
+    "sugar_g": 1.0,
+    "sodium_mg": 680.0,
+    "potassium_mg": 420.0,
+    "vitamin_c_mg": 3.0,
+    "calcium_mg": 42.0,
+    "iron_mg": 22.0,
+    "spice_level": "Mild",
+    "cooking_method": "Grill",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 2.0,
+      "protein": 26.0,
+      "fat": 20.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 3.0,
+      "protein": 39.0,
+      "fat": 30.0,
+      "calories": 405.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 4.0,
+      "protein": 52.0,
+      "fat": 40.0,
+      "calories": 540.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 113,
+    "name": "Chicken Korma",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 820.0,
+    "potassium_mg": 360.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 48.0,
+    "iron_mg": 25.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 6.0,
+      "protein": 28.0,
+      "fat": 22.0,
+      "calories": 290.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 9.0,
+      "protein": 42.0,
+      "fat": 33.0,
+      "calories": 435.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 12.0,
+      "protein": 56.0,
+      "fat": 44.0,
+      "calories": 580.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 114,
+    "name": "Navratan Korma",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 5.0,
+    "sugar_g": 12.0,
+    "sodium_mg": 480.0,
+    "potassium_mg": 220.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 65.0,
+    "iron_mg": 15.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 18.0,
+      "protein": 6.0,
+      "fat": 16.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 27.0,
+      "protein": 9.0,
+      "fat": 24.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 36.0,
+      "protein": 12.0,
+      "fat": 32.0,
+      "calories": 400.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 115,
+    "name": "Malai Kofta",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 520.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 55.0,
+    "iron_mg": 12.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 20.0,
+      "protein": 8.0,
+      "fat": 18.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 30.0,
+      "protein": 12.0,
+      "fat": 27.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 40.0,
+      "protein": 16.0,
+      "fat": 36.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 116,
+    "name": "Shahi Paneer",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 560.0,
+    "potassium_mg": 240.0,
+    "vitamin_c_mg": 18.0,
+    "calcium_mg": 220.0,
+    "iron_mg": 18.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 12.0,
+      "protein": 14.0,
+      "fat": 22.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 21.0,
+      "fat": 33.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24.0,
+      "protein": 28.0,
+      "fat": 44.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 117,
+    "name": "Matar Paneer",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 5.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 580.0,
+    "potassium_mg": 260.0,
+    "vitamin_c_mg": 20.0,
+    "calcium_mg": 165.0,
+    "iron_mg": 16.0,
+    "spice_level": "Medium",
+    "cooking_method": "Simmer",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 14.0,
+      "protein": 15.0,
+      "fat": 18.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 21.0,
+      "protein": 22.5,
+      "fat": 27.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 28.0,
+      "protein": 30.0,
+      "fat": 36.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 118,
+    "name": "Palak Chicken",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 640.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 35.0,
+    "calcium_mg": 55.0,
+    "iron_mg": 22.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 8.0,
+      "protein": 29.0,
+      "fat": 16.0,
+      "calories": 260.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 12.0,
+      "protein": 43.5,
+      "fat": 24.0,
+      "calories": 390.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 16.0,
+      "protein": 58.0,
+      "fat": 32.0,
+      "calories": 520.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 119,
+    "name": "Chicken Chettinad",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 980.0,
+    "potassium_mg": 420.0,
+    "vitamin_c_mg": 18.0,
+    "calcium_mg": 45.0,
+    "iron_mg": 28.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 7.0,
+      "protein": 31.0,
+      "fat": 18.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 10.5,
+      "protein": 46.5,
+      "fat": 27.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 14.0,
+      "protein": 62.0,
+      "fat": 36.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 120,
+    "name": "Andhra Chicken",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 1050.0,
+    "potassium_mg": 440.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 42.0,
+    "iron_mg": 25.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Curry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 8.0,
+      "protein": 30.0,
+      "fat": 19.0,
+      "calories": 290.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 12.0,
+      "protein": 45.0,
+      "fat": 28.5,
+      "calories": 435.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 16.0,
+      "protein": 60.0,
+      "fat": 38.0,
+      "calories": 580.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 121,
+    "name": "Chicken 65",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 1.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 920.0,
+    "potassium_mg": 380.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 38.0,
+    "iron_mg": 24.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Deep Fry",
+    "region": "South",
+    "small": {
+      "grams": 100,
+      "carbs": 9.0,
+      "protein": 28.0,
+      "fat": 20.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 13.5,
+      "protein": 42.0,
+      "fat": 30.0,
+      "calories": 450.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 18.0,
+      "protein": 56.0,
+      "fat": 40.0,
+      "calories": 600.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 122,
+    "name": "Chili Chicken",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 780.0,
+    "potassium_mg": 360.0,
+    "vitamin_c_mg": 45.0,
+    "calcium_mg": 48.0,
+    "iron_mg": 20.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 12.0,
+      "protein": 26.0,
+      "fat": 16.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 18.0,
+      "protein": 39.0,
+      "fat": 24.0,
+      "calories": 405.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 24.0,
+      "protein": 52.0,
+      "fat": 32.0,
+      "calories": 540.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 123,
+    "name": "Chicken Manchurian",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 10.0,
+    "sodium_mg": 820.0,
+    "potassium_mg": 340.0,
+    "vitamin_c_mg": 35.0,
+    "calcium_mg": 42.0,
+    "iron_mg": 22.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 14.0,
+      "protein": 25.0,
+      "fat": 18.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 21.0,
+      "protein": 37.5,
+      "fat": 27.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 28.0,
+      "protein": 50.0,
+      "fat": 36.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 124,
+    "name": "Gobi Manchurian",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 5.0,
+    "sugar_g": 12.0,
+    "sodium_mg": 680.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 40.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 15.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 20.0,
+      "protein": 6.0,
+      "fat": 16.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 30.0,
+      "protein": 9.0,
+      "fat": 24.0,
+      "calories": 330.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 40.0,
+      "protein": 12.0,
+      "fat": 32.0,
+      "calories": 440.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 125,
+    "name": "Paneer Manchurian",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 10.0,
+    "sodium_mg": 720.0,
+    "potassium_mg": 220.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 165.0,
+    "iron_mg": 18.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 16.0,
+      "protein": 16.0,
+      "fat": 20.0,
+      "calories": 260.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 24.0,
+      "protein": 24.0,
+      "fat": 30.0,
+      "calories": 390.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 32.0,
+      "protein": 32.0,
+      "fat": 40.0,
+      "calories": 520.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 126,
+    "name": "Spring Roll",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 3.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 580.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 12.0,
+    "spice_level": "Mild",
+    "cooking_method": "Deep Fry",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 24.0,
+      "protein": 8.0,
+      "fat": 12.0,
+      "calories": 200.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 36.0,
+      "protein": 12.0,
+      "fat": 18.0,
+      "calories": 300.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 48.0,
+      "protein": 16.0,
+      "fat": 24.0,
+      "calories": 400.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 127,
+    "name": "Momos",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 2.0,
+    "sugar_g": 3.0,
+    "sodium_mg": 520.0,
+    "potassium_mg": 220.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 15.0,
+    "spice_level": "Mild",
+    "cooking_method": "Steam",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 20.0,
+      "protein": 12.0,
+      "fat": 8.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 30.0,
+      "protein": 18.0,
+      "fat": 12.0,
+      "calories": 270.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 40.0,
+      "protein": 24.0,
+      "fat": 16.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 128,
+    "name": "Thukpa",
+    "type": "veg",
+    "category": "Snacks",
+    "fiber_g": 2.0,
+    "sugar_g": 2.0,
+    "sodium_mg": 480.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 25.0,
+    "iron_mg": 8.0,
+    "spice_level": "Mild",
+    "cooking_method": "Simmer",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 16.0,
+      "protein": 8.0,
+      "fat": 4.0,
+      "calories": 120.0,
+      "calorieLevel": "low"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 24.0,
+      "protein": 12.0,
+      "fat": 6.0,
+      "calories": 180.0,
+      "calorieLevel": "moderate"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 32.0,
+      "protein": 16.0,
+      "fat": 8.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    }
+  },
+  {
+    "id": 129,
+    "name": "Chowmein",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 4.0,
+    "sugar_g": 6.0,
+    "sodium_mg": 620.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 18.0,
+    "calcium_mg": 30.0,
+    "iron_mg": 12.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 28.0,
+      "protein": 8.0,
+      "fat": 14.0,
+      "calories": 220.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 42.0,
+      "protein": 12.0,
+      "fat": 21.0,
+      "calories": 330.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 56.0,
+      "protein": 16.0,
+      "fat": 28.0,
+      "calories": 440.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 130,
+    "name": "Fried Rice",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 580.0,
+    "potassium_mg": 140.0,
+    "vitamin_c_mg": 12.0,
+    "calcium_mg": 28.0,
+    "iron_mg": 14.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 32.0,
+      "protein": 10.0,
+      "fat": 12.0,
+      "calories": 240.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 15.0,
+      "fat": 18.0,
+      "calories": 360.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64.0,
+      "protein": 20.0,
+      "fat": 24.0,
+      "calories": 480.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 131,
+    "name": "Schezwan Rice",
+    "type": "veg",
+    "category": "Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 8.0,
+    "sodium_mg": 780.0,
+    "potassium_mg": 150.0,
+    "vitamin_c_mg": 25.0,
+    "calcium_mg": 32.0,
+    "iron_mg": 16.0,
+    "spice_level": "Spicy",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 30.0,
+      "protein": 9.0,
+      "fat": 16.0,
+      "calories": 260.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 45.0,
+      "protein": 13.5,
+      "fat": 24.0,
+      "calories": 390.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 60.0,
+      "protein": 18.0,
+      "fat": 32.0,
+      "calories": 520.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 132,
+    "name": "Chicken Fried Rice",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 2.0,
+    "sugar_g": 4.0,
+    "sodium_mg": 650.0,
+    "potassium_mg": 180.0,
+    "vitamin_c_mg": 15.0,
+    "calcium_mg": 35.0,
+    "iron_mg": 18.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 30.0,
+      "protein": 18.0,
+      "fat": 14.0,
+      "calories": 280.0,
+      "calorieLevel": "high"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 45.0,
+      "protein": 27.0,
+      "fat": 21.0,
+      "calories": 420.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 60.0,
+      "protein": 36.0,
+      "fat": 28.0,
+      "calories": 560.0,
+      "calorieLevel": "high"
+    }
+  },
+  {
+    "id": 133,
+    "name": "Egg Fried Rice",
+    "type": "non-veg",
+    "category": "Non-Veg",
+    "fiber_g": 3.0,
+    "sugar_g": 5.0,
+    "sodium_mg": 600.0,
+    "potassium_mg": 160.0,
+    "vitamin_c_mg": 8.0,
+    "calcium_mg": 38.0,
+    "iron_mg": 16.0,
+    "spice_level": "Medium",
+    "cooking_method": "Saut\u00e9",
+    "region": "North",
+    "small": {
+      "grams": 100,
+      "carbs": 32.0,
+      "protein": 14.0,
+      "fat": 12.0,
+      "calories": 250.0,
+      "calorieLevel": "moderate"
+    },
+    "medium": {
+      "grams": 150,
+      "carbs": 48.0,
+      "protein": 21.0,
+      "fat": 18.0,
+      "calories": 375.0,
+      "calorieLevel": "high"
+    },
+    "large": {
+      "grams": 200,
+      "carbs": 64.0,
+      "protein": 28.0,
+      "fat": 24.0,
+      "calories": 500.0,
+      "calorieLevel": "high"
+    }
   }
 ]
