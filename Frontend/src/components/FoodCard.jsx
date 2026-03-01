@@ -29,110 +29,88 @@ const FoodCard = memo(({ item, applyDelta, onRemove }) => {
   };
 
   const changeServings = (change) => {
-    const next = servings + change;
-    if (next < 1) return;
+    const next = Math.max(1, servings + change);
     setServings(next);
     updateNutrition(size, next);
   };
 
-  const getLevelStyles = (level) => {
-    switch (level) {
-      case "low": return "from-emerald-400/20 to-emerald-500/5 text-emerald-500 border-emerald-500/20";
-      case "high": return "from-rose-400/20 to-rose-500/5 text-rose-500 border-rose-500/20";
-      default: return "from-amber-400/20 to-amber-500/5 text-amber-600 border-amber-500/20";
-    }
-  };
-
   return (
-    <div 
-      className="group relative p-1 rounded-[3rem] transition-all duration-500 hover:scale-[1.01] overflow-hidden"
-      style={{ background: `linear-gradient(135deg, rgb(var(--primary) / 0.2), transparent)` }}
-    >
-      {/* Background Glow Effect */}
-      <div className="absolute -top-24 -right-24 w-48 h-48 bg-[rgb(var(--primary))] opacity-10 blur-[80px] group-hover:opacity-20 transition-opacity" />
-      
-      <div 
-        className="relative p-8 rounded-[2.8rem] backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden"
-        style={{ backgroundColor: `rgb(var(--card-depth-0) / 0.8)` }}
-      >
-        {/* Header Section */}
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h2 className="text-4xl font-black tracking-tight bg-gradient-to-br from-[rgb(var(--text-primary))] to-[rgb(var(--text-primary)/0.6)] bg-clip-text text-transparent">
+    <div className="group relative p-[1px] rounded-[3.5rem] transition-all duration-700 bg-gradient-to-br from-white/20 to-transparent hover:from-[rgb(var(--primary)/0.4)]">
+      <div className="relative p-10 rounded-[3.4rem] backdrop-blur-3xl shadow-2xl overflow-hidden bg-[rgb(var(--card-depth-0)/0.9)]">
+        
+        {/* Top Section: Identity & Actions */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+          <div className="space-y-1">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] opacity-40">Ingredient Source</span>
+            <h2 className="text-5xl font-black tracking-tighter bg-gradient-to-r from-[rgb(var(--text-primary))] to-[rgb(var(--text-primary)/0.5)] bg-clip-text text-transparent">
               {food.name}
             </h2>
-            <div className={`mt-2 inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border ${getLevelStyles(currentData.calorieLevel)}`}>
-              {currentData.calorieLevel} Intensity
-            </div>
           </div>
-          <button 
-            onClick={() => onRemove(item)}
-            className="w-12 h-12 flex items-center justify-center rounded-2xl bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white transition-all duration-300 transform hover:rotate-90"
-          >
-            ✕
-          </button>
+          
+          <div className="flex items-center gap-4">
+            <div className={`px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest border transition-colors ${
+              currentData.calorieLevel === 'high' ? 'bg-rose-500/10 text-rose-500 border-rose-500/20' : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
+            }`}>
+              {currentData.calorieLevel} Density
+            </div>
+            <button 
+              onClick={() => onRemove(item)}
+              className="w-14 h-14 flex items-center justify-center rounded-[1.5rem] bg-rose-500/5 text-rose-500 hover:bg-rose-500 hover:text-white transition-all duration-500"
+            >
+              <span className="text-xl">✕</span>
+            </button>
+          </div>
         </div>
 
-        {/* Interaction Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {/* Size Selector */}
-          <div className="p-4 rounded-[2rem] bg-black/5 dark:bg-white/5 border border-white/5">
-            <span className="text-[10px] font-bold opacity-40 uppercase tracking-widest ml-2 mb-3 block">Portion Size</span>
-            <div className="flex gap-2">
-              {["small", "medium", "large"].map((s) => (
-                <button
-                  key={s}
-                  onClick={() => changeSize(s)}
-                  className={`flex-1 py-3 rounded-2xl font-bold text-xs transition-all duration-300 ${
-                    size === s 
-                      ? "bg-[rgb(var(--primary))] text-white shadow-[0_0_20px_rgba(var(--primary),0.4)] scale-105" 
-                      : "hover:bg-white/10 opacity-60 hover:opacity-100"
-                  }`}
-                >
-                  {s.charAt(0).toUpperCase()} <span className="block text-[9px] opacity-60 font-medium">{food[s].grams}g</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Servings Counter */}
-          <div className="p-4 rounded-[2rem] bg-black/5 dark:bg-white/5 border border-white/5 flex flex-col justify-center">
-            <span className="text-[10px] font-bold opacity-40 uppercase tracking-widest ml-2 mb-3 block">Quantity</span>
-            <div className="flex items-center justify-between px-2">
-              <button 
-                onClick={() => changeServings(-1)}
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[rgb(var(--accent))] hover:text-white transition-colors flex items-center justify-center text-xl"
-              >
-                −
-              </button>
-              <div className="text-center">
-                <span className="text-2xl font-black">{servings}</span>
-                <span className="block text-[10px] opacity-40 font-bold uppercase">Servings</span>
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 items-center">
+          
+          {/* Column 1: Configuration */}
+          <div className="space-y-6 lg:border-r border-white/5 lg:pr-8">
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold opacity-30 uppercase tracking-widest ml-1">Portion Control</label>
+              <div className="grid grid-cols-3 gap-2 p-1.5 bg-black/20 rounded-[1.8rem]">
+                {["small", "medium", "large"].map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => changeSize(s)}
+                    className={`py-3 rounded-2xl font-bold text-[10px] uppercase transition-all ${
+                      size === s ? "bg-[rgb(var(--primary))] text-white shadow-lg shadow-[rgb(var(--primary)/0.3)]" : "opacity-40 hover:opacity-100"
+                    }`}
+                  >
+                    {s}
+                  </button>
+                ))}
               </div>
-              <button 
-                onClick={() => changeServings(1)}
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[rgb(var(--accent))] hover:text-white transition-colors flex items-center justify-center text-xl"
-              >
-                +
-              </button>
+            </div>
+
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold opacity-30 uppercase tracking-widest ml-1">Quantity</label>
+              <div className="flex items-center justify-between p-2 bg-black/20 rounded-[1.8rem]">
+                <button onClick={() => changeServings(-1)} className="w-12 h-12 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-xl font-light">−</button>
+                <div className="text-center">
+                  <span className="text-2xl font-black">{servings}</span>
+                  <span className="block text-[8px] opacity-40 font-bold uppercase">Units</span>
+                </div>
+                <button onClick={() => changeServings(1)} className="w-12 h-12 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-xl font-light">+</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Nutrition Stats - The "Holographic" Pods */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <StatPod label="Calories" value={currentData.calories * servings} unit="kcal" theme="sky" />
-          <StatPod label="Protein" value={currentData.protein * servings} unit="g" theme="emerald" />
-          <StatPod label="Carbs" value={currentData.carbs * servings} unit="g" theme="indigo" />
-          <StatPod label="Fat" value={currentData.fat * servings} unit="g" theme="amber" />
-        </div>
-
-        {/* Floating Detail Trigger */}
-        <div className="mt-8 flex justify-center">
-          <button className="flex items-center gap-2 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 hover:text-[rgb(var(--primary))] transition-all">
-            Full Nutrition Breakdown
-            <span className="animate-bounce">↓</span>
-          </button>
+          {/* Column 2 & 3: Results (Wide) */}
+          <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StatPod label="Energy" value={currentData.calories * servings} unit="kcal" theme="sky" />
+            <StatPod label="Protein" value={currentData.protein * servings} unit="g" theme="emerald" />
+            <StatPod label="Carbs" value={currentData.carbs * servings} unit="g" theme="indigo" />
+            <StatPod label="Fat" value={currentData.fat * servings} unit="g" theme="amber" />
+            
+            <div className="col-span-full mt-4 p-5 rounded-[2rem] bg-white/5 border border-white/5">
+              <p className="text-[11px] leading-relaxed opacity-50 italic">
+                * Nutritional values are based on standard biological estimates. This specific serving contains 
+                <span className="text-[rgb(var(--text-primary))] font-bold"> {currentData.grams * servings}g </span> of net weight.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -141,19 +119,19 @@ const FoodCard = memo(({ item, applyDelta, onRemove }) => {
 
 const StatPod = ({ label, value, unit, theme }) => {
   const themes = {
-    sky: "text-sky-500 shadow-sky-500/10 bg-sky-500/5 border-sky-500/10",
-    emerald: "text-emerald-500 shadow-emerald-500/10 bg-emerald-500/5 border-emerald-500/10",
-    indigo: "text-indigo-500 shadow-indigo-500/10 bg-indigo-500/5 border-indigo-500/10",
-    amber: "text-amber-500 shadow-amber-500/10 bg-amber-500/5 border-amber-500/10",
+    sky: "text-sky-400 border-sky-400/10 bg-sky-400/5",
+    emerald: "text-emerald-400 border-emerald-400/10 bg-emerald-400/5",
+    indigo: "text-indigo-400 border-indigo-400/10 bg-indigo-400/5",
+    amber: "text-amber-400 border-amber-400/10 bg-amber-400/5",
   };
 
   return (
-    <div className={`p-5 rounded-[2.2rem] border transition-transform hover:-translate-y-1 duration-300 shadow-xl ${themes[theme]}`}>
-      <div className="text-2xl font-black tracking-tighter mb-0.5">
+    <div className={`p-6 rounded-[2.5rem] border transition-all hover:scale-[1.05] ${themes[theme]}`}>
+      <div className="text-2xl font-black tracking-tighter mb-1">
         {value.toFixed(1)}
-        <span className="text-[10px] ml-1 opacity-60">{unit}</span>
+        <span className="text-[10px] ml-1 opacity-50">{unit}</span>
       </div>
-      <div className="text-[9px] font-black uppercase tracking-widest opacity-60">
+      <div className="text-[9px] font-black uppercase tracking-[0.2em] opacity-40">
         {label}
       </div>
     </div>

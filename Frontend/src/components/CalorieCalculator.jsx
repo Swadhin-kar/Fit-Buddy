@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import FoodCard from "./FoodCard";
 import FoodSearchModal from "./FoodSearchModal";
 import { v4 as uuid } from "uuid";
@@ -10,22 +11,18 @@ const CalorieCalculator = () => {
 
   const applyDelta = useCallback((delta) => {
     setTotals(prev => ({
-      calories: prev.calories + delta.calories,
-      protein: prev.protein + delta.protein,
-      carbs: prev.carbs + delta.carbs,
-      fat: prev.fat + delta.fat
+      calories: Math.max(0, prev.calories + delta.calories),
+      protein: Math.max(0, prev.protein + delta.protein),
+      carbs: Math.max(0, prev.carbs + delta.carbs),
+      fat: Math.max(0, prev.fat + delta.fat)
     }));
   }, []);
 
   const handleAddFood = (food) => {
     const size = "medium";
-    const base = food[size];
-    applyDelta(base);
-
-    setSelectedFoods(prev => [
-      ...prev,
-      { id: uuid(), food, size, servings: 1 }
-    ]);
+    applyDelta(food[size]);
+    setSelectedFoods(prev => [{ id: uuid(), food, size, servings: 1 }, ...prev]);
+    setIsModalOpen(false);
   };
 
   const removeFood = useCallback((item) => {
@@ -41,45 +38,128 @@ const CalorieCalculator = () => {
   }, [applyDelta]);
 
   return (
-    <div className="max-w-2xl mx-auto p-6 space-y-8 min-h-screen pt-20" style={{ color: `rgb(var(--text-primary))` }}>
-      {/* Dynamic Dashboard */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Stat label="Calories" value={totals.calories} unit="kcal" />
-        <Stat label="Protein" value={totals.protein} unit="g" />
-        <Stat label="Carbs" value={totals.carbs} unit="g" />
-        <Stat label="Fat" value={totals.fat} unit="g" />
+    <div className="max-w-6xl mx-auto p-6 md:p-16 space-y-16 min-h-screen pt-24 font-sans selection:bg-indigo-100">
+
+      {/* --- HERO SECTION --- */}
+      {/* <div className="grid lg:grid-cols-2 gap-12 items-start"> */}
+      <div className="flex flex-row md:flex-col justify-center align-center">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-10"
+        >
+          {/* Heading Section */}
+          <div className="space-y-4">
+            <h2 className="text-[rgb(var(--primary))] font-bold tracking-[0.2em] uppercase text-sm">
+              Nutritional Intelligence
+            </h2>
+
+            <h1 className="text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight text-slate-900">
+              Precision <br />
+              <span className="bg-gradient-to-r from-[rgb(var(--primary))] to-indigo-600 bg-clip-text text-transparent">
+                Metabolic Analytics.
+              </span>
+            </h1>
+
+            <p className="text-slate-500 text-lg max-w-md leading-relaxed font-medium opacity-80">
+              Master your biology with our high-fidelity caloric engine.
+              Quantify every gram, optimize every meal, and achieve peak performance.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="grid grid-cols-2 gap-6"
+          >
+            <HeroStat
+              label="Active Energy"
+              value={totals.calories}
+              unit="kcal"
+              color="var(--primary)"
+            />
+
+            <HeroStat
+              label="Protein Intake"
+              value={totals.protein}
+              unit="g"
+              color="var(--secondary)"
+            />
+
+            {/* Carbs Card */}
+            <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--white))] shadow-sm border border-slate-100 space-y-2 hover:border-[rgb(var(--primary)/0.3)] transition-colors">
+              <div className="text-3xl font-black text-slate-900">
+                {totals.carbs.toFixed(0)}g
+              </div>
+              <div className="text-[10px] uppercase font-black tracking-widest text-slate-400">
+                Carbohydrates
+              </div>
+            </div>
+
+            {/* Fat Card */}
+            <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--white))] shadow-sm border border-slate-100 space-y-2 hover:border-[rgb(var(--primary)/0.3)] transition-colors">
+              <div className="text-3xl font-black text-slate-900">
+                {totals.fat.toFixed(0)}g
+              </div>
+              <div className="text-[10px] uppercase font-black tracking-widest text-slate-400">
+                Total Lipids
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div className="space-y-4">
-        {selectedFoods.map(item => (
-          <FoodCard key={item.id} item={item} applyDelta={applyDelta} onRemove={removeFood} />
-        ))}
+
+      {/* --- CONTENT SECTION --- */}
+      <div className="space-y-8">
+        <div className="flex justify-between items-center border-b border-slate-100 pb-6">
+          <h3 className="text-xl font-bold tracking-tight text-slate-800">Fuel Log</h3>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-8 py-3 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-[rgb(var(--primary))] transition-all active:scale-95 shadow-lg shadow-slate-200"
+          >
+            + Add Source
+          </button>
+        </div>
+
+        <AnimatePresence mode="popLayout">
+          {selectedFoods.length > 0 ? (
+            selectedFoods.map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+              >
+                <FoodCard item={item} applyDelta={applyDelta} onRemove={removeFood} />
+              </motion.div>
+            ))
+          ) : (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} className="py-20 text-center italic text-slate-400">
+              Waiting for data input...
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      <button
-        onClick={() => setIsModalOpen(true)}
-        className="w-full py-4 rounded-2xl font-bold shadow-lg transform active:scale-[0.98] transition-all flex items-center justify-center gap-2 hover:brightness-110"
-        style={{ backgroundColor: `rgb(var(--primary))`, color: `rgb(var(--white))` }}
-      >
-        <span className="text-xl">+</span> Add Another Food
-      </button>
-
-      <FoodSearchModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        onSelect={handleAddFood} 
-      />
+      <FoodSearchModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSelect={handleAddFood} />
     </div>
   );
 };
 
-const Stat = ({ label, value, unit }) => (
-  <div 
-    className="rounded-2xl p-4 shadow-sm border border-[rgb(var(--card-depth-1))] text-center"
-    style={{ backgroundColor: `rgb(var(--card-depth-0))` }}
-  >
-    <p className="text-2xl font-black">{Math.round(value)}<span className="text-xs ml-0.5 opacity-60">{unit}</span></p>
-    <p className="text-xs uppercase tracking-widest font-bold opacity-50">{label}</p>
+const HeroStat = ({ label, value, unit, color }) => (
+  <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--white))] shadow-sm border border-slate-200 hover:shadow-md transition-all">
+    <div className="text-3xl mb-2 font-black tracking-tighter" style={{ color: `rgb(${color})` }}>
+      {Math.round(value)}
+      <span className="text-xs ml-1 opacity-50 font-bold uppercase">{unit}</span>
+    </div>
+    <div className="text-[rgb(var(--slate-400))] text-[10px] uppercase font-black tracking-widest">
+      {label}
+    </div>
   </div>
 );
 
