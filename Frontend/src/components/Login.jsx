@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
 
     axios
-      .post("/user/login", formData)
+      .post("https://fit-buddy-mw5w.onrender.com/user/login", formData)
       .then((res) => {
         toast.success("Login successful");
         localStorage.setItem("token", res.data.token);

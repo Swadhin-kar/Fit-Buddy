@@ -24,7 +24,7 @@ const Signup = () => {
     }
 
     axios
-      .post("/user/signup", formData)
+      .post("https://fit-buddy-mw5w.onrender.com/user/signup", formData)
       .then(() => {
         toast.success("Registered Successfully");
         setTimeout(() => (window.location.href = "/"), 1500);
