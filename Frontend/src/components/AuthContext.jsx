@@ -10,7 +10,7 @@ export function AuthProvider({ children }) {
 
   const checkAuth = async () => {
     try {
-      const res = await axios.get("/user/verify")
+      const res = await axios.get("https://fit-buddy-mw5w.onrender.com/user/verify")
       setUser(res.data.user)
     } catch (err) {
       if (err?.response?.status === 401) {
