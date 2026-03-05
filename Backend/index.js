@@ -9,10 +9,12 @@ import aiRouter from './routes/ai.route.js'
 const app = express()
 dotenv.config()
 app.use(cors({
-    origin: "http://localhost:5173",
-    origin: "https://fitbuddy-blond.vercel.app/",
-    credentials: true
-}))
+  origin: [
+    "http://localhost:5173",
+    "https://fitbuddy-blond.vercel.app"
+  ],
+  credentials: true
+}));
 
 app.use(cookieParser());
 app.use(express.json())
