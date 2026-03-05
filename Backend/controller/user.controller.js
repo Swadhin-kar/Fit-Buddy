@@ -35,18 +35,15 @@ export const registerUser = async (req, res) => {
         newUser.refreshToken = refreshToken
         await newUser.save()
         
-        res.cookie("accessToken", accessToken, {
+        const cookieOptions = {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            path: "/"
-        })
-        .cookie("refreshToken", refreshToken, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            path: "/"
-        })
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+            path: '/'
+        };
+
+        res.cookie("accessToken", accessToken, cookieOptions)
+        .cookie("refreshToken", refreshToken, cookieOptions)
         
 
         return res.status(201).send({ message: "User registered successfully" })
@@ -79,18 +76,15 @@ export const loginUser = async (req, res) => {
     existingUser.refreshToken = refreshToken
     await existingUser.save()
 
-    res.cookie("accessToken", accessToken, {
+    const cookieOptions = {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
-        path: "/"
-    })
-        .cookie("refreshToken", refreshToken, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            path: "/"
-        })
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        path: '/'
+    };
+
+    res.cookie("accessToken", accessToken, cookieOptions)
+        .cookie("refreshToken", refreshToken, cookieOptions)
         .json({ message: "Login successful" })
 }
 
@@ -110,8 +104,8 @@ export const refresh = async (req, res) => {
 
         res.cookie("accessToken", newAccessToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: "strict"
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict'
         });
 
         res.json({ message: "Token refreshed" })
