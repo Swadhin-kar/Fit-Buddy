@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "../utils/axios";
 
@@ -7,6 +8,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +23,7 @@ const Login = () => {
       .then((res) => {
         toast.success("Login successful");
         localStorage.setItem("token", res.data.token);
-        setTimeout(() => (window.location.href = "/dashboard"), 1000);
+        setTimeout(() => navigate("/dashboard"), 1000);
       })
       .catch((err) => {
         toast.error(err?.response?.data?.message || "Invalid credentials");
