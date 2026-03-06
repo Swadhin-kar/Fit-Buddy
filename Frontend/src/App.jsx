@@ -3,13 +3,13 @@ import { Route, Routes } from 'react-router-dom'
 import Bmi from './components/Bmi'
 import { Toaster } from 'react-hot-toast';
 
-const Home = lazy(() => import('./components/Home'))
-const Login = lazy(() => import('./components/Login'))
-const Signup = lazy(() => import('./components/Signup'))
-const Blog = lazy(() => import('./components/Blog'))
-const FitBee = lazy(() => import('./components/FitBee'))
-const DashBoard = lazy(() => import('./components/DashBoard'))
-const CalorieCalculator = lazy(() => import('./components/CalorieCalculator'))
+const Home = lazy(() => import('./pages/Home'))
+const Login = lazy(() => import('./pages/Login'))
+const Signup = lazy(() => import('./pages/Signup'))
+const Blog = lazy(() => import('./pages/Blog'))
+const FitBee = lazy(() => import('./pages/FitBee'))
+const DashBoard = lazy(() => import('./pages/DashBoard'))
+const CalorieCalculator = lazy(() => import('./pages/CalorieCalculator'))
 
 import LoadingFallback from './components/LoadingFallback';
 import FitBeeIcon from './components/FitBeeIcon';

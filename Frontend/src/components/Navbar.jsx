@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
-import axios from '../utils/axios';
+import api from '../utils/axios';
 import toast from 'react-hot-toast';
 import { User } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
@@ -14,36 +14,23 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { user, loading, checkAuth, setUser } = useContext(AuthContext)
+  const { user, setUser } = useContext(AuthContext);
 
-
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [isLoggingOut, setIsLoggingOut] = useState(false)
-
-
-  useEffect(() => {
-    if (user) setLoggedIn(true)
-    else setLoggedIn(false)
-  }, [user])
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   const logoutme = async () => {
-    setIsLoggingOut(true)
+    setIsLoggingOut(true);
     try {
-      await axios.post('/user/logout')
-      setUser(null)
-      toast.success('Logged out successfully')
-      setTimeout(() => {
-
-        navigate('/', {
-          state: { from: location.pathname }
-        })
-        window.location.reload()
-      }, 800)
+      await api.post('/user/logout');
+      localStorage.removeItem('token');
+      setUser(null);
+      toast.success('Logged out successfully');
+      navigate('/');
     } catch (err) {
-      toast.error('Failed to logout')
-      setIsLoggingOut(false)
+      toast.error('Failed to logout');
+      setIsLoggingOut(false);
     }
-  }
+  };
 
   const handleLogin = () => {
     navigate('/user/login', {

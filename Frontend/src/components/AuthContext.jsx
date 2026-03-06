@@ -1,54 +1,38 @@
-import { createContext, useState, useEffect, useRef } from "react"
-import axios from "../utils/axios"
+import { createContext, useState, useEffect } from 'react';
+import api from '../utils/axios';
 
-export const AuthContext = createContext(null)
+export const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const mounted = useRef(false)
-
-  const checkAuth = async () => {
-    try {
-      const res = await axios.get("https://fit-buddy-mw5w.onrender.com/user/verify")
-      setUser(res.data.user)
-    } catch (err) {
-      if (err?.response?.status === 401) {
-        setUser(null)
-      } else {
-        console.error("Auth check error:", err)
-        setUser(null)
-      }
-    } finally {
-      setLoading(false)
-    }
-  }
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    mounted.current = true
-    checkAuth()
-
-    const interceptor = axios.interceptors.response.use(
-      (response) => response,
-      (error) => {
-        if (error?.response?.status === 401) {
-          if (mounted.current) setUser(null)
+    const restoreUser = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        if (token) {
+          // The interceptor will attach the token to the header
+          const res = await api.get('/user/verify');
+          setUser(res.data.user);
         }
-        return Promise.reject(error)
+      } catch (err) {
+        localStorage.removeItem('token');
+        setUser(null);
+        console.error('Session restoration failed:', err);
+      } finally {
+        setLoading(false);
       }
-    )
+    };
 
-    return () => {
-      mounted.current = false
-      axios.interceptors.response.eject(interceptor)
-    }
-  }, [])
+    restoreUser();
+  }, []);
 
-  const isAuthenticated = Boolean(user)
+  const isAuthenticated = !!user;
 
   return (
-    <AuthContext.Provider value={{ user, setUser, loading, isAuthenticated, checkAuth }}>
+    <AuthContext.Provider value={{ user, setUser, loading, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
-  )
+  );
 }

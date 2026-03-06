@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import axios from "../utils/axios";
+import api from "../utils/axios";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -23,8 +23,8 @@ const Signup = () => {
       return;
     }
 
-    axios
-      .post("https://fit-buddy-mw5w.onrender.com/user/signup", formData)
+    api
+      .post("/user/signup", formData)
       .then(() => {
         toast.success("Registered Successfully");
         setTimeout(() => (window.location.href = "/"), 1500);

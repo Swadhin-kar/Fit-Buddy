@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import FoodCard from "./FoodCard";
-import FoodSearchModal from "./FoodSearchModal";
+import FoodCard from "../components/FoodCard";
+import FoodSearchModal from "../components/FoodSearchModal";
 import { v4 as uuid } from "uuid";
 
 const CalorieCalculator = () => {

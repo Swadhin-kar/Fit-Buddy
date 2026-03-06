@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, lazy, Suspense } from "react";
 
-const ExerciseInfo = lazy(() => import("./ExerciseInfo"));
+const ExerciseInfo = lazy(() => import("../components/ExerciseInfo"));
 
 export default function Blog() {
   const [search, setSearch] = useState("");

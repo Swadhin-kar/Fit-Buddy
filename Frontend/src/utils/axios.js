@@ -1,8 +1,20 @@
-import axios from "axios";
+import axios from 'axios'
 
-const instance = axios.create({
-  baseURL: "http://localhost:7000",
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true,
-});
+})
 
-export default instance;
+// Request interceptor: Attach token to all requests
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
+    return config
+  },
+  (error) => Promise.reject(error)
+)
+
+export default api

@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import axios from "../utils/axios";
+import api from "../utils/axios";
+import { AuthContext } from "../components/AuthContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
+  const { setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -18,15 +21,16 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post("https://fit-buddy-mw5w.onrender.com/user/login", formData)
+    api
+      .post('/user/login', formData)
       .then((res) => {
-        toast.success("Login successful");
-        localStorage.setItem("token", res.data.token);
-        setTimeout(() => navigate("/dashboard"), 1000);
+        toast.success('Login successful');
+        localStorage.setItem('token', res.data.token);
+        setUser(res.data.user);
+        window.location.href = '/';
       })
       .catch((err) => {
-        toast.error(err?.response?.data?.message || "Invalid credentials");
+        toast.error(err?.response?.data?.message || 'Invalid credentials');
       });
   };
 
