@@ -1,21 +1,20 @@
-import axios from 'axios'
+import axios from "axios";
+
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 const api = axios.create({
-  // if VITE_API_BASE_URL is undefined (e.g. not set in production), fall back to ''
-  baseURL: import.meta.env.VITE_API_BASE_URL || '',
+  baseURL: API_BASE,
   withCredentials: true,
-})
+});
 
-// Request interceptor: Attach token to all requests
-api.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`
-    }
-    return config
-  },
-  (error) => Promise.reject(error)
-)
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
 
-export default api
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
+
+export default api;

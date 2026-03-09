@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log("API BASE:", import.meta.env.VITE_API_BASE_URL)
     api
       .post('/user/login', formData)
       .then((res) => {
