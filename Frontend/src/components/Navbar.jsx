@@ -21,7 +21,7 @@ const Navbar = () => {
   const logoutme = async () => {
     setIsLoggingOut(true);
     try {
-      await api.post(`${process.env.VITE_API_BASE_URL}/user/logout`);
+      await api.post('/user/logout');
       localStorage.removeItem('token');
       setUser(null);
       toast.success('Logged out successfully');

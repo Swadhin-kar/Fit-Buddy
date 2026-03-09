@@ -26,15 +26,10 @@ export default function AiAssistant() {
     setLoading(true);
 
     try {
-      const res = api.post(`${process.env.VITE_API_BASE_URL}/ai/chat`, {
-        body: JSON.stringify({ prompt: currentInput }),
-      });
+      // use axios instance with baseURL so only relative path is needed
+      const response = await api.post('/ai/chat', { prompt: currentInput });
+      const data = response.data; // axios response holds body in .data
 
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-
-      const data = await res.json();
 
       setMessages((prev) => [
         ...prev,

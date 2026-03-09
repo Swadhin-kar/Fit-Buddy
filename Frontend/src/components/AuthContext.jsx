@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
         const token = localStorage.getItem('token');
         if (token) {
           // The interceptor will attach the token to the header
-          const res = await api.get(`${process.env.VITE_API_BASE_URL}/user/verify`);
+          const res = await api.get('/user/verify');
           setUser(res.data.user);
         }
       } catch (err) {
