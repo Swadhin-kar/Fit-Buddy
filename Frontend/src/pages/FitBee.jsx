@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import api from "../utils/axios";
 
 export default function AiAssistant() {
   const [messages, setMessages] = useState([
@@ -20,14 +21,13 @@ export default function AiAssistant() {
 
     const userMsg = { role: "user", content: input };
     setMessages((prev) => [...prev, userMsg]);
+    const currentInput = input
     setInput("");
     setLoading(true);
 
     try {
-      const res = await fetch("https://fit-buddy-mw5w.onrender.com/ai/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: input }),
+      const res = api.post(`${process.env.VITE_API_BASE_URL}/ai/chat`, {
+        body: JSON.stringify({ prompt: currentInput }),
       });
 
       if (!res.ok) {

@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
 
     api
-      .post('/user/login', formData)
+      .post(`${process.env.VITE_API_BASE_URL}/user/login`, formData)
       .then((res) => {
         toast.success('Login successful');
         localStorage.setItem('token', res.data.token);

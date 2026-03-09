@@ -24,7 +24,7 @@ const Signup = () => {
     }
 
     api
-      .post("/user/signup", formData)
+      .post(`${process.env.VITE_API_BASE_URL}/user/signup`, formData)
       .then(() => {
         toast.success("Registered Successfully");
         setTimeout(() => (window.location.href = "/"), 1500);
