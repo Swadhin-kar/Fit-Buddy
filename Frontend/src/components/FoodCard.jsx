@@ -82,7 +82,7 @@ const FoodCard = memo(({ item, applyDelta, onRemove }) => {
                 {["small", "medium", "large"].map((s) => (
                   <button key={s} onClick={() => changeSize(s)}
                     className={`flex-1 py-2.5 rounded-xl font-bold text-[10px] uppercase transition-all ${
-                      size === s ? "bg-[rgb(var(--card-depth-0))] text-[rgb(var(--secondary))] shadow-sm" : "text-[rgb(var(--text-muted)/0.4)] hover:text-[rgb(var(--text-muted))]"
+                      size === s ? "bg-[rgb(var(--card-depth-0))] text-[rgb(var(--secondary))] shadow-sm" : "text-[rgb(var(--text-muted))] hover:text-[rgb(var(--text-primary))]"
                     }`}>{s}</button>
                 ))}
               </div>

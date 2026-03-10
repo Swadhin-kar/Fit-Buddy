@@ -45,13 +45,13 @@ const FoodSearchModal = ({ isOpen, onClose, onSelect }) => {
                 <button
                   key={food.name}
                   onClick={() => { onSelect(food); setSearch(""); onClose(); }}
-                  className="w-full flex justify-between items-center p-4 rounded-2xl transition-all bg-[rgb(var(--card-depth-1)/0.5)] hover:bg-[rgb(var(--primary))] hover:text-white group"
+                  className="w-full flex justify-between items-center p-4 rounded-2xl transition-all bg-[rgb(var(--card-depth-1)/0.5)] hover:bg-[rgb(var(--primary))] text-[rgb(var(--text-primary))] hover:text-white group"
                 >
                   <div className="text-left">
                     <p className="font-bold">{food.name}</p>
-                    <p className="text-[10px] opacity-60 group-hover:text-white/80">{food.medium.calories} kcal · Medium</p>
+                    <p className="text-[10px] opacity-60 group-hover:text-[rgb(var(--text-muted))]">{food.medium.calories} kcal · Medium</p>
                   </div>
-                  <span className="font-bold text-[rgb(var(--primary))] group-hover:text-white">+</span>
+                  <span className="font-bold text-[rgb(var(--primary))] group-hover:text-[rgb(var(--text-primary))]">+</span>
                 </button>
               ))
             ) : (
