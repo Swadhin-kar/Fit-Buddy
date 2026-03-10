@@ -119,27 +119,41 @@
   --black: 0 0 0;
 
   /* ===== Brand (Fitness-friendly: energetic blue + green accent) ===== */
-  --primary: 59 130 246;          /* blue-500 */
-  --primary-hover: 37 99 235;     /* blue-600 */
+  --primary: 59 130 246;
+  /* blue-500 */
+  --primary-hover: 37 99 235;
+  /* blue-600 */
 
-  --secondary: 34 197 94;         /* green-500 */
-  --secondary-hover: 22 163 74;   /* green-600 */
+  --secondary: 34 197 94;
+  /* green-500 */
+  --secondary-hover: 22 163 74;
+  /* green-600 */
 
-  --accent: 249 115 22;           /* orange-500 */
-  --accent-hover: 234 88 12;      /* orange-600 */
+  --accent: 249 115 22;
+  /* orange-500 */
+  --accent-hover: 234 88 12;
+  /* orange-600 */
 
   /* ===== Layout ===== */
-  --body-color: 248 250 252;      /* slate-50 */
-  --navbar: 37, 137, 246;          /* clean white */
+  --body-color: 248 250 252;
+  /* slate-50 */
+  --navbar: 37, 137, 246;
+  /* clean white */
   --navbar-hover: 29, 108, 195;
 
   --text-primary: 15 23 42;
+  --text-muted: 15 23 42 / 0.6;
+  --text-dim: 15 23 42 / 0.3;
 
   /* ===== Card / Depth System ===== */
-  --card-depth-0: 255 255 255;    /* base card */
-  --card-depth-1: 226 232 240;    /* slate-100 */
-  --card-depth-2: 203 213 225;    /* slate-200 */
-  --card-depth-3: 203 213 225;    /* slate-300 */
+  --card-depth-0: 255 255 255;
+  /* base card */
+  --card-depth-1: 226 232 240;
+  /* slate-100 */
+  --card-depth-2: 203 213 225;
+  /* slate-200 */
+  --card-depth-3: 203 213 225;
+  /* slate-300 */
 }
 
 html.dark {
@@ -148,27 +162,43 @@ html.dark {
   --black: 0 0 0;
 
   /* ===== Brand (cool, strong, modern) ===== */
-  --primary: 59 130 246;          /* blue-400 */
-  --primary-hover: 59 130 246;    /* blue-500 */
+  --primary: 59 130 246;
+  /* blue-400 */
+  --primary-hover: 59 130 246;
+  /* blue-500 */
 
-  --secondary: 52 211 153;        /* emerald-400 */
-  --secondary-hover: 34 197 94;   /* emerald-500 */
+  --secondary: 52 211 153;
+  /* emerald-400 */
+  --secondary-hover: 34 197 94;
+  /* emerald-500 */
 
-  --accent: 251 146 60;           /* orange-400 */
-  --accent-hover: 249 115 22;     /* orange-500 */
+  --accent: 251 146 60;
+  /* orange-400 */
+  --accent-hover: 249 115 22;
+  /* orange-500 */
 
   /* ===== Layout ===== */
-  --body-color: 2 6 23;           /* slate-950 */
-  --navbar: 37, 137, 246;              /* slate-900 */
+  --body-color: 2 6 23;
+  /* slate-950 */
+  --navbar: 37, 137, 246;
+  /* slate-900 */
   --navbar-hover: 29, 108, 195;
 
   --text-primary: 226 232 240;
+  --text-muted: 226 232 240 / 0.6;
+  --text-dim: 226 232 240 / 0.35;
+  
+  --border-subtle: 226 232 240 / 0.1;
 
   /* ===== Card / Depth System ===== */
-  --card-depth-0: 15 23 42;       /* slate-900 */
-  --card-depth-1: 30 41 59;       /* slate-800 */
-  --card-depth-2: 51 65 85;       /* slate-700 */
-  --card-depth-3: 71 85 105;      /* slate-600 */
+  --card-depth-0: 15 23 42;
+  /* slate-900 */
+  --card-depth-1: 30 41 59;
+  /* slate-800 */
+  --card-depth-2: 51 65 85;
+  /* slate-700 */
+  --card-depth-3: 71 85 105;
+  /* slate-600 */
 }
 
 body {
@@ -193,15 +223,53 @@ body {
 
 /* Sophisticated Input styling */
 .glass-input {
-  @apply w-full bg-white/10 dark:bg-black/20 border border-slate-200 dark:border-slate-700 
-         px-4 py-3 rounded-2xl outline-none transition-all duration-300 focus:ring-2 focus:ring-[rgb(var(--primary))];
+  @apply w-full bg-white/10 dark:bg-black/20 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-2xl outline-none transition-all duration-300 focus:ring-2 focus:ring-[rgb(var(--primary))];
   color: rgb(var(--text-main));
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for the Modal */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(var(--card-depth-2));
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--primary));
+}
+
+/* Eliminate tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Sophisticated selection color */
+::selection {
+  background: rgb(var(--primary) / 0.2);
+  color: rgb(var(--primary));
+}

@@ -55,14 +55,14 @@ const CalorieCalculator = () => {
               Nutritional Intelligence
             </h2>
 
-            <h1 className="text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight text-slate-900">
+            <h1 className="text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight text-[rgb(var(--text-primary))]">
               Precision <br />
               <span className="bg-gradient-to-r from-[rgb(var(--primary))] to-indigo-600 bg-clip-text text-transparent">
                 Metabolic Analytics.
               </span>
             </h1>
 
-            <p className="text-slate-500 text-lg max-w-md leading-relaxed font-medium opacity-80">
+            <p className="text-[rgb(var(--text-primary))] text-lg max-w-md leading-relaxed font-medium opacity-80">
               Master your biology with our high-fidelity caloric engine.
               Quantify every gram, optimize every meal, and achieve peak performance.
             </p>
@@ -90,21 +90,21 @@ const CalorieCalculator = () => {
             />
 
             {/* Carbs Card */}
-            <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--white))] shadow-sm border border-slate-100 space-y-2 hover:border-[rgb(var(--primary)/0.3)] transition-colors">
-              <div className="text-3xl font-black text-slate-900">
+            <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--card-depth-1))] shadow-sm border border-slate-100 space-y-2 hover:border-[rgb(var(--primary)/0.3)] transition-colors">
+              <div className="text-3xl font-black text-[rgb(var(--text-primary))]">
                 {totals.carbs.toFixed(0)}g
               </div>
-              <div className="text-[10px] uppercase font-black tracking-widest text-slate-400">
+              <div className="text-[10px] uppercase font-black tracking-widest text-[rgb(var(--text-muted))]">
                 Carbohydrates
               </div>
             </div>
 
             {/* Fat Card */}
-            <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--white))] shadow-sm border border-slate-100 space-y-2 hover:border-[rgb(var(--primary)/0.3)] transition-colors">
-              <div className="text-3xl font-black text-slate-900">
+            <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--card-depth-1))] shadow-sm border border-slate-100 space-y-2 hover:border-[rgb(var(--primary)/0.3)] transition-colors">
+              <div className="text-3xl font-black text-[rgb(var(--text-primary))]">
                 {totals.fat.toFixed(0)}g
               </div>
-              <div className="text-[10px] uppercase font-black tracking-widest text-slate-400">
+              <div className="text-[10px] uppercase font-black tracking-widest text-[rgb(var(--text-muted))]">
                 Total Lipids
               </div>
             </div>
@@ -115,11 +115,11 @@ const CalorieCalculator = () => {
 
       {/* --- CONTENT SECTION --- */}
       <div className="space-y-8">
-        <div className="flex justify-between items-center border-b border-slate-100 pb-6">
-          <h3 className="text-xl font-bold tracking-tight text-slate-800">Fuel Log</h3>
+        <div className="flex justify-between items-center border-b border-[rgb(var(--text-muted))] pb-6">
+          <h3 className="text-xl font-bold tracking-tight text-[rgb(var(--text-primary))]">Fuel Log</h3>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-8 py-3 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-[rgb(var(--primary))] transition-all active:scale-95 shadow-lg shadow-slate-200"
+            className="px-8 py-3 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-[rgb(var(--primary))] transition-all active:scale-95 shadow-lg "
           >
             + Add Source
           </button>
@@ -152,7 +152,7 @@ const CalorieCalculator = () => {
 };
 
 const HeroStat = ({ label, value, unit, color }) => (
-  <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--white))] shadow-sm border border-slate-200 hover:shadow-md transition-all">
+  <div className="p-8 rounded-[2.5rem] bg-[rgb(var(--card-depth-1))] shadow-sm border border-slate-200 hover:shadow-md transition-all">
     <div className="text-3xl mb-2 font-black tracking-tighter" style={{ color: `rgb(${color})` }}>
       {Math.round(value)}
       <span className="text-xs ml-1 opacity-50 font-bold uppercase">{unit}</span>
