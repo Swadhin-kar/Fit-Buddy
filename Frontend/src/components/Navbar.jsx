@@ -49,23 +49,23 @@ const Navbar = () => {
           <ul
             tabIndex="-1"
             className={`menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow text-white bg-[rgb(var(--navbar))]`}>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/exercises'>Exercises</a></li>
+            <li><button onClick={() => navigate('/')} >Home</button></li>
+            <li><button onClick={() => navigate('/exercises')} >Exercises</button></li>
             <li>
               <details>
                 <summary>Tools</summary>
                 <ul className="p-2 bg-[rgb(var(--navbar))] w-40 z-1 ">
-                  <li><a href='/calorie-calculator'>Calorie calculator</a></li>
-                  <li><a href='/bmi-calculator'>BMI calculator</a></li>
-                  <li><a href='/exercise-selector'>Exercise Selector</a></li>
-                  <li><a href='/daily-tracker'>Daily Tracker</a></li>
+                  <li><button onClick={() => navigate('/calorie-calculator')}>Calorie calculator</button></li>
+                  <li><button onClick={() => navigate('/bmi-calculator')}>BMI calculator</button></li>
+                  <li><button onClick={() => navigate('/exercise-selector')}>Exercise Selector</button></li>
+                  <li><button onClick={() => navigate('/daily-tracker')}>Daily Tracker</button></li>
                 </ul>
               </details>
             </li>
             <li><a>Contact Us</a></li>
           </ul>
         </div>
-        <a className={`btn btn-ghost text-xl hover:bg-[rgb(var(--navbar-hover))] hover:border-none`} href='/'>FitBuddy</a>
+        <button className={`btn btn-ghost text-xl hover:bg-[rgb(var(--navbar-hover))] hover:border-none`} onClick={() => navigate('/')}>FitBuddy</button>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className={`menu menu-horizontal px-1 `}>
@@ -77,10 +77,10 @@ const Navbar = () => {
             <details>
               <summary>Tools</summary>
               <ul className="p-2 bg-[rgb(var(--navbar))] w-40 z-1 ">
-                <li><a href='/calorie-calculator'>Calorie calculator</a></li>
-                <li><a href='/bmi-calculator'>BMI calculator</a></li>
-                <li><a href='/exercise-selector'>Exercise Selector</a></li>
-                <li><a href='/daily-tracker'>Daily Tracker</a></li>
+                <li><button onClick={() => navigate('/calorie-calculator')}>Calorie calculator</button></li>
+                <li><button onClick={() => navigate('/bmi-calculator')}>BMI calculator</button></li>
+                <li><button onClick={() => navigate('/exercise-selector')}>Exercise Selector</button></li>
+                <li><button onClick={() => navigate('/daily-tracker')}>Daily Tracker</button></li>
               </ul>
             </details>
           </li>
