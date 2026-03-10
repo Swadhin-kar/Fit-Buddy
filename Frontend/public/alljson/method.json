@@ -1,45 +1,62 @@
 [
     {
-        "id":1,
-        "title": "Weight training",
-        "description": "A method focused on building muscle strength and size through resistance exercises using weights.",
-        "image": "weight_training.jpg",
+        "id": 1,
+        "type": "method",
+        "title": "Weight Training",
+        "description": "Master the science of resistance to sculpt your physique and build raw power.",
+        "content": "Weight training is the cornerstone of hypertrophy. By utilizing external resistance—dumbbells, barbells, or machines—you create micro-tears in muscle fibers that, when paired with proper nutrition, lead to increased size and metabolic rate. It is not just about aesthetics; it increases bone density and improves insulin sensitivity. Focus on compound movements like the overhead press and rows to maximize hormonal response.",
+        "benefits": ["Hypertrophy", "Bone Density", "Metabolic Boost"],
+        "image": "/weight_training.jpg",
         "link": "/methods/weight-training"
     },
     {
-        "id":2,
+        "id": 2,
+        "type": "method",
         "title": "Calisthenics",
-        "description": "A bodyweight training method that emphasizes functional movements to improve strength, flexibility, and endurance without the need for equipment.",
-        "image": "calisthenics.jpg",
+        "description": "Master your own bodyweight to achieve peak functional strength and agility.",
+        "content": "Calisthenics turns the world into your gym. By using your body weight as the primary resistance, you develop a level of relative strength that traditional weightlifting often misses. From basic push-ups to advanced movements like the muscle-up or human flag, this method emphasizes core stability, balance, and lean muscle development. It’s the ultimate expression of body control and functional freedom.",
+        "benefits": ["Body Control", "Core Power", "Joint Longevity"],
+        "image": "/calisthenics.jpg",
         "link": "/methods/calisthenics"
     },
     {
-        "id":3,
-        "title": "Power Lifting",
-        "description": "A strength training method that focuses on three main lifts: squat, bench press, and deadlift, aiming to maximize overall strength.",
-        "image": "power_lifting.jpg",
+        "id": 3,
+        "type": "method",
+        "title": "Powerlifting",
+        "description": "The pursuit of the 'Big Three': Squat, Bench Press, and Deadlift.",
+        "content": "Powerlifting is a specialized strength sport centered on moving the maximum weight possible for a single repetition. It requires technical precision and a focus on nervous system adaptation. Unlike bodybuilding, the goal is purely neurological and mechanical efficiency. Training usually revolves around low-volume, high-intensity sessions designed to peak your strength for the three fundamental lifts.",
+        "benefits": ["Maximal Strength", "CNS Adaptation", "Posterior Chain Power"],
+        "image": "/power_lifting.jpg",
         "link": "/methods/power-lifting"
     },
     {
-        "id":4,
-        "title":"functional training",
-        "description":"A training method that focuses on exercises mimicking everyday movements to improve overall body function and coordination.",
-        "image":"functional_training.jpg",
-        "link":"/methods/functional-training"
+        "id": 4,
+        "type": "method",
+        "title": "Functional Training",
+        "description": "Exercises designed for the movements of real life and high-performance sports.",
+        "content": "Functional training bridges the gap between the gym and reality. It focuses on multi-planar movements—rotation, lateral shifts, and vertical pushes—that mimic how humans move naturally. By emphasizing coordination and stability over isolated muscle growth, functional training ensures that the strength you build in the gym translates to better performance in sports and daily activities.",
+        "benefits": ["Injury Prevention", "Coordination", "Agility"],
+        "image": "/functional_training.jpg",
+        "link": "/methods/functional-training"
     },
     {
-        "id":5,
+        "id": 5,
+        "type": "method",
         "title": "Yoga",
-        "description": "A holistic practice combining physical postures, breathing exercises, and meditation to enhance flexibility, balance, and mental well-being.",
-        "image": "yoga.png",
+        "description": "A rhythmic union of breath, movement, and mental clarity.",
+        "content": "Yoga is much more than stretching; it is a comprehensive system for physical and mental health. Through various 'Asanas' (postures), it targets the deep connective tissues and improves spinal mobility. The integration of Pranayama (breathwork) helps regulate the parasympathetic nervous system, reducing cortisol levels and enhancing recovery from more intense forms of training.",
+        "benefits": ["Flexibility", "Stress Reduction", "Mind-Body Connection"],
+        "image": "/yoga.png",
         "link": "/methods/yoga"
     },
     {
-        "id":6,
-        "title": "Cardio",
-        "description": "A cardiovascular training method aimed at improving heart health and endurance through activities like running, cycling, and swimming.",
-        "image": "cardio.jpg",
+        "id": 6,
+        "type": "method",
+        "title": "Cardiovascular Training",
+        "description": "Optimize your heart health and build an engine that never quits.",
+        "content": "Cardio is the foundation of longevity. Whether it’s steady-state running or high-intensity interval training (HIIT), cardiovascular work strengthens the heart muscle and increases capillary density. This allows for better oxygen delivery to muscles during rest and exercise alike. Consistent cardio improves VO2 max, lowers resting heart rate, and is a vital tool for managing body composition.",
+        "benefits": ["Heart Health", "Endurance", "Active Recovery"],
+        "image": "/cardio.jpg",
         "link": "/methods/cardio"
     }
-
 ]

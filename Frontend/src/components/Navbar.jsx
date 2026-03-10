@@ -84,10 +84,7 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
-
-
-
-          <li><a>Contact Us</a></li>
+          <li><button onClick={() => navigate('/contact')}>Contact Us</button></li>
         </ul>
       </div>
 
@@ -101,12 +98,12 @@ const Navbar = () => {
             <button
               onClick={logoutme}
               disabled={isLoggingOut}
-              className="btn bg-red-500 text-white ml-4 hover:bg-red-600 disabled:opacity-50"
+              className="btn bg-red-500 text-white ml-2 hover:bg-red-600 disabled:opacity-50"
             >
               {isLoggingOut ? 'Logging out...' : 'Logout'}
             </button>
 
-            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white ml-4">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white ml-4 flex-shrink-0">
               {user.profilePicture ? (
                 <img
                   src={user.profilePicture}

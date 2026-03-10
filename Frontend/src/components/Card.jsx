@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const cardVariants = {
     hidden: {
@@ -17,6 +18,7 @@ const cardVariants = {
 };
 
 const Card = ({ data, index }) => {
+    const navigate = useNavigate()
     return (
         <motion.div
             variants={cardVariants}
@@ -24,6 +26,7 @@ const Card = ({ data, index }) => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             className="card bg-[rgb(var(--card-depth-1))] w-full max-w-xs mx-auto transition-all duration-300 hover:-translate-y-1 shadow-[0_2px_10px_rgba(72,72,72,0.95)] hover:shadow-[0_4px_20px_rgba(72,72,72,1)]"
+            onClick={() => navigate(`/${data.type}/${data.id}`)}
         >
 
 
