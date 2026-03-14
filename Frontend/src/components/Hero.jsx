@@ -1,56 +1,40 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 
 const Hero = () => {
   return (
-    <section
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: "url(/hero_bg.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90"></div>
-
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/30 blur-[160px] rounded-full"></div>
-
-      <div className="relative z-10 px-6">
-        <div className="max-w-xl mx-auto backdrop-blur-xl bg-white/10 border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl text-center">
-          
-          <span className="inline-block mb-4 px-4 py-1 text-sm tracking-wide rounded-full bg-primary/20 text-white font-semibold">
-            Train • Move • Transform
-          </span>
-
-          <h1 className="mb-5 text-4xl md:text-5xl font-extrabold text-white leading-tight">
-            A complete fitness  
-            <span className="text-blue-300"> for every body</span>
-          </h1>
-
-          <p className="mb-8 text-gray-300 text-base md:text-lg">
-            From calisthenics and strength training to yoga and mobility work —
-            we guide you through it all.  
-            <span className="text-white font-medium">
-              Train smarter. Move better. Live stronger.
-            </span>
-          </p>
-
-          <div className="flex gap-4 justify-center">
-            <button className="btn btn-primary px-8 hover:scale-105 transition-transform">
-              Get Started
-            </button>
-
-            <button className="btn btn-outline text-white border-white/30 hover:bg-white/10">
-              Learn More
-            </button>
-          </div>
+    <section className="relative pt-40 pb-20 px-6 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[rgb(var(--primary)/0.15)] blur-[100px] rounded-full animate-pulse" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-[rgb(var(--secondary)/0.1)] blur-[120px] rounded-full" />
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-sm animate-bounce">
-        ↓ Scroll
-      </div>
-    </section>
+        <div className="max-w-7xl mx-auto relative z-10 text-center">
+          <motion.span 
+            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+            className="inline-block px-5 py-2 rounded-full bg-[rgb(var(--primary)/0.1)] text-[rgb(var(--primary))] font-bold text-sm mb-6 border border-[rgb(var(--primary)/0.2)]"
+          >
+            DISCOVER FITBUDDY
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
+            className="text-5xl md:text-8xl text-[rgb(var(--text-primary))] font-black tracking-tighter mb-8"
+          >
+            Empowering Your <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgb(var(--primary))] via-[rgb(var(--secondary))] to-[rgb(var(--accent))]">
+              Fitness Evolution
+            </span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
+            className="max-w-3xl mx-auto text-lg md:text-xl text-[rgb(var(--text-muted))] leading-relaxed"
+          >
+            We merge cutting-edge technology with human health to create a seamless fitness ecosystem. 
+            From AI guidance to precise tracking, your goals are now within reach.
+          </motion.p>
+        </div>
+      </section>
   );
 };
 

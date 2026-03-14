@@ -11,6 +11,7 @@ const FitBee = lazy(() => import('./pages/FitBee'))
 const DashBoard = lazy(() => import('./pages/DashBoard'))
 const CalorieCalculator = lazy(() => import('./pages/CalorieCalculator'))
 const Article = lazy(() => import('./pages/Article'))
+import ScrollToTop from './utils/ScrollToTop';
 
 import LoadingFallback from './components/LoadingFallback';
 import FitBeeIcon from './components/FitBeeIcon';
@@ -18,6 +19,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Protect from './Protect';
 import Alpha from './components/Alpha';
+import PageNotFound from './pages/PageNotFound';
 function App() {
 
   return (
@@ -26,17 +28,18 @@ function App() {
       <Navbar />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
+          
+          <Route path="/scroll-to-top" element={<ScrollToTop />} />
           <Route path="/" element={<Home />} />
 
           <Route path='/exercises' element={<Blog />} />
-          <Route path="/:type/:id" element={<Article />} />
+          <Route path="/article/:type/:id" element={<Article />} />
 
           <Route path="/user/login" element={<Login />} />
           <Route path="/user/signup" element={<Signup />} />
 
           <Route path='/bmi-calculator' element={<Bmi />} />
           <Route path='/calorie-calculator' element={<CalorieCalculator />} />
-
           <Route path='/test' element={<Alpha />} />
 
 
@@ -44,6 +47,7 @@ function App() {
             <Route path='/dashboard' element={<DashBoard />} />
             <Route path='/FitBee' element={<FitBee />} />
           </Route>
+
         </Routes>
       </Suspense>
       <Footer />

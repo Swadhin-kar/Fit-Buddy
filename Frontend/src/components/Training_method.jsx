@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Card from './Card'
+import StaggerContainer from '../animation/StaggerContainer'
+import PremiumCard from './PremiumCard'
 
 const Training_method = () => {
   const [methods, setMethods] = useState([])
@@ -23,19 +25,22 @@ const Training_method = () => {
   };
 
   return (
-    <div>
-      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 ">
-        <div className="text-center my-6">
-          <h1 className="text-2xl md:text-3xl font-semibold text-[rgb(var(--text-primary))]">Training Methods</h1>
-          <p className="text-sm md:text-base max-w-2xl mx-auto mt-2 text-[rgb(var(--text-primary))]">Explore our collection of training methods to help you find your favorite style and achieve your desired results. Whether you're aiming to build muscle, lose weight, or improve endurance, we've got you covered.</p>
+    <section className="py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black mb-4">Proven Methodologies</h2>
+          <p className="text-[rgb(var(--text-muted))] max-w-2xl mx-auto">Scientifically backed training styles curated to deliver maximum efficiency for your time.</p>
         </div>
-        <div className="grid gap-10 items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {methods.map((method, index) => (
-            <Card key={index} data={method} index={index} />
+        <motion.div
+          variants={StaggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
+          {methods.map((method, idx) => (
+            <PremiumCard key={idx} data={method} index={idx} />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 

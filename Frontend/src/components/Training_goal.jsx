@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Card from './Card';
+import StaggerContainer from '../animation/StaggerContainer';
+import PremiumCard from './PremiumCard';
+
 
 const Training_goal = () => {
   const [goals, setGoals] = useState([]);
@@ -25,23 +27,24 @@ const Training_goal = () => {
   };
 
   return (
-    <div className='mx-auto md:px-10 px-4'>
-      <div className="text-center my-6">
-        <h1 className="text-2xl md:text-3xl font-semibold text-[rgb(var(--text-primary))]">Fitness Goals</h1>
-        <p className="text-sm md:text-base max-w-2xl mx-auto mt-2 text-[rgb(var(--text-primary))]">Explore our collection of fitness goals to help you find your goal and achieve your desired results. Whether you're aiming to build muscle, lose weight, or improve endurance, we've got you covered.</p>
+    <section className="py-24 px-6 bg-[rgb(var(--card-depth-1)/0.2)]">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Targeted Fitness Goals</h2>
+            <p className="text-[rgb(var(--text-muted))] text-lg">Explore specialized pathways designed to transform your physique and mindset.</p>
+          </div>
+        </div>
+        <motion.div
+          variants={StaggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {goals.map((goal, idx) => (
+            <PremiumCard key={goal.id || idx} data={goal} index={idx} />
+          ))}
+        </motion.div>
       </div>
-      <motion.div 
-        className="grid gap-5 items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {goals.map((goal, index) => (
-          <Card key={goal.id} data={goal} index={index} />
-        ))}
-      </motion.div>
-    </div>
+    </section>
   )
 }
 
