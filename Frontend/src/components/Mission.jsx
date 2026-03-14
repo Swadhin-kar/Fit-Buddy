@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import StaggerContainer from '../animation/StaggerContainer';
-import FadeInUp from '../animation/fadeInUp';
+import FadeInUp from '../animation/FadeInUp';
 
 const Mission = () => {
     return (

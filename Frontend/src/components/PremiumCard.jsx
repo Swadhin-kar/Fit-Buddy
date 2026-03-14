@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import FadeInUp from '../animation/fadeInUp';
+import FadeInUp from '../animation/FadeInUp';
 
 const PremiumCard = ({ data, index }) => {
   const navigate = useNavigate();

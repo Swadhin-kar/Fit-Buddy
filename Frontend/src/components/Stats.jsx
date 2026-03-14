@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion,useInView, animate } from 'framer-motion'
-import FadeInUp from '../animation/fadeInUp'
+import FadeInUp from '../animation/FadeInUp'
 import StatCounter from './StatCounter';
 
 const Stats = () => {
