@@ -48,6 +48,8 @@ function App() {
             <Route path='/FitBee' element={<FitBee />} />
           </Route>
 
+          <Route path="*" element={<PageNotFound />} />
+
         </Routes>
       </Suspense>
       <Footer />
