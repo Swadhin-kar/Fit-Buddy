@@ -112,7 +112,7 @@ const Navbar = () => {
                   onClick={() => navigate('/dashboard')}
                 />
               ) : (
-                <User size={20} className="cursor-pointer" />
+                <User size={20} className="cursor-pointer" onClick={() => navigate('/dashboard')} />
               )}
             </div>
           </>
