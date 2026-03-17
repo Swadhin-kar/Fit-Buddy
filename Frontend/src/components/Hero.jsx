@@ -74,7 +74,7 @@ const Hero = () => {
             {/* Main Visual Container */}
             <div className="relative z-20 bg-[rgb(var(--card-depth-0))] border border-[rgb(var(--card-depth-1))] rounded-[2.5rem] md:rounded-[3.5rem] p-3 shadow-2xl backdrop-blur-xl">
               <img 
-                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop" 
+                src="/Hero_bg_version_2.0.png" 
                 alt="Fitness App" 
                 className="rounded-[2rem] md:rounded-[3rem] w-full aspect-square object-cover"
               />
