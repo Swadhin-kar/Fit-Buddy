@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Bmi from './components/Bmi'
+import Bmi from './pages/Bmi'
 import { Toaster } from 'react-hot-toast';
 
 const Home = lazy(() => import('./pages/Home'))
