@@ -13,11 +13,11 @@ const Stats = () => {
                     { label: "Active Users", val: "50,000", s: "+" },
                     { label: "Workouts Logged", val: "1,200", s: "" },
                     { label: "Success Rate", val: "98", s: "%" },
-                    { label: "Global Reach", val: "120", s: " Countries" }
+                    { label: "Countries Reach", val: "120", s: "" }
                 ].map((s, i) => (
                     <motion.div
                         key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={FadeInUp}
-                        className="p-8 rounded-[2.5rem] bg-[rgb(var(--card-depth-0))] border border-[rgb(var(--card-depth-1))] text-center shadow-lg"
+                        className={`p-8 ${i === 0 ? 'pl-2' : ''} rounded-[2.5rem] bg-[rgb(var(--card-depth-0))] border border-[rgb(var(--card-depth-1))] text-center shadow-lg`}
                     >
                         <h3 className="text-4xl font-black text-[rgb(var(--primary))] mb-2">
                             <StatCounter value={s.val} suffix={s.s} />

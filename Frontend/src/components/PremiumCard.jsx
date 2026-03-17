@@ -7,6 +7,9 @@ const PremiumCard = ({ data, index }) => {
   return (
     <motion.div
       variants={FadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       whileHover={{ y: -10, transition: { duration: 0.3 } }}
       onClick={() => navigate(`/article/${data.type}/${data.id}`)}
       className="group cursor-pointer relative overflow-hidden rounded-[2rem] bg-[rgb(var(--card-depth-0))] border border-[rgb(var(--card-depth-1))] shadow-xl hover:shadow-2xl transition-all duration-500"

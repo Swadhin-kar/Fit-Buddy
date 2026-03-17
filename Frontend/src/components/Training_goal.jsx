@@ -27,7 +27,7 @@ const Training_goal = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-[rgb(var(--card-depth-1)/0.2)]">
+    <section className="py-24 px-6 bg-[rgb(var(--card-depth-1)/0.2)] ">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
@@ -36,10 +36,12 @@ const Training_goal = () => {
           </div>
         </div>
         <motion.div
-          variants={StaggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}
+          variants={StaggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {goals.map((goal, idx) => (
+            // console.log(goal),
+
             <PremiumCard key={goal.id || idx} data={goal} index={idx} />
           ))}
         </motion.div>

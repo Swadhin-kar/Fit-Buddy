@@ -35,9 +35,6 @@ const Home = () => {
 
       {/* 7. CALL TO ACTION (CTA) */}
       <CallToAction />
-
-      {/* FOOTER */}
-      
     </div>
   );
 }
