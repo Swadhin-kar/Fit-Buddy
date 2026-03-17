@@ -33,7 +33,7 @@ export const fitnessAI = async (req, res) => {
         headers: {
           Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
-          "HTTP-Referer": "https://fit-buddy.vercel.app",
+          "HTTP-Referer": "https://fitbuddy-blond.vercel.app",
           "X-Title": "FitBee AI"
         }
       }
