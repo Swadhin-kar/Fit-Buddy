@@ -62,7 +62,7 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
-            <li><a>Contact Us</a></li>
+            <li><button onClick={() => navigate('/contact-us')}>Contact Us</button></li>
           </ul>
         </div>
         <button className={`btn btn-ghost text-xl hover:bg-[rgb(var(--navbar-hover))] hover:border-none`} onClick={() => navigate('/')}>FitBuddy</button>
@@ -84,7 +84,7 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
-          <li><button onClick={() => navigate('/contact')}>Contact Us</button></li>
+          <li><button onClick={() => navigate('/contact-us')}>Contact Us</button></li>
         </ul>
       </div>
 

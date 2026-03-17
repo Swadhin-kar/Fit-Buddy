@@ -11,6 +11,8 @@ const FitBee = lazy(() => import('./pages/FitBee'))
 const DashBoard = lazy(() => import('./pages/DashBoard'))
 const CalorieCalculator = lazy(() => import('./pages/CalorieCalculator'))
 const Article = lazy(() => import('./pages/Article'))
+const Contact = lazy(() => import('./pages/Contact'))
+
 import ScrollToTop from './utils/ScrollToTop';
 
 import LoadingFallback from './components/LoadingFallback';
@@ -20,6 +22,7 @@ import Footer from './components/Footer';
 import Protect from './Protect';
 import Alpha from './components/Alpha';
 import PageNotFound from './pages/PageNotFound';
+
 function App() {
 
   return (
@@ -40,6 +43,8 @@ function App() {
 
           <Route path='/bmi-calculator' element={<Bmi />} />
           <Route path='/calorie-calculator' element={<CalorieCalculator />} />
+          <Route path='/contact-us' element={<Contact />} />
+
           <Route path='/test' element={<Alpha />} />
 
 
