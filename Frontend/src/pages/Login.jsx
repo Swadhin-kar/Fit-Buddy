@@ -59,7 +59,7 @@ const Login = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
             <div>
-              <label className="text-sm font-medium text-[rgb(var(--slate-600))]">
+              <label className="text-sm font-medium text-[rgb(var(--text-muted))]">
                 Email Address
               </label>
               <input
@@ -81,7 +81,7 @@ const Login = () => {
 
             {/* Password */}
             <div>
-              <label className="text-sm font-medium text-[rgb(var(--slate-600))]">
+              <label className="text-sm font-medium text-[rgb(var(--text-muted))]">
                 Password
               </label>
               <input

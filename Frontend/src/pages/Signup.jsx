@@ -59,7 +59,7 @@ const Signup = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Full Name */}
             <div>
-              <label className="text-sm font-medium text-[rgb(var(--text-primary))]">
+              <label className="text-sm font-medium text-[rgb(var(--text-muted))]">
                 Full Name
               </label>
               <input
@@ -81,7 +81,7 @@ const Signup = () => {
 
             {/* Email */}
             <div>
-              <label className="text-sm font-medium text-[rgb(var(--text-primary))]">
+              <label className="text-sm font-medium text-[rgb(var(--text-muted))]">
                 Email Address
               </label>
               <input
@@ -103,7 +103,7 @@ const Signup = () => {
 
             {/* Password */}
             <div>
-              <label className="text-sm font-medium text-[rgb(var(--text-primary))]">
+              <label className="text-sm font-medium text-[rgb(var(--text-muted))]">
                 Password
               </label>
               <input
@@ -125,7 +125,7 @@ const Signup = () => {
 
             {/* Confirm Password */}
             <div>
-              <label className="text-sm font-medium text-[rgb(var(--text-primary))]">
+              <label className="text-sm font-medium text-[rgb(var(--text-muted))]">
                 Confirm Password
               </label>
               <input
@@ -160,7 +160,7 @@ const Signup = () => {
           </form>
 
           {/* Footer */}
-          <p className="text-center text-xs text-[rgb(var(--text-primary))]">
+          <p className="text-center text-xs text-[rgb(var(--text-muted))]">
             Already have an account?{" "}
             <a
               href="/user/login"
