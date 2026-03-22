@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import userRouter from './routes/user.route.js'
 import cookieParser from "cookie-parser";
 import aiRouter from './routes/ai.route.js'
+import foodRouter from './routes/food.route.js'
 
 const app = express()
 dotenv.config()
@@ -25,11 +26,12 @@ mongoose.connect(URI)
     .catch((err) => console.log("Error connnecting to MongoDB:", err))
 
 app.get('/xyztestabc', (req, res) => {
-    res.send('API is working properly')
+    res.status(200).send('API is working properly')
 })
 
 app.use('/user', userRouter)
 app.use('/ai', aiRouter)
+app.use('/food', foodRouter)
 
 
 app.listen(PORT, () => {

@@ -10,7 +10,7 @@ export default function Blog() {
   const [openedExercise, setOpenedExercise] = useState(null);
 
   useEffect(() => {
-    fetch("/alljson/exercises.json")
+    fetch("./alljson/exercises.json")
       .then((res) => res.json())
       .then((data) => setExercises(Array.isArray(data) ? data : []))
       .catch((err) => console.error("Error fetching exercises:", err));
