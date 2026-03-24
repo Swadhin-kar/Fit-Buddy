@@ -61,7 +61,7 @@ export const updateLog = async (req, res) => {
 export const getLogs = async (req, res) => {
   try {
     const userId = req.userId;
-    const days = Number.parseInt(req.query.days, 10) || 7;
+    const days = Number.parseInt(req.query.days, 10) || 90;
 
     const fromDate = new Date();
     fromDate.setDate(fromDate.getDate() - days);

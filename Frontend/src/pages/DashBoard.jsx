@@ -15,53 +15,90 @@ import {
 } from "lucide-react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../components/AuthContext";
+import Heatmap from "../components/Heatmap";
 import LogForm from "../components/LogForm";
-import { getTodayLog, updateTodayLog } from "../utils/logApi";
+import StreakCard from "../components/StreakCard";
+import { getLogHistory, getTodayLog, updateTodayLog } from "../api/logApi";
 
 const createEmptyLogForm = () => ({
   caloriesConsumed: "",
   exerciseTime: "",
-  didExercise: false,
   weight: "",
 });
 
 const mapLogToForm = (log) => ({
   caloriesConsumed: log?.caloriesConsumed?.toString() ?? "",
   exerciseTime: log?.exerciseTime?.toString() ?? "",
-  didExercise: Boolean(log?.didExercise),
   weight: log?.weight === null || log?.weight === undefined ? "" : log.weight.toString(),
 });
 
 const normalizePayload = (formData) => ({
   caloriesConsumed: formData.caloriesConsumed === "" ? 0 : Number(formData.caloriesConsumed),
   exerciseTime: formData.exerciseTime === "" ? 0 : Number(formData.exerciseTime),
-  didExercise: Boolean(formData.didExercise),
   weight: formData.weight === "" ? "" : Number(formData.weight),
 });
 
-const generateHeatmap = (weeks = 20) => {
-  const days = weeks * 7;
-  return Array.from({ length: days }, () => Math.floor(Math.random() * 5));
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, "0");
+  const day = `${date.getDate()}`.padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
 };
 
-const getHeatmapColor = (level) => {
-  const levels = [
-    "bg-[rgb(var(--card-depth-2))]",
-    "bg-[rgb(var(--secondary))]/30",
-    "bg-[rgb(var(--secondary))]/50",
-    "bg-[rgb(var(--secondary))]/80",
-    "bg-[rgb(var(--secondary))]",
-  ];
-  return levels[level];
+const buildHeatmapDays = (logs, totalDays = 90) => {
+  const logMap = new Map(logs.map((log) => [log.date, log]));
+  const today = new Date();
+
+  return Array.from({ length: totalDays }, (_, index) => {
+    const date = new Date(today);
+    date.setHours(0, 0, 0, 0);
+    date.setDate(today.getDate() - (totalDays - 1 - index));
+
+    const formattedDate = formatDate(date);
+
+    return {
+      date: formattedDate,
+      log: logMap.get(formattedDate) ?? null,
+    };
+  });
+};
+
+const calculateWorkoutStreak = (logs) => {
+  const logMap = new Map(logs.map((log) => [log.date, log]));
+  const today = new Date();
+  let streak = 0;
+
+  for (let offset = 0; offset < logs.length + 1; offset += 1) {
+    const currentDate = new Date(today);
+    currentDate.setHours(0, 0, 0, 0);
+    currentDate.setDate(today.getDate() - offset);
+
+    const formattedDate = formatDate(currentDate);
+    const log = logMap.get(formattedDate);
+
+    if (!log || Number(log.exerciseTime) <= 0) {
+      break;
+    }
+
+    streak += 1;
+  }
+
+  return streak;
 };
 
 export default function PersonalDashboard() {
   const { user } = useContext(AuthContext);
-  const [heatmap] = useState(generateHeatmap());
   const [isLogModalOpen, setIsLogModalOpen] = useState(false);
+  const [isDashboardLoading, setIsDashboardLoading] = useState(true);
   const [isFetchingLog, setIsFetchingLog] = useState(false);
+  const [isHistoryLoading, setIsHistoryLoading] = useState(true);
   const [isSubmittingLog, setIsSubmittingLog] = useState(false);
+  const [dashboardError, setDashboardError] = useState("");
   const [logError, setLogError] = useState("");
+  const [historyError, setHistoryError] = useState("");
+  const [logHistory, setLogHistory] = useState([]);
+  const [streakCount, setStreakCount] = useState(0);
   const [todayLog, setTodayLog] = useState(null);
   const [formData, setFormData] = useState(createEmptyLogForm());
 
@@ -77,6 +114,46 @@ export default function PersonalDashboard() {
       setFormData(mapLogToForm(todayLog));
     }
   }, [todayLog]);
+
+  useEffect(() => {
+    const loadDashboard = async () => {
+      setIsDashboardLoading(true);
+      setIsHistoryLoading(true);
+      setDashboardError("");
+      setHistoryError("");
+
+      try {
+        const [todayResult, historyResult] = await Promise.allSettled([getTodayLog(), getLogHistory(90)]);
+
+        if (todayResult.status === "fulfilled") {
+          setTodayLog(todayResult.value);
+        } else {
+          const message =
+            todayResult.reason?.response?.data?.error ||
+            "Failed to load today's log. You can still review your recent history.";
+          setDashboardError(message);
+        }
+
+        if (historyResult.status === "fulfilled") {
+          setLogHistory(Array.isArray(historyResult.value) ? historyResult.value : []);
+        } else {
+          const message =
+            historyResult.reason?.response?.data?.error ||
+            "Failed to load workout history. Your streak and heatmap may be unavailable.";
+          setHistoryError(message);
+        }
+      } finally {
+        setIsDashboardLoading(false);
+        setIsHistoryLoading(false);
+      }
+    };
+
+    loadDashboard();
+  }, []);
+
+  useEffect(() => {
+    setStreakCount(calculateWorkoutStreak(logHistory));
+  }, [logHistory]);
 
   useEffect(() => {
     if (!isLogModalOpen) {
@@ -99,6 +176,7 @@ export default function PersonalDashboard() {
     try {
       const log = await getTodayLog();
       setTodayLog(log);
+      setFormData(log ? mapLogToForm(log) : createEmptyLogForm());
     } catch (error) {
       const message =
         error?.response?.data?.error || "Failed to load today's log. Please try again.";
@@ -144,6 +222,11 @@ export default function PersonalDashboard() {
 
     try {
       const updatedLog = await updateTodayLog(payload);
+      setLogHistory((current) => {
+        const next = current.filter((log) => log.date !== updatedLog.date);
+        const merged = [...next, updatedLog].sort((left, right) => left.date.localeCompare(right.date));
+        return merged;
+      });
       setTodayLog(updatedLog);
       setIsLogModalOpen(false);
       toast.success("Today's log updated");
@@ -157,6 +240,8 @@ export default function PersonalDashboard() {
   };
 
   const hasLog = Boolean(todayLog);
+  const workedOutToday = hasLog ? Number(todayLog.exerciseTime) > 0 : false;
+  const heatmapDays = buildHeatmapDays(logHistory, 90);
 
   return (
     <>
@@ -165,7 +250,7 @@ export default function PersonalDashboard() {
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Fitness Command Center</h1>
             <p className="mt-2 text-sm text-[rgb(var(--text-muted))]">
-              Stay on top of today&apos;s nutrition, workout time, and recovery.
+              Stay on top of today&apos;s nutrition, workout time, and 90-day consistency.
             </p>
           </div>
 
@@ -182,33 +267,45 @@ export default function PersonalDashboard() {
           </div>
         </header>
 
+        {dashboardError ? (
+          <div className="mb-6 rounded-3xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+            {dashboardError}
+          </div>
+        ) : null}
+
         <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           <StatCard
             title="Calories Consumed"
-            value={hasLog ? todayLog.caloriesConsumed : "--"}
+            value={hasLog ? todayLog.caloriesConsumed : isDashboardLoading ? "..." : "--"}
             unit="kcal"
-            trend={hasLog ? "Updated today" : "No log yet"}
+            trend={hasLog ? "Updated today" : isDashboardLoading ? "Loading" : "No log yet"}
             color="var(--primary)"
           />
           <StatCard
             title="Exercise Time"
-            value={hasLog ? todayLog.exerciseTime : "--"}
+            value={hasLog ? todayLog.exerciseTime : isDashboardLoading ? "..." : "--"}
             unit="min"
-            trend={hasLog ? "Today" : "No log yet"}
+            trend={hasLog ? "Today" : isDashboardLoading ? "Loading" : "No log yet"}
             color="var(--secondary)"
           />
           <StatCard
             title="Workout Status"
-            value={hasLog ? (todayLog.didExercise ? "Yes" : "No") : "--"}
+            value={hasLog ? (workedOutToday ? "Yes" : "Rest") : isDashboardLoading ? "..." : "--"}
             unit=""
-            trend={hasLog ? "Completion" : "No log yet"}
+            trend={hasLog ? "Based on exercise time" : isDashboardLoading ? "Loading" : "No log yet"}
             color="var(--accent)"
           />
           <StatCard
             title="Current Weight"
-            value={hasLog && todayLog.weight !== null && todayLog.weight !== undefined ? todayLog.weight : "--"}
+            value={
+              hasLog && todayLog.weight !== null && todayLog.weight !== undefined
+                ? todayLog.weight
+                : isDashboardLoading
+                  ? "..."
+                  : "--"
+            }
             unit={hasLog && todayLog.weight !== null && todayLog.weight !== undefined ? "kg" : ""}
-            trend={hasLog ? "Latest entry" : "No log yet"}
+            trend={hasLog ? "Latest entry" : isDashboardLoading ? "Loading" : "No log yet"}
             color="var(--primary)"
           />
         </section>
@@ -235,7 +332,7 @@ export default function PersonalDashboard() {
                   <div className="rounded-2xl border border-white/10 bg-black/10 p-3 backdrop-blur-sm">
                     <p className="text-[10px] uppercase tracking-widest opacity-70">Workout</p>
                     <p className="font-bold">
-                      {hasLog ? (todayLog.didExercise ? "Completed" : "Pending") : "Not logged"}
+                      {hasLog ? (workedOutToday ? "Completed" : "Rest day") : "Not logged"}
                     </p>
                   </div>
                 </div>
@@ -278,6 +375,8 @@ export default function PersonalDashboard() {
               </div>
             </Card>
 
+            <StreakCard streakCount={streakCount} isLoading={isHistoryLoading} />
+
             <div className="grid grid-cols-2 gap-3">
               <ActionButton icon={<Calculator />} label="BMI Calc" sub="Check index" />
               <ActionButton icon={<Flame />} label="Nutrition" sub="Track meals" />
@@ -287,35 +386,7 @@ export default function PersonalDashboard() {
           </div>
 
           <div className="space-y-8 lg:col-span-8">
-            <Card>
-              <div className="mb-6 flex items-center justify-between">
-                <div>
-                  <h3 className="text-lg font-bold">Activity Consistency</h3>
-                  <p className="text-xs opacity-50">
-                    Visualizing your dedication over the last 20 weeks
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 text-[10px] opacity-60">
-                  <span>Less</span>
-                  <div className="flex gap-1">
-                    {[0, 1, 2, 3, 4].map((level) => (
-                      <div key={level} className={`h-2 w-2 rounded-sm ${getHeatmapColor(level)}`} />
-                    ))}
-                  </div>
-                  <span>More</span>
-                </div>
-              </div>
-              <div className="custom-scrollbar overflow-x-auto pb-2">
-                <div className="grid min-w-max grid-flow-col grid-rows-7 gap-1.5">
-                  {heatmap.map((level, index) => (
-                    <div
-                      key={index}
-                      className={`h-[14px] w-[14px] cursor-pointer rounded-[3px] shadow-sm transition-all duration-300 hover:scale-125 hover:ring-2 hover:ring-[rgb(var(--primary))] ${getHeatmapColor(level)}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </Card>
+            <Heatmap days={heatmapDays} isLoading={isHistoryLoading} error={historyError} />
 
             <div className="grid gap-6 md:grid-cols-2">
               <Card>
@@ -338,9 +409,9 @@ export default function PersonalDashboard() {
                     label="Recovery"
                     value={
                       hasLog
-                        ? todayLog.didExercise
+                        ? workedOutToday
                           ? "Great work. Recover well tonight."
-                          : "Recovery day or workout pending."
+                          : "Recovery day logged."
                         : "Update your daily log to see insights."
                     }
                     icon={<Moon size={16} />}

@@ -29,7 +29,7 @@ export default function LogForm({
               Log Today
             </h2>
             <p className="mt-1 text-sm text-[rgb(var(--text-muted))]">
-              Track your calories, workout time, and weight for today.
+              Track your calories, exercise time, and weight for today.
             </p>
           </div>
 
@@ -116,25 +116,6 @@ export default function LogForm({
               />
             </div>
 
-            <label className="flex cursor-pointer items-center justify-between rounded-2xl border border-[rgb(var(--card-depth-2))] bg-[rgb(var(--card-depth-1))] px-4 py-3">
-              <div>
-                <p className="text-sm font-medium text-[rgb(var(--text-primary))]">
-                  Did you exercise today?
-                </p>
-                <p className="text-xs text-[rgb(var(--text-muted))]">
-                  Toggle this on after completing your workout.
-                </p>
-              </div>
-
-              <input
-                name="didExercise"
-                type="checkbox"
-                checked={formData.didExercise}
-                onChange={onChange}
-                className="h-5 w-5 rounded border-[rgb(var(--card-depth-2))] text-[rgb(var(--primary))] focus:ring-[rgb(var(--primary))]"
-              />
-            </label>
-
             <div className="flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end">
               <button
                 type="button"
@@ -166,4 +147,3 @@ export default function LogForm({
     </div>
   );
 }
-
