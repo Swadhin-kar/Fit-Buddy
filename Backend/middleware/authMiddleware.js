@@ -1,9 +1,12 @@
 import jwt from 'jsonwebtoken'
 
 const protect = (req, res, next) => {
-  // console.log("Cookies received:", req.cookies);
+  const authHeader = req.headers.authorization || '';
+  const bearerToken = authHeader.startsWith('Bearer ')
+    ? authHeader.split(' ')[1]
+    : null;
+  const token = bearerToken || req.cookies.accessToken;
 
-  const token = req.cookies.accessToken;
   if (!token) {
     return res.status(401).json({ message: "No access token" });
   }
@@ -12,7 +15,9 @@ const protect = (req, res, next) => {
     if (err) {
       return res.status(401).json({ message: "Invalid token" });
     }
+
     req.userId = decoded.id;
+    req.user = { id: decoded.id };
     next();
   });
 };

@@ -83,9 +83,17 @@ export const loginUser = async (req, res) => {
         path: '/'
     };
 
+    const user = await User.findById(existingUser._id)
+        .select("-password -refreshToken")
+        .lean();
+
     res.cookie("accessToken", accessToken, cookieOptions)
         .cookie("refreshToken", refreshToken, cookieOptions)
-        .json({ message: "Login successful" })
+        .json({
+            message: "Login successful",
+            token: accessToken,
+            user
+        })
 }
 
 export const refresh = async (req, res) => {

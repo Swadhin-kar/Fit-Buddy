@@ -6,6 +6,7 @@ import userRouter from './routes/user.route.js'
 import cookieParser from "cookie-parser";
 import aiRouter from './routes/ai.route.js'
 import foodRouter from './routes/food.route.js'
+import logRouter from './routes/log.route.js'
 
 const app = express()
 dotenv.config()
@@ -32,7 +33,7 @@ app.get('/xyztestabc', (req, res) => {
 app.use('/user', userRouter)
 app.use('/ai', aiRouter)
 app.use('/food', foodRouter)
-
+app.use('/log', logRouter)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
