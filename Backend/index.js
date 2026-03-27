@@ -19,6 +19,16 @@ app.use(cookieParser());
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+app.use((req, res, next) => {
+    console.log(`Route hit: ${req.method} ${req.originalUrl}`)
+
+    if (req.originalUrl.startsWith('/log')) {
+        console.log(`Auth header: ${req.headers.authorization || 'missing'}`)
+    }
+
+    next()
+})
+
 const PORT = process.env.PORT || 7001
 const URI = process.env.MONGO_URI
 
