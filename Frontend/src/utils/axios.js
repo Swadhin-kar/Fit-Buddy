@@ -1,9 +1,29 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL;
+const trimTrailingSlash = (value) => value?.replace(/\/+$/, "");
+
+const resolveApiBase = () => {
+  const configuredBase = trimTrailingSlash(import.meta.env.VITE_API_BASE_URL);
+
+  if (configuredBase) {
+    return configuredBase;
+  }
+
+  if (typeof window !== "undefined") {
+    const { hostname, origin } = window.location;
+
+    if (hostname === "localhost" || hostname === "127.0.0.1") {
+      return "http://localhost:7000";
+    }
+
+    return trimTrailingSlash(origin);
+  }
+
+  return "http://localhost:7000";
+};
 
 const api = axios.create({
-  baseURL: API_BASE,
+  baseURL: resolveApiBase(),
   withCredentials: true,
 });
 
