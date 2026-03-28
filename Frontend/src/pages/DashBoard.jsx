@@ -8,7 +8,6 @@ import {
   Mail,
   Moon,
   PlusCircle,
-  TrendingUp,
   Trophy,
   User,
   Weight,
@@ -18,51 +17,106 @@ import { AuthContext } from "../components/AuthContext";
 import Heatmap from "../components/Heatmap";
 import LogForm from "../components/LogForm";
 import StreakCard from "../components/StreakCard";
+import InjuryRiskCard from "../components/dashboard/InjuryRiskCard";
+import WeightTrendChart from "../components/dashboard/WeightTrendChart";
 import { getLogHistory, getTodayLog, updateTodayLog } from "../api/logApi";
+import {
+  buildHeatmapData,
+  buildWeightSeries,
+  calculateDailyVolume,
+  calculateRisk,
+  formatDateKey,
+} from "../utils/workoutAnalytics";
+
+const HISTORY_RANGE_DAYS = 180;
+const HEATMAP_DAYS = 90;
+
+const createEmptyExercise = () => ({
+  name: "",
+  sets: "",
+  reps: "",
+  weight: "",
+});
 
 const createEmptyLogForm = () => ({
   caloriesConsumed: "",
   exerciseTime: "",
   weight: "",
+  exercises: [],
 });
 
 const mapLogToForm = (log) => ({
   caloriesConsumed: log?.caloriesConsumed?.toString() ?? "",
   exerciseTime: log?.exerciseTime?.toString() ?? "",
   weight: log?.weight === null || log?.weight === undefined ? "" : log.weight.toString(),
+  exercises: Array.isArray(log?.exercises)
+    ? log.exercises.map((exercise) => ({
+        name: exercise.name ?? "",
+        sets: exercise.sets?.toString() ?? "",
+        reps: exercise.reps?.toString() ?? "",
+        weight: exercise.weight?.toString() ?? "",
+      }))
+    : [],
 });
+
+const hasExerciseInput = (exercise = {}) =>
+  [exercise?.name, exercise?.sets, exercise?.reps, exercise?.weight].some(
+    (value) => value !== "" && value !== null && value !== undefined,
+  );
+
+const normalizeExercises = (exercises = []) =>
+  exercises
+    .filter((exercise) => hasExerciseInput(exercise))
+    .map((exercise) => ({
+      name: exercise.name.trim(),
+      sets: Number(exercise.sets),
+      reps: Number(exercise.reps),
+      weight: Number(exercise.weight),
+    }));
+
+const validateExercises = (exercises = []) => {
+  const hasInvalidExercise = exercises.some((exercise) => {
+    if (!hasExerciseInput(exercise)) {
+      return false;
+    }
+
+    const trimmedName = exercise.name.trim();
+    const sets = Number(exercise.sets);
+    const reps = Number(exercise.reps);
+    const weight = Number(exercise.weight);
+
+    return (
+      !trimmedName ||
+      !Number.isInteger(sets) ||
+      sets <= 0 ||
+      !Number.isInteger(reps) ||
+      reps <= 0 ||
+      !Number.isFinite(weight) ||
+      weight < 0
+    );
+  });
+
+  if (hasInvalidExercise) {
+    return "Complete each exercise with a name, whole-number sets and reps, and a non-negative weight.";
+  }
+
+  return "";
+};
 
 const normalizePayload = (formData) => ({
   caloriesConsumed: formData.caloriesConsumed === "" ? 0 : Number(formData.caloriesConsumed),
   exerciseTime: formData.exerciseTime === "" ? 0 : Number(formData.exerciseTime),
   weight: formData.weight === "" ? "" : Number(formData.weight),
+  exercises: normalizeExercises(formData.exercises),
 });
 
-const formatDate = (date) => {
-  const year = date.getFullYear();
-  const month = `${date.getMonth() + 1}`.padStart(2, "0");
-  const day = `${date.getDate()}`.padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
-};
-
-const buildHeatmapDays = (logs, totalDays = 90) => {
-  const logMap = new Map(logs.map((log) => [log.date, log]));
-  const today = new Date();
-
-  return Array.from({ length: totalDays }, (_, index) => {
-    const date = new Date(today);
-    date.setHours(0, 0, 0, 0);
-    date.setDate(today.getDate() - (totalDays - 1 - index));
-
-    const formattedDate = formatDate(date);
-
-    return {
-      date: formattedDate,
-      log: logMap.get(formattedDate) ?? null,
-    };
-  });
-};
+const hasWorkoutRecord = (log) =>
+  Boolean(
+    log &&
+      (Boolean(log.didExercise) ||
+        Number(log.exerciseTime) > 0 ||
+        (Array.isArray(log.exercises) && log.exercises.length > 0)),
+  );
 
 const calculateWorkoutStreak = (logs) => {
   const logMap = new Map(logs.map((log) => [log.date, log]));
@@ -74,10 +128,10 @@ const calculateWorkoutStreak = (logs) => {
     currentDate.setHours(0, 0, 0, 0);
     currentDate.setDate(today.getDate() - offset);
 
-    const formattedDate = formatDate(currentDate);
+    const formattedDate = formatDateKey(currentDate);
     const log = logMap.get(formattedDate);
 
-    if (!log || Number(log.exerciseTime) <= 0) {
+    if (!hasWorkoutRecord(log)) {
       break;
     }
 
@@ -86,6 +140,8 @@ const calculateWorkoutStreak = (logs) => {
 
   return streak;
 };
+
+const formatLoad = (value) => Math.round(value || 0).toLocaleString();
 
 export default function PersonalDashboard() {
   const { user } = useContext(AuthContext);
@@ -102,13 +158,6 @@ export default function PersonalDashboard() {
   const [todayLog, setTodayLog] = useState(null);
   const [formData, setFormData] = useState(createEmptyLogForm());
 
-  const routine = [
-    { name: "Push-ups", sets: "3 x 15", icon: <Activity size={14} /> },
-    { name: "Squats", sets: "3 x 20", icon: <Activity size={14} /> },
-    { name: "Plank", sets: "60 sec", icon: <Activity size={14} /> },
-    { name: "Running", sets: "20 min", icon: <Activity size={14} /> },
-  ];
-
   useEffect(() => {
     if (todayLog) {
       setFormData(mapLogToForm(todayLog));
@@ -123,7 +172,10 @@ export default function PersonalDashboard() {
       setHistoryError("");
 
       try {
-        const [todayResult, historyResult] = await Promise.allSettled([getTodayLog(), getLogHistory(90)]);
+        const [todayResult, historyResult] = await Promise.allSettled([
+          getTodayLog(),
+          getLogHistory(HISTORY_RANGE_DAYS),
+        ]);
 
         if (todayResult.status === "fulfilled") {
           setTodayLog(todayResult.value);
@@ -139,7 +191,7 @@ export default function PersonalDashboard() {
         } else {
           const message =
             historyResult.reason?.response?.data?.error ||
-            "Failed to load workout history. Your streak and heatmap may be unavailable.";
+            "Failed to load workout history. Your streak and analytics may be unavailable.";
           setHistoryError(message);
         }
       } finally {
@@ -197,23 +249,54 @@ export default function PersonalDashboard() {
   };
 
   const handleInputChange = (event) => {
-    const { name, type, checked, value } = event.target;
+    const { name, value } = event.target;
 
     setFormData((current) => ({
       ...current,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: value,
+    }));
+  };
+
+  const handleAddExercise = () => {
+    setFormData((current) => ({
+      ...current,
+      exercises: [...current.exercises, createEmptyExercise()],
+    }));
+  };
+
+  const handleExerciseChange = (index, field, value) => {
+    setFormData((current) => ({
+      ...current,
+      exercises: current.exercises.map((exercise, exerciseIndex) =>
+        exerciseIndex === index ? { ...exercise, [field]: value } : exercise,
+      ),
+    }));
+  };
+
+  const handleRemoveExercise = (index) => {
+    setFormData((current) => ({
+      ...current,
+      exercises: current.exercises.filter((_, exerciseIndex) => exerciseIndex !== index),
     }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const exerciseValidationMessage = validateExercises(formData.exercises);
+
+    if (exerciseValidationMessage) {
+      setLogError(exerciseValidationMessage);
+      return;
+    }
+
     const payload = normalizePayload(formData);
     const previousLog = todayLog;
     const optimisticLog = {
       ...todayLog,
       ...payload,
-      date: todayLog?.date || new Date().toISOString().split("T")[0],
+      didExercise: payload.exerciseTime > 0 || payload.exercises.length > 0,
+      date: todayLog?.date || formatDateKey(new Date()),
     };
 
     setIsSubmittingLog(true);
@@ -224,8 +307,7 @@ export default function PersonalDashboard() {
       const updatedLog = await updateTodayLog(payload);
       setLogHistory((current) => {
         const next = current.filter((log) => log.date !== updatedLog.date);
-        const merged = [...next, updatedLog].sort((left, right) => left.date.localeCompare(right.date));
-        return merged;
+        return [...next, updatedLog].sort((left, right) => left.date.localeCompare(right.date));
       });
       setTodayLog(updatedLog);
       setIsLogModalOpen(false);
@@ -240,8 +322,12 @@ export default function PersonalDashboard() {
   };
 
   const hasLog = Boolean(todayLog);
-  const workedOutToday = hasLog ? Number(todayLog.exerciseTime) > 0 : false;
-  const heatmapDays = buildHeatmapDays(logHistory, 90);
+  const workedOutToday = hasWorkoutRecord(todayLog);
+  const todayWorkoutVolume = calculateDailyVolume(todayLog?.exercises ?? []);
+  const todayExercises = Array.isArray(todayLog?.exercises) ? todayLog.exercises : [];
+  const heatmapData = buildHeatmapData(logHistory, HEATMAP_DAYS);
+  const weightSeries = buildWeightSeries(logHistory);
+  const risk = calculateRisk(logHistory);
 
   return (
     <>
@@ -250,7 +336,7 @@ export default function PersonalDashboard() {
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Fitness Command Center</h1>
             <p className="mt-2 text-sm text-[rgb(var(--text-muted))]">
-              Stay on top of today&apos;s nutrition, workout time, and 90-day consistency.
+              Track daily recovery, lifting volume, body weight, and 90-day consistency in one place.
             </p>
           </div>
 
@@ -292,7 +378,7 @@ export default function PersonalDashboard() {
             title="Workout Status"
             value={hasLog ? (workedOutToday ? "Yes" : "Rest") : isDashboardLoading ? "..." : "--"}
             unit=""
-            trend={hasLog ? "Based on exercise time" : isDashboardLoading ? "Loading" : "No log yet"}
+            trend={hasLog ? "Minutes or lifts logged" : isDashboardLoading ? "Loading" : "No log yet"}
             color="var(--accent)"
           />
           <StatCard
@@ -363,6 +449,12 @@ export default function PersonalDashboard() {
                   icon={<Dumbbell size={16} />}
                 />
                 <FocusItem
+                  label="Volume"
+                  value={todayExercises.length ? `${formatLoad(todayWorkoutVolume)} total load` : "No lifting entries"}
+                  icon={<Activity size={16} />}
+                  color="var(--secondary)"
+                />
+                <FocusItem
                   label="Weight"
                   value={
                     hasLog && todayLog.weight !== null && todayLog.weight !== undefined
@@ -380,70 +472,82 @@ export default function PersonalDashboard() {
             <div className="grid grid-cols-2 gap-3">
               <ActionButton icon={<Calculator />} label="BMI Calc" sub="Check index" />
               <ActionButton icon={<Flame />} label="Nutrition" sub="Track meals" />
-              <ActionButton icon={<Dumbbell />} label="Plan" sub="Edit routine" />
+              <ActionButton icon={<Dumbbell />} label="Progress" sub="Log lifts" />
               <ActionButton icon={<Trophy />} label="Badges" sub="View all" />
             </div>
           </div>
 
           <div className="space-y-8 lg:col-span-8">
-            <Heatmap days={heatmapDays} isLoading={isHistoryLoading} error={historyError} />
+            <Heatmap data={heatmapData} isLoading={isHistoryLoading} error={historyError} />
+
+            <div className="grid gap-6 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+              <InjuryRiskCard risk={risk} />
+              <WeightTrendChart data={weightSeries} />
+            </div>
 
             <div className="grid gap-6 md:grid-cols-2">
               <Card>
                 <h3 className="mb-4 flex items-center gap-2 text-lg font-bold">
-                  <TrendingUp size={20} className="text-[rgb(var(--primary))]" /> Today&apos;s Focus
+                  <Dumbbell size={20} className="text-[rgb(var(--primary))]" /> Today&apos;s Exercises
+                </h3>
+
+                {todayExercises.length ? (
+                  <div className="space-y-3">
+                    {todayExercises.map((exercise) => (
+                      <div
+                        key={`${exercise.name}-${exercise.sets}-${exercise.reps}-${exercise.weight}`}
+                        className="rounded-2xl border border-[rgb(var(--card-depth-1))] bg-[rgb(var(--card-depth-1))/0.3] px-4 py-3"
+                      >
+                        <div className="flex items-center justify-between gap-3">
+                          <div>
+                            <p className="text-sm font-semibold">{exercise.name}</p>
+                            <p className="mt-1 text-xs text-[rgb(var(--text-muted))]">
+                              {exercise.sets} sets x {exercise.reps} reps
+                            </p>
+                          </div>
+                          <span className="rounded-full bg-[rgb(var(--primary))]/10 px-3 py-1 text-xs font-semibold text-[rgb(var(--primary))]">
+                            {exercise.weight} kg
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="rounded-3xl border border-dashed border-[rgb(var(--card-depth-2))] bg-[rgb(var(--card-depth-1))/0.25] px-4 py-10 text-center">
+                    <p className="text-sm font-medium">No exercise sets logged today.</p>
+                    <p className="mt-2 text-sm text-[rgb(var(--text-muted))]">
+                      Add exercises in the daily log to unlock load-based analytics.
+                    </p>
+                  </div>
+                )}
+              </Card>
+
+              <Card>
+                <h3 className="mb-4 flex items-center gap-2 text-lg font-bold">
+                  <Moon size={20} className="text-[rgb(var(--accent))]" /> Recovery Focus
                 </h3>
                 <div className="space-y-3">
                   <FocusItem
                     label="Workout"
-                    value={hasLog ? `${todayLog.exerciseTime} minutes planned/logged` : "Log your session"}
+                    value={hasLog ? `${todayLog.exerciseTime} minutes logged` : "Log your session"}
                     icon={<Dumbbell size={16} />}
                   />
                   <FocusItem
-                    label="Nutrition"
-                    value={hasLog ? `${todayLog.caloriesConsumed} kcal tracked` : "Add calorie intake"}
-                    icon={<Flame size={16} />}
-                    color="var(--primary)"
+                    label="Load"
+                    value={todayExercises.length ? `${formatLoad(todayWorkoutVolume)} total load` : "No lifting volume yet"}
+                    icon={<Activity size={16} />}
+                    color="var(--secondary)"
                   />
                   <FocusItem
                     label="Recovery"
                     value={
-                      hasLog
-                        ? workedOutToday
-                          ? "Great work. Recover well tonight."
-                          : "Recovery day logged."
-                        : "Update your daily log to see insights."
+                      workedOutToday
+                        ? `Current risk is ${risk.level.toLowerCase()}. Review recovery if the score rises.`
+                        : "Rest day logged. Keep sleep and hydration consistent."
                     }
                     icon={<Moon size={16} />}
                     color="var(--accent)"
                   />
-                </div>
-              </Card>
-
-              <Card>
-                <div className="mb-4 flex items-center justify-between">
-                  <h3 className="text-lg font-bold">Current Routine</h3>
-                  <button className="text-xs font-bold text-[rgb(var(--primary))] hover:underline">
-                    Manage
-                  </button>
-                </div>
-                <div className="space-y-2">
-                  {routine.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group flex items-center justify-between rounded-2xl border border-[rgb(var(--card-depth-2))]/30 bg-[rgb(var(--card-depth-1))] p-3 transition-colors hover:border-[rgb(var(--primary))]/50"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="rounded-lg bg-[rgb(var(--card-depth-0))] p-2 text-[rgb(var(--primary))]">
-                          {item.icon}
-                        </div>
-                        <span className="text-sm font-medium">{item.name}</span>
-                      </div>
-                      <span className="text-xs font-bold opacity-60 transition-opacity group-hover:text-[rgb(var(--secondary))] group-hover:opacity-100">
-                        {item.sets}
-                      </span>
-                    </div>
-                  ))}
                 </div>
               </Card>
             </div>
@@ -457,8 +561,11 @@ export default function PersonalDashboard() {
         error={logError}
         isFetching={isFetchingLog}
         isSubmitting={isSubmittingLog}
+        onAddExercise={handleAddExercise}
         onChange={handleInputChange}
         onClose={closeLogModal}
+        onExerciseChange={handleExerciseChange}
+        onRemoveExercise={handleRemoveExercise}
         onSubmit={handleSubmit}
       />
     </>
@@ -502,7 +609,7 @@ const StatCard = ({ title, value, unit, trend, color }) => (
 );
 
 const ActionButton = ({ icon, label, sub }) => (
-  <button className="flex w-full flex-col items-start rounded-2xl border border-[rgb(var(--card-depth-1))] bg-[rgb(var(--card-depth-0))] p-4 transition-all hover:-translate-y-1 hover:border-[rgb(var(--secondary))] group">
+  <button className="group flex w-full flex-col items-start rounded-2xl border border-[rgb(var(--card-depth-1))] bg-[rgb(var(--card-depth-0))] p-4 transition-all hover:-translate-y-1 hover:border-[rgb(var(--secondary))]">
     <div className="mb-3 rounded-xl bg-[rgb(var(--card-depth-1))] p-2 text-[rgb(var(--primary))] transition-colors group-hover:bg-[rgb(var(--secondary))] group-hover:text-white">
       {icon}
     </div>

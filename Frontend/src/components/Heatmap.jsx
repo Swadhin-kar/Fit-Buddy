@@ -1,107 +1,105 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { Activity } from "lucide-react";
+import { formatDisplayDate } from "../utils/workoutAnalytics";
 
-const GET_COLOR_CLASS = (day) => {
-  if (!day?.log) return "bg-[rgb(var(--card-depth-1))] opacity-10";
+const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  const mins = day.log.exerciseTime;
-  if (mins === 0) return "bg-sky-400/40";
-  if (mins <= 30) return "bg-emerald-500/40";
-  if (mins <= 60) return "bg-emerald-500/70";
-  return "bg-emerald-600 shadow-[0_0_10px_rgba(16,185,129,0.3)]";
-};
+const INTENSITY_CLASS_NAMES = [
+  "bg-[rgb(var(--card-depth-1))]/40",
+  "bg-emerald-300/70",
+  "bg-emerald-400/80",
+  "bg-emerald-500/85",
+  "bg-emerald-600 shadow-[0_0_12px_rgba(22,163,74,0.25)]",
+];
 
-export default function LeetCodeHeatmap({ days = [] }) {
-  const TOTAL_ROWS = 7;
-  const TOTAL_COLS = 20; // increase/decrease for density
+const LEGEND_LABELS = ["Rest", "Light", "Building", "Strong", "Peak"];
 
-  const TOTAL_CELLS = TOTAL_ROWS * TOTAL_COLS;
+export default function Heatmap({ data, isLoading = false, error = "" }) {
+  const columns = data?.columns ?? 0;
+  const cells = data?.cells ?? [];
+  const monthLabels = data?.monthLabels ?? [];
+  const activeDays = data?.activeDays ?? 0;
 
-  // Fill full grid (no gaps)
-  const heatmapDays = Array.from({ length: TOTAL_CELLS }, (_, i) => {
-    return days[i] || { date: null, log: null };
-  });
-
-  const activeDays = days.filter(
-    (d) => d.log && d.log.exerciseTime > 0
-  ).length;
+  if (error) {
+    return (
+      <div className="rounded-[2rem] border border-red-500/20 bg-red-500/10 px-5 py-4 text-sm text-red-300">
+        {error}
+      </div>
+    );
+  }
 
   return (
-    <div className="w-full rounded-3xl border border-[rgb(var(--card-depth-1))] bg-[rgb(var(--card-depth-0))] p-6 shadow-sm">
-      <div className="flex flex-col gap-2">
-        
-        {/* Header */}
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold text-[rgb(var(--text-muted))]">
-            {activeDays} active days in last months
-          </span>
-
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] text-[rgb(var(--text-dim))]">Less</span>
-            {[0, 1, 2, 3, 4].map((v) => (
-              <div
-                key={v}
-                className={`h-3 w-3 rounded-sm ${getLegendColor(v)}`}
-              />
-            ))}
-            <span className="text-[10px] text-[rgb(var(--text-dim))]">More</span>
-          </div>
+    <div className="rounded-[2rem] border border-[rgb(var(--card-depth-1))] bg-[rgb(var(--card-depth-0))] p-6 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[rgb(var(--secondary))]">
+            Training Heatmap
+          </p>
+          <h3 className="mt-2 text-xl font-bold">GitHub-style workout consistency</h3>
+          <p className="mt-2 text-sm text-[rgb(var(--text-muted))]">
+            Weeks run left to right. Rows stay locked from Monday through Sunday.
+          </p>
         </div>
 
-        <div className="flex gap-3">
-          {/* Y Axis */}
-          <div className="flex flex-col justify-between py-5 text-[10px] font-medium text-[rgb(var(--text-dim))]">
-            <span>Mon</span>
-            <span>Wed</span>
-            <span>Fri</span>
+        <div className="rounded-2xl bg-[rgb(var(--card-depth-1))/0.45] px-4 py-3 text-right">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[rgb(var(--text-muted))]">
+            Active Days
+          </p>
+          <p className="mt-2 text-2xl font-bold text-[rgb(var(--secondary))]">
+            {isLoading ? "--" : activeDays}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+        <div className="inline-flex items-center gap-2 rounded-full bg-[rgb(var(--card-depth-1))/0.35] px-3 py-1.5 text-xs text-[rgb(var(--text-muted))]">
+          <Activity size={14} className="text-[rgb(var(--secondary))]" />
+          Intensity uses logged volume first, then exercise minutes when volume is unavailable.
+        </div>
+
+        <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[rgb(var(--text-muted))]">
+          {LEGEND_LABELS.map((label, index) => (
+            <div key={label} className="flex items-center gap-1.5">
+              <span className={`h-3 w-3 rounded-[4px] ${INTENSITY_CLASS_NAMES[index]}`} />
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-6 overflow-x-auto pb-2">
+        <div className="min-w-max">
+          <div
+            className="mb-3 grid items-center gap-x-1 pl-12 text-[10px] font-semibold uppercase tracking-[0.18em] text-[rgb(var(--text-muted))]"
+            style={{ gridTemplateColumns: `repeat(${columns}, var(--heatmap-cell-size))` }}
+          >
+            {monthLabels.map((label, index) => (
+              <div key={`${label || "month"}-${index}`} className="text-left">
+                {label}
+              </div>
+            ))}
           </div>
 
-          <div className="flex-1 overflow-hidden">
-            {/* Month Labels */}
-            <div className="flex justify-between mb-2 px-1 text-[10px] font-medium text-[rgb(var(--text-dim))]">
-              <span>Jan</span>
-              <span>Feb</span>
-              <span>Mar</span>
+          <div className="flex gap-3">
+            <div className="grid grid-rows-7 gap-1 text-[11px] font-medium text-[rgb(var(--text-muted))]">
+              {DAY_LABELS.map((label) => (
+                <div key={label} className="flex h-3 items-center sm:h-[14px]">
+                  {label}
+                </div>
+              ))}
             </div>
 
-            {/* GRID */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="grid gap-1 sm:gap-1"
-              style={{
-                gridTemplateColumns: `repeat(${TOTAL_COLS}, minmax(0, 1fr))`,
-                gridTemplateRows: `repeat(${TOTAL_ROWS}, auto)`
-              }}
-            >
-              {heatmapDays.map((day, i) => (
-                <motion.div
-                  key={day.date || i}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: i * 0.002 }}
-                  whileHover={{
-                    scale: 1.3,
-                    zIndex: 20,
-                    boxShadow: "0 0 15px rgba(0,0,0,0.1)"
-                  }}
-                  className={`group relative h-3 w-3 sm:h-5 sm:w-5 rounded-[2px] sm:rounded-md transition-all cursor-pointer ${GET_COLOR_CLASS(day)}`}
-                >
-                  {/* Tooltip */}
-                  <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 w-max -translate-x-1/2 scale-0 rounded-lg bg-slate-900 px-3 py-1.5 text-[10px] text-white transition-all group-hover:scale-100 shadow-xl border border-white/10">
-                    <p className="font-bold">
-                      {day.date || "No Date"}
-                    </p>
-                    <p className="opacity-80">
-                      {day.log
-                        ? `${day.log.exerciseTime} mins workout`
-                        : "No activity logged"}
-                    </p>
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900" />
-                  </div>
-                </motion.div>
+            <div className="heatmap-grid" aria-label="Workout contribution heatmap">
+              {cells.map((cell) => (
+                <div
+                  key={cell.key}
+                  title={buildTooltipLabel(cell)}
+                  className={`rounded-[4px] transition-transform duration-150 hover:scale-110 ${
+                    INTENSITY_CLASS_NAMES[cell.intensity]
+                  } ${cell.date ? "cursor-pointer" : "opacity-0"}`}
+                  aria-label={buildTooltipLabel(cell)}
+                />
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -109,13 +107,18 @@ export default function LeetCodeHeatmap({ days = [] }) {
   );
 }
 
-function getLegendColor(level) {
-  const colors = [
-    "bg-[rgb(var(--card-depth-1))] opacity-20",
-    "bg-sky-400/40",
-    "bg-emerald-500/40",
-    "bg-emerald-500/70",
-    "bg-emerald-600"
-  ];
-  return colors[level];
+function buildTooltipLabel(cell) {
+  if (!cell?.date) {
+    return "Outside current range";
+  }
+
+  if (!cell.isActive) {
+    return `${formatDisplayDate(cell.date)}: no workout logged`;
+  }
+
+  if (cell.log?.volume > 0) {
+    return `${formatDisplayDate(cell.date)}: ${cell.log.volume.toLocaleString()} total load`;
+  }
+
+  return `${formatDisplayDate(cell.date)}: ${cell.log?.exerciseTime ?? 0} minutes logged`;
 }

@@ -1,6 +1,7 @@
 import dailyLog from "../model/dailyLog.model.js";
+import { formatDateKey, sanitizeExercises } from "../utils/logHelpers.js";
 
-const getTodayDate = () => new Date().toISOString().split("T")[0];
+const getTodayDate = () => formatDateKey(new Date());
 
 export const getTodayLog = async (req, res) => {
   try {
@@ -19,6 +20,7 @@ export const getTodayLog = async (req, res) => {
         exerciseTime: 0,
         didExercise: false,
         weight: lastLog?.weight ?? null,
+        exercises: [],
       });
     }
 
@@ -32,16 +34,21 @@ export const updateLog = async (req, res) => {
   try {
     const userId = req.userId;
     const today = getTodayDate();
-    const { caloriesConsumed, exerciseTime, didExercise, weight } = req.body;
+    const { caloriesConsumed, exerciseTime, didExercise, weight, exercises } = req.body;
+    const sanitizedExercises = sanitizeExercises(exercises ?? []);
+    const normalizedExerciseTime = Number(exerciseTime) || 0;
+    const resolvedDidExercise =
+      normalizedExerciseTime > 0 || sanitizedExercises.length > 0 || Boolean(didExercise);
 
     const log = await dailyLog.findOneAndUpdate(
       { userId, date: today },
       {
         $set: {
           caloriesConsumed: Number(caloriesConsumed) || 0,
-          exerciseTime: Number(exerciseTime) || 0,
-          didExercise: Boolean(didExercise),
+          exerciseTime: normalizedExerciseTime,
+          didExercise: resolvedDidExercise,
           weight: weight === "" || weight === null || weight === undefined ? null : Number(weight),
+          exercises: sanitizedExercises,
         },
       },
       {
@@ -54,7 +61,8 @@ export const updateLog = async (req, res) => {
 
     res.json(log);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    const statusCode = err.message?.toLowerCase().includes("exercise") ? 400 : 500;
+    res.status(statusCode).json({ error: err.message });
   }
 };
 
@@ -69,7 +77,7 @@ export const getLogs = async (req, res) => {
     const logs = await dailyLog
       .find({
         userId,
-        date: { $gte: fromDate.toISOString().split("T")[0] },
+        date: { $gte: formatDateKey(fromDate) },
       })
       .sort({ date: 1 });
 
